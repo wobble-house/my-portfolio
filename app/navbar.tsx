@@ -13,7 +13,7 @@ export default function MyNavbar() {
         <div className="max-w-5xl justify-between mx-auto items-center md:flex">
           <div>
             <div className="flex items-center justify-between md:block">
-              <Link href={"/"}>
+              <Link href={"/"} legacyBehavior>
                 <h2 className="text-2xl  dark:text-zinc-50 font-bold tracking-normal hover:scale-105">Ross Alan Ford</h2>
               </Link>
               <div className="md:hidden">
