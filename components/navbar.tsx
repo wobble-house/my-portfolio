@@ -1,12 +1,19 @@
 'use client';
-
+import { useOnClickOutside } from 'usehooks-ts'
 import Link from 'next/link';
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from "react";
 
-export default function MyNavbar() {
-  const ref = useRef();
+export default function MyNavbar({children}) {
+  const Navref = useRef();
   const [navbar, setNavbar] = useState(false);
-  useOnClickOutside(ref, () => setNavbar(false));
+  const handleClickOutside = () => {
+    setNavbar(false)
+  }
+  const handleClickInside = () => {
+    setNavbar(!navbar)
+  }
+  
+  useOnClickOutside(Navref, handleClickOutside)
   return (
     <div>
       <nav className="bg-zinc-50 dark:bg-zinc-900 w-full fixed z-50 shadow-2xl px-5">
@@ -20,7 +27,7 @@ export default function MyNavbar() {
                 <button
                   className="pr-2 mr-2 pl-2  dark:text-zinc-50
                  rounded-md outline-none focus:border-white focus:border"
-                  onClick={() => setNavbar(!navbar)}
+                 onClick={handleClickInside}
                 >
                   {navbar ? (
                     <svg
@@ -63,7 +70,7 @@ export default function MyNavbar() {
                 navbar ? 'block' : 'hidden'
               }`}
             >
-              <ul ref={ref} className="md:flex">
+              <ul ref={Navref} className="md:flex">
                 <li 
                 className="
                 py-2
@@ -76,7 +83,7 @@ export default function MyNavbar() {
                 px-2 
                 rounded
                 ">
-                  <Link href="/about" onClick={() => setNavbar(false)}>
+                  <Link href="/about" onClick={handleClickOutside}>
                   ABOUT
                   </Link>
                 </li>
@@ -92,7 +99,7 @@ export default function MyNavbar() {
                 px-2 
                 rounded
                 ">
-                  <Link href="/projects" onClick={() => setNavbar(false)}>
+                  <Link href="/projects" onClick={handleClickOutside}>
                   Projects
                   </Link>
                 </li>
@@ -108,10 +115,14 @@ export default function MyNavbar() {
                 px-2 
                 rounded
                 ">
-                  <Link href="/contact" onClick={() => setNavbar(false)}>
+                  <Link href="/contact" onClick={handleClickOutside}>
                   Contact
                   </Link>
                 </li>
+                <li
+              className="text-center font-serif text-zinc-500 whitespace-nowrap hover:scale-105">
+          {children}
+            </li>
               </ul>
             </div>
           </div>
@@ -121,29 +132,3 @@ export default function MyNavbar() {
   );
 };
 
-function useOnClickOutside(ref: any, handler: any) {
-  useEffect(
-    () => {
-      const listener = (event: any) => {
-        // Do nothing if clicking ref's element or descendent elements
-        if (!ref.current || ref.current.contains(event.target)) {
-          return;
-        }
-        handler(event);
-      };
-      document.addEventListener("mousedown", listener);
-      document.addEventListener("touchstart", listener);
-      return () => {
-        document.removeEventListener("mousedown", listener);
-        document.removeEventListener("touchstart", listener);
-      };
-    },
-    // Add ref and handler to effect dependencies
-    // It's worth noting that because passed in handler is a new ...
-    // ... function on every render that will cause this effect ...
-    // ... callback/cleanup to run every render. It's not a big deal ...
-    // ... but to optimize you can wrap handler in useCallback before ...
-    // ... passing it into this hook.
-    [ref, handler]
-  );
-}

@@ -1,6 +1,8 @@
 import Footer from './footer'
 import './globals.css'
-import MyNavbar from './navbar'
+import AuthContext from '@/components/next-auth-provider'
+
+export const runtime = 'nodejs'
 
 export default function RootLayout({
   children,
@@ -15,11 +17,11 @@ export default function RootLayout({
       */}
       <head />
       <body className="bg-zinc-50 dark:bg-zinc-900 text-black dark:text-zinc-50">
-        <MyNavbar/>
+      <AuthContext>
         {children}
         <Footer/>
+        </AuthContext>
         </body>
-        
     </html>
   )
 }
