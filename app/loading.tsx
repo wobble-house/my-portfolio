@@ -1,5 +1,5 @@
 import MyNavbar from "../components/navbar";
-import LoginButton from "./login";
+import LoginButton from "../components/login";
 
 
 export default function Loading(start, end) {

@@ -6,7 +6,7 @@ export default function LoginButton() {
     if (status === "authenticated") {
       return (
         <>
-        <div className="flex flex-row mx-auto max-w-lg">
+        <div className="flex flex-row max-w-lg">
           <p className="text-white">Hi, {session.user.name}!</p>
           <button className="text-black bg-white px-4 py-1 rounded-md mx-3" onClick={() => signOut()}>Sign out</button>
           </div>
@@ -15,7 +15,7 @@ export default function LoginButton() {
     }
     return (
       <>
-      <div className="mx-auto max-w-md">
+      <div className="max-w-md">
         Not signed in <br />
         <button className="text-black bg-white px-4 py-1 rounded-md" onClick={() => signIn()}>Sign in</button>
         </div>

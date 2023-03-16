@@ -51,6 +51,11 @@ module.exports = {
       fuchsia: colors.fuchsia,
       pink: colors.pink,
       rose: colors.rose,
+      "rossblue": '#C4E7E4',
+      "rosspurple": '#A297C9',
+      "rosstan": '#FFFDE7',
+      "rossgreen": '#00773A',
+      "rossred": '#EF4048',
     }),
     columns: {
       auto: 'auto',

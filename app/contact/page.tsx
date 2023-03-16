@@ -1,11 +1,10 @@
 export default function Contact() {
   return (
-    <main >
+<>
       <div className="mx-auto max-w-4xl justify-center text-center">
-      <h2 className="text-center text-4xl py-20">Ross Ford&apos;s Portfolio</h2>
       <MyContact/>
       </div>
-    </main>
+    </>
   )
 }
 

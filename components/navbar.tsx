@@ -2,6 +2,7 @@
 import { useOnClickOutside } from 'usehooks-ts'
 import Link from 'next/link';
 import React, { useState, useRef } from "react";
+import Name from './name';
 
 export default function MyNavbar({children}) {
   const Navref = useRef();
@@ -16,23 +17,23 @@ export default function MyNavbar({children}) {
   useOnClickOutside(Navref, handleClickOutside)
   return (
     <div>
-      <nav className="bg-zinc-50 dark:bg-zinc-900 w-full fixed z-50 shadow-2xl px-5">
-        <div className="max-w-5xl justify-between mx-auto items-center md:flex">
-          <div>
-            <div className="flex items-center justify-between md:block">
-              <Link href={"/"} legacyBehavior>
-                <h2 className="text-2xl  dark:text-zinc-50 font-bold tracking-normal hover:scale-105">Ross Alan Ford</h2>
+      <nav className="h-full z-50 px-5 pt-16 relative justify-center my-auto">
+        <div className="max-w-6xl justify-between mx-auto items-center md:flex-col my-auto">
+          <div className="my-auto">
+            <div className="flex flex-col items-center justify-between md:block my-auto">
+              <Link href={"/"}>
+                <Name/>
               </Link>
               <div className="md:hidden">
                 <button
-                  className="pr-2 mr-2 pl-2  dark:text-zinc-50
+                  className="pr-2 mr-2 pl-2 
                  rounded-md outline-none focus:border-white focus:border"
                  onClick={handleClickInside}
                 >
                   {navbar ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6  dark:text-zinc-50
+                      className="w-6 h-6  
                       "
                       viewBox="0 0 20 20"
                       fill="currentColor"
@@ -46,7 +47,7 @@ export default function MyNavbar({children}) {
                   ) : (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6  dark:text-zinc-50
+                      className="w-6 h-6 
                       "
                       fill="none"
                       viewBox="0 0 24 24"
@@ -66,18 +67,17 @@ export default function MyNavbar({children}) {
           </div>
           <div>
             <div 
-              className={`flex-1 justify-center md:block ${
+              className={`flex-1 mx-auto justify-center md:block ${
                 navbar ? 'block' : 'hidden'
               }`}
             >
-              <ul ref={Navref} className="md:flex">
+              <ul ref={Navref} className="md:flex-col mx-auto text-center py-10">
                 <li 
                 className="
                 py-2
                 md:py-0
                 text-center
                 md:text-left 
-                dark:text-zinc-50
                 text-l 
                 uppercase 
                 px-2 
@@ -93,7 +93,6 @@ export default function MyNavbar({children}) {
                 md:py-0
                 text-center
                 md:text-left 
-                dark:text-zinc-50
                 text-l 
                 uppercase 
                 px-2 
@@ -109,7 +108,6 @@ export default function MyNavbar({children}) {
                 md:py-0
                 text-center
                 md:text-left 
-                dark:text-zinc-50
                 text-l 
                 uppercase 
                 px-2 
@@ -120,7 +118,7 @@ export default function MyNavbar({children}) {
                   </Link>
                 </li>
                 <li
-              className="text-center font-serif text-zinc-500 whitespace-nowrap hover:scale-105">
+              className="font-serif whitespace-nowrap md:text-left pl-2">
           {children}
             </li>
               </ul>

@@ -1,6 +1,9 @@
 import Footer from './footer'
+import Name from '@/components/name'
 import './globals.css'
 import AuthContext from '@/components/next-auth-provider'
+import MyNavbar from '@/components/navbar'
+import LoginButton from '@/components/login'
 
 export const runtime = 'nodejs'
 
@@ -11,14 +14,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" >
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
-      <body className="bg-zinc-50 dark:bg-zinc-900 text-black dark:text-zinc-50">
+      <body>
       <AuthContext>
-        {children}
+        <main className="md:flex flex-row max-w-7xl mx-auto gap-5">
+        <MyNavbar><LoginButton/></MyNavbar>
+          {children}</main>
         <Footer/>
         </AuthContext>
         </body>
