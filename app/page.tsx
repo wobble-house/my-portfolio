@@ -1,5 +1,4 @@
 import Skills from './skills'
-import { MyProjects } from './projects/page'
 import { AboutMe } from './about/page'
 
 export default function Home() {
@@ -7,7 +6,6 @@ export default function Home() {
     <>
       <div>
       <AboutMe/>
-      <MyProjects/>
       <Skills/>
       </div>
     </>
