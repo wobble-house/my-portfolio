@@ -1,5 +1,4 @@
 import Footer from './footer'
-import Name from '@/components/name'
 import './globals.css'
 import AuthContext from '@/components/next-auth-provider'
 import MyNavbar from '@/components/navbar'

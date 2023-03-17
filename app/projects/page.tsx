@@ -2,8 +2,6 @@ import { projects } from "@/lib/projects"
 import Link from "next/link"
 import ImageWithFallback from "@/components/image-handler";
 
-
-
 const fs = require('fs');
 const webdriver = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
@@ -16,6 +14,7 @@ export const dynamic = 'force-dynamic',
   fetchCache = 'auto',
   runtime = 'nodejs',
   preferredRegion = 'auto'
+
 export async function GetScreenshot({url, name}:{url: string, name: string}) {
   let options = new chrome.Options();
   options.setChromeBinaryPath(chromium.path);
@@ -33,43 +32,41 @@ export async function GetScreenshot({url, name}:{url: string, name: string}) {
 };
 
 async function takeScreenshot(driver, name) {
-await driver.takeScreenshot().then((data) => {
 
-      fs.writeFileSync(name + '.png', data, 'base64');
-      console.log('Screenshot is saved');
+await driver.takeScreenshot().then((data) => {
+  const dir = `public/images/chromium/${name}.png`
+      fs.writeFileSync(dir, data, 'base64');
   });
 }
-
-
 
 async function ProjectCard({params}: { params: { 
   url : string,
   name: string,
  }}){
   await GetScreenshot(params)
-  const imgsrc = params.name + '.png';
+  const imgsrc = '/images/chromium/' + params.name + '.png';
   return(
-<div key={params.name} id="project-card" className="flex-col project-card w-64 h-48 hover:scale-105">
+<div key={params.name} id="project-card" className="flex-col project-card w-64 h-48 hover:scale-105"><Link href={params.url} target="_blank" rel="noopener noreferrer">
                 <div className="flex content-center justify-center bg-rosspurple w-full h-full relative shadow-3xl">
                 <div className="flex-col items-center content-center justify-center bg-rossblue w-full h-full relative -ml-4 -mt-2 p-5">
                   <div className="flex h-8 -ml-8 -mt-8 ">
                       <div className="flex shrink bg-rosspurple text-white px-2">
-                      <Link href={params.url} target="_blank" rel="noopener noreferrer">
+                      
                           <h2 className="text-xl uppercase font-bold text-left">{params.name}</h2>
-                      </Link>
+                      
                       </div>
                   </div>
                   <div className="bg-zinc-50 h-32 overflow-hidden relative mt-3">
                   <ImageWithFallback
                       width={216}
                       height={128}
-                      src={`/${imgsrc}`}
+                      src={imgsrc}
                       alt={`${params.url} screenshot`}
                       fallbackSrc={'/images/HRHNY_TheVenueWide2.jpg'}
                       /> 
                   </div>
               </div>
-          </div>
+          </div></Link>
       </div>
   )
 }
