@@ -1,19 +1,12 @@
 import { projects } from "@/lib/projects"
 import Link from "next/link"
 import ImageWithFallback from "@/components/image-handler";
+import webdriver from 'selenium-webdriver'
+import chrome from 'selenium-webdriver/chrome'
+import chromium from 'chromium'
+import * as fs from 'fs';
 
-const fs = require('fs');
-const webdriver = require('selenium-webdriver');
-const chrome = require('selenium-webdriver/chrome');
-const chromium = require('chromium');
 require('chromedriver');
-
-export const dynamic = 'force-dynamic',
-  dynamicParams = true,
-  revalidate = false,
-  fetchCache = 'auto',
-  runtime = 'nodejs',
-  preferredRegion = 'auto'
 
 export async function GetScreenshot({url, name}:{url: string, name: string}) {
   let options = new chrome.Options();
