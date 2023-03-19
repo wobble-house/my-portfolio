@@ -7,6 +7,29 @@ module.exports = {
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
   },
+  images: {
+    domains: [
+      'rossalanford.com',
+      'dev.rossalanford.com'
+    ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'rossalanford.com',
+        port: '80',
+        pathname: '/***',
+      },
+      {
+        protocol: 'https',
+        hostname: 'dev.rossalanford.com',
+        port: '80',
+        pathname: '/***',
+      }
+    ],
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; sandbox;",
+    minimumCacheTTL: 60,
+},
   experimental: {
     appDir: true,
   },
