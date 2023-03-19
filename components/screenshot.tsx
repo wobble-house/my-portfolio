@@ -5,11 +5,14 @@ import ImageWithFallback from './image-handler';
 export const WebScreenshot = ({ url }) => {
   const [data, setData] = useState(null);
   useEffect(() => {
-    fetch(`/api/screenshot${url ? `?url=${url}` : ''}`, { next: { revalidate: 60 } })
+    const fetchData = async () => {
+        await fetch(`/api/screenshot${url ? `?url=${url}` : ''}`, { next: { revalidate: 60 } })
       .then((res) => res.json())
       .then((res) => setData(res.blob))
       .catch((err) => console.log(err));
-  }, []);
+    }
+    fetchData()
+    } , []);
   return (
     <div>
       {!data ? <p>Loading...</p> : <ImageWithFallback
