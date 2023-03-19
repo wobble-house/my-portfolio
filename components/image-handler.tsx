@@ -7,7 +7,6 @@ export default function ImageWithFallback(props){
     const [imgSrc, setImgSrc] = useState(src);
 
     return (
-        <div className="relative overflow-hidden mx-auto">
         <Image
             {...rest}
             src={imgSrc}
@@ -19,7 +18,6 @@ export default function ImageWithFallback(props){
                 setImgSrc(fallbackSrc);
             }}
         />
-        </div>
     );
 };
 

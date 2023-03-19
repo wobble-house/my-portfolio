@@ -13,9 +13,9 @@ export const WebScreenshot = ({ url }) => {
   return (
     <div>
       {!data ? <p>Loading...</p> : <ImageWithFallback
-                                        width={216}
-                                        height={128}
                                         src={data}
+                                        height={162}
+                                        width={216}
                                         alt={`${url} screenshot`}
                                         fallbackSrc={'/images/HRHNY_TheVenueWide2.jpg'}
                                         /> }

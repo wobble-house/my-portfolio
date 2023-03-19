@@ -2,13 +2,6 @@ import { projects } from "@/lib/projects"
 import Link from "next/link"
 import { WebScreenshot } from "@/components/screenshot";
 
-export const dynamic = 'force-dynamic',
-  dynamicParams = true,
-  revalidate = false,
-  fetchCache = 'auto',
-  runtime = 'nodejs',
-  preferredRegion = 'auto'
-
 export function ProjectCard({params}: { params: { 
   url : string,
   name: string,

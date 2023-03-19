@@ -15,10 +15,10 @@ export default async (req, res) => {
     );
     const page = await browser.newPage();
     page.setUserAgent(
-      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:86.0) Gecko/20100101 Firefox/86.0',
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36',
     );
     await page.setViewport({
-      width: 1366,
+      width: 1024,
       height: 768,
     });
 
