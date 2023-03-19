@@ -2,7 +2,7 @@
 import puppeteer from '../../utils/puppeteer';
 import chrome from 'chrome-aws-lambda';
 
-export default async (req, res) => {
+export default async function ProjectScreenshots(req, res){
   try {
     const browser = await puppeteer.launch(
       process.env.NODE_ENV === 'production'
