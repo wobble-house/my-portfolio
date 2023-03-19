@@ -9,20 +9,45 @@ module.exports = {
   },
   images: {
     domains: [
+      'www.rossalanford.com',
       'rossalanford.com',
       'dev.rossalanford.com'
     ],
     remotePatterns: [
       {
-        protocol: 'https',
+        protocol: 'http',
+        hostname: 'www.rossalanford.com',
+        port: '80',
+        pathname: '/***',
+      },
+      {
+        protocol: 'http',
         hostname: 'rossalanford.com',
         port: '80',
         pathname: '/***',
       },
       {
-        protocol: 'https',
+        protocol: 'http',
         hostname: 'dev.rossalanford.com',
         port: '80',
+        pathname: '/***',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.rossalanford.com',
+        port: '443',
+        pathname: '/***',
+      },
+      {
+        protocol: 'https',
+        hostname: 'rossalanford.com',
+        port: '443',
+        pathname: '/***',
+      },
+      {
+        protocol: 'https',
+        hostname: 'dev.rossalanford.com',
+        port: '443',
         pathname: '/***',
       }
     ],
