@@ -17,7 +17,7 @@ export function ProjectCard({params}: { params: {
                       </div>
                   </div>
                   <div className="bg-zinc-50 h-32 overflow-hidden relative mt-3">
-                    <WebScreenshot url={params.url}/>
+                    <WebScreenshot url={params.url} name={params.name}/>
                   </div>
               </div>
           </div></Link>
