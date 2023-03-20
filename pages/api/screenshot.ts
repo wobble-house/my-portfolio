@@ -15,7 +15,7 @@ export default async function ProjectScreenshots(req, res: null){
     );
     const page = await browser.newPage();
     page.setUserAgent(
-      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36',
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36',
     );
     await page.setViewport({
       width: 1024,
