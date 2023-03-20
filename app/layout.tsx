@@ -1,11 +1,10 @@
 import Footer from './footer'
 import './globals.css'
-import AuthContext from '@/components/next-auth-provider'
-import MyNavbar from '@/components/navbar'
-import LoginButton from '@/components/login'
+import AuthContext from '../components/next-auth-provider'
+import MyNavbar from '../components/navbar'
+import LoginButton from '../components/login'
 
 export const runtime = 'nodejs'
-export const revalidate = 60;
 
 export default function RootLayout({
   children,

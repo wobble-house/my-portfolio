@@ -1,8 +1,7 @@
-import { projects } from "@/lib/projects"
+'use client';
+import { projects } from "../../lib/projects"
 import Link from "next/link"
-import { WebScreenshot } from "@/components/screenshot";
-
-export const revalidate = 60;
+import { WebScreenshot } from "../../components/screenshot";
 
 export function ProjectCard({params}: { params: { 
   url : string,

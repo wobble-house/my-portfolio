@@ -1,4 +1,4 @@
-import Name from "@/components/name"
+import Name from "../../components/name"
 export default function About() {
   return (
     <>

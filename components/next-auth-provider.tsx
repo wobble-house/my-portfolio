@@ -2,7 +2,7 @@
 
 import { SessionProvider } from "next-auth/react";
 import { useSession } from "next-auth/react";
-import Loading from "@/app/loading";
+import Loading from "../app/loading";
 
 export default function AuthContext({ children }) {
   return (

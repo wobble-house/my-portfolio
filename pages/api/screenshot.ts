@@ -1,7 +1,7 @@
 import chromium from 'chrome-aws-lambda'
 import puppeteer from '../../utils/puppeteer'
 
-export default async function ProjectScreenshots(req, res: null){
+export default async function ProjectScreenshots(req, res){
   let browser = null;
   try {
     browser = await puppeteer.launch(
