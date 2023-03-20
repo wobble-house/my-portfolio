@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import ImageWithFallback from './image-handler';
 
-export const WebScreenshot = ({ url }) => {
+export const WebScreenshot = ({ url}) => {
   const [data, setData] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
