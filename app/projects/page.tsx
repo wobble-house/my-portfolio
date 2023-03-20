@@ -2,6 +2,8 @@ import { projects } from "@/lib/projects"
 import Link from "next/link"
 import { WebScreenshot } from "@/components/screenshot";
 
+export const revalidate = 60;
+
 export function ProjectCard({params}: { params: { 
   url : string,
   name: string,

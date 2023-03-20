@@ -5,6 +5,7 @@ import MyNavbar from '@/components/navbar'
 import LoginButton from '@/components/login'
 
 export const runtime = 'nodejs'
+export const revalidate = 60;
 
 export default function RootLayout({
   children,
