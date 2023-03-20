@@ -1,13 +1,17 @@
-import puppeteer from '../../utils/puppeteer';
-import chrome from 'chrome-aws-lambda';
+import chromium from 'chrome-aws-lambda'
+import puppeteer from '../../utils/puppeteer'
 
-export default async function ProjectScreenshots(req, res){
+export default async function ProjectScreenshots(req, res: null){
+  let browser = null;
   try {
-    const browser = await puppeteer.launch({
-            args: chrome.args,
-            executablePath: await chrome.executablePath,
-            headless: chrome.headless,
+    browser = await puppeteer.launch(
+      process.env.NODE_ENV === 'production'
+        ? {
+            args: chromium.args,
+            executablePath: await chromium.executablePath,
+            headless: chromium.headless,
           }
+        : {},
     );
     const page = await browser.newPage();
     page.setUserAgent(
@@ -22,10 +26,14 @@ export default async function ProjectScreenshots(req, res){
     const screenshot = await page.screenshot({
       encoding: 'base64',
     });
-
     await browser.close();
     res.json({ blob: `data:image/jpeg;base64,${screenshot}` });
   } catch (error) {
     console.log(error);
+  } finally {
+    if (browser !== null) {
+      await browser.close();
+    }
   }
+  return res
 };
