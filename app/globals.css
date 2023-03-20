@@ -10,6 +10,108 @@
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 }
+@layer base {
+  html {
+      font-family: Righteous, Manrope, sans-serif, system-ui;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+      background: var(--white);
+      transition: color var(--transition);
+    }
+  html::before {
+      content: "";
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      background: var(--black);
+      transform: translateX(-100%);
+      transition: transform var(--transition);
+      z-index: 0;
+    }
+    html.dark section a {
+      color: #60a5fa
+    }
+    html.dark .navigation a {
+      color: #60a5fa
+    }
+    section a {
+      color: blue
+    }
+    h1 {
+      font-family: Righteous;
+      letter-spacing: 2px;
+      line-height: 1.2em;
+      font-size: 3vmax;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding-top: 0.25em;
+      padding-bottom: 0.25em;
+  }
+  h2 {
+      font-family: Righteous;
+      letter-spacing: 2px;
+      line-height: 1.2em;
+      font-size: 2.2vmax;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding-top: 0.25em;
+      padding-bottom: 0.25em;
+  }
+  h3 {
+    font-family: Righteous;
+    letter-spacing: 2px;
+    line-height: 1.2em;
+    font-size: 1.5vmax;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-top: 1em;
+    padding-bottom: 0.25em;
+  }
+  h4 {
+      font-family: Righteous;
+      font-size: 1.5rem;
+      padding-bottom: 0.25em;
+  }
+  p {
+      font-family: Comfortaa;
+    }
+  li > ul { display: none; }
+  li:hover > ul { display: block; }
+  .lvl1 li { display: relative; position:relative; }
+  .lvl2 { position: absolute; }
+  .lvl2 li { 
+    position: relative;
+   }
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  a:hover {
+    --tw-scale-x: 1.01;
+    --tw-scale-y: 1.01;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+  .font-outline-2 {
+    -webkit-text-stroke: 2px black;
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 4px black;
+  }
+  body {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+ 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+}
 
 * {
   box-sizing: border-box;
@@ -29,6 +131,19 @@ a {
   text-decoration: none;
 }
 
+@font-face {
+  font-family: 'Righteous';
+  src: url(/fonts/Righteous/Righteous-Regular.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url(/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

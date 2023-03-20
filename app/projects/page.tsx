@@ -28,9 +28,9 @@ export function ProjectCard({params}: { params: {
 export default function Projects() {
   return (
 <>
-      <div className="mx-auto w-full justify-center text-center">
+      <div className="mx-auto max-w-4xl justify-center text-center">
       <div className="w-full 0 py-20">
-          <div className="grid grid-cols-0 md:grid-cols-3 gap-10 mx-auto max-w-5xl text-center justify-center">
+          <div className="grid grid-cols-0 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto max-w-5xl text-center justify-center">
               {projects.map(projects => (
                   <ProjectCard key={projects.name} params={projects}/>
               ))}

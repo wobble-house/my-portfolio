@@ -17,23 +17,23 @@ export default function MyNavbar({children}) {
   useOnClickOutside(Navref, handleClickOutside)
   return (
     <div>
-      <nav className="h-full z-50 px-5 pt-16 relative justify-center my-auto">
-        <div className="max-w-6xl justify-between mx-auto items-center md:flex-col my-auto">
+      <nav className="h-full z-50 px-5 pt-16 relative justify-center my-auto mx-auto">
+        <div className="justify-between mx-auto my-auto">
           <div className="my-auto">
             <div className="flex flex-col items-center justify-between md:block my-auto">
-              <Link href={"/"}>
+              <Link href={"/"} className="md:fixed">
                 <Name/>
               </Link>
-              <div className="md:hidden">
+              <div className="z-10 md:hidden mr-auto relative">
                 <button
-                  className="pr-2 mr-2 pl-2 
-                 rounded-md outline-none focus:border-white focus:border"
+                  className="pr-2 mr-2 pl-2 bg-rosspurple 
+                 outline-none focus:border-rosspurple focus:border"
                  onClick={handleClickInside}
                 >
                   {navbar ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6  
+                      className="w-6 h-6 text-rossblue 
                       "
                       viewBox="0 0 20 20"
                       fill="currentColor"
@@ -47,7 +47,7 @@ export default function MyNavbar({children}) {
                   ) : (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6 
+                      className="w-6 h-6 text-rossblue
                       "
                       fill="none"
                       viewBox="0 0 24 24"
@@ -66,12 +66,8 @@ export default function MyNavbar({children}) {
             </div>
           </div>
           <div>
-            <div 
-              className={`flex-1 mx-auto justify-center md:block ${
-                navbar ? 'block' : 'hidden'
-              }`}
-            >
-              <ul ref={Navref} className="md:flex-col mx-auto text-center py-10">
+            <div className={`flex-1 mx-auto justify-center md:pt-40 md:block ${navbar ? 'sticky' : 'hidden'}`}>
+              <ul ref={Navref} className="md:flex-col mx-auto text-center items-center py-10">
                 <li 
                 className="
                 py-2
