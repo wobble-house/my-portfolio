@@ -1,17 +1,13 @@
-
 import puppeteer from '../../utils/puppeteer';
 import chrome from 'chrome-aws-lambda';
 
 export default async function ProjectScreenshots(req, res){
   try {
-    const browser = await puppeteer.launch(
-      process.env.NODE_ENV === 'production'
-        ? {
+    const browser = await puppeteer.launch({
             args: chrome.args,
             executablePath: await chrome.executablePath,
             headless: chrome.headless,
           }
-        : {},
     );
     const page = await browser.newPage();
     page.setUserAgent(

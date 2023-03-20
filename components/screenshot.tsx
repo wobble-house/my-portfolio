@@ -6,7 +6,7 @@ export const WebScreenshot = ({ url }) => {
   const [data, setData] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
-        await fetch(`/api/screenshot${url ? `?url=${url}` : ''}`)
+        await fetch(`/api/screenshot${url ? `?url=${url}` : ''}`, { next: { revalidate: 60 }})
       .then((res) => res.json())
       .then((res) => setData(res.blob))
       .catch((err) => console.log(err));
