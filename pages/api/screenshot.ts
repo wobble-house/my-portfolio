@@ -1,4 +1,4 @@
-import chromium from 'chrome-aws-lambda'
+import chrome from 'chrome-aws-lambda'
 import puppeteer from '../../utils/puppeteer'
 
 export default async function ProjectScreenshots(req, res: null){
@@ -7,9 +7,9 @@ export default async function ProjectScreenshots(req, res: null){
     browser = await puppeteer.launch(
       process.env.NODE_ENV === 'production'
         ? {
-            args: chromium.args,
-            executablePath: await chromium.executablePath,
-            headless: chromium.headless,
+            args: chrome.args,
+            executablePath: await chrome.executablePath,
+            headless: chrome.headless,
           }
         : {},
     );
