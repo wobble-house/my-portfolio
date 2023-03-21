@@ -6,7 +6,6 @@ export const metadata = {
 }
 
 export default function Contact() {
-
   return (
 <>
       <div className="mx-auto max-w-xl justify-center pt-32 px-10">
