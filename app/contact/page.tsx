@@ -1,17 +1,18 @@
+import ContactForm from "../../components/contact-form"
+
+export const metadata = {
+  title: 'Contact',
+  description: 'Contact Ross Alan Ford for any inquiries',
+}
+
 export default function Contact() {
+
   return (
 <>
-      <div className="mx-auto max-w-4xl justify-center text-center">
-      <MyContact/>
+      <div className="mx-auto max-w-xl justify-center pt-32 px-10">
+      <ContactForm/>
       </div>
     </>
   )
 }
 
-export function MyContact(){
-  return (
-      <div className="mx-auto">
-          <button className="rounded-lg hover:scale-105 p-5 uppercase bg-zinc-800 text-white">contact</button>
-      </div>
-  )
-}

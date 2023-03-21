@@ -6,6 +6,13 @@ import LoginButton from '../components/login'
 
 export const runtime = 'nodejs'
 
+export const metadata = {
+  title: {
+    default: 'Ross Alan Ford',
+    template: '%s | Ross Alan Ford',
+  },
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -13,10 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" style={{scrollBehavior:'smooth'}}>
-      <head />
       <body>
       <AuthContext>
-        <main className="md:flex flex-row max-w-7xl mx-auto gap-5 justify-evenly pb-32">
+        <main className="md:flex flex-row max-w-7xl mx-auto gap-5 justify-evenly pb-32 align-top">
         <MyNavbar><LoginButton/></MyNavbar>
           {children}</main>
         <Footer/>
