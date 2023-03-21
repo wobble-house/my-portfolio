@@ -88,8 +88,8 @@ export default function ContactForm(){
               <form
               className="flex flex-col px-8 py-8 text-white">
                 <div className="mb-20 bg-rosspurple pb-2 pr-2 -mt-2 pt-2">
-                <div className=" bg-rossblue pb-2 pr-2 -ml-2 -mt-4 pt-4">
-                    <h2 className=" bg-rosspurple -ml-2 -mt-8 px-3 mr-auto relative">
+                <div className=" bg-rossblue pb-2 pr-2 -ml-2 -mt-4 pt-4 md:whitespace-nowrap">
+                    <h2 className=" bg-rosspurple -ml-2 -mt-8 px-5 mr-auto ">
                     Send me a message
                     </h2>
                 </div>
@@ -121,19 +121,17 @@ export default function ContactForm(){
         <textarea id={id} value={message} onChange={e => setMessage(e.target.value)} name="message" rows={6} className="bg-rossblue py-2 mb-2 pb-2 pl-4 pt-8 -ml-2 focus:outline-none focus:ring-2 ring-rossgreen font-light text-gray-500"></textarea>
         </div>
 
-        <div className="flex flex-row items-center bg-rosspurple mx-auto pb-1 pr-1 mb-10">
+        <div className="bg-rosspurple mx-auto pb-1 pr-1 mb-10">
           <button 
               className=" bg-rossblue drop-shadow-2xl hover:scale-105 justify-center leading-tight mx-auto pb-1 pr-1 -ml-1 -mt-1"
               onClick={handleSubmit}>
-                <h3 className="bg-rosspurple align-middle text-white truncate font-bold -ml-1 -mt-1 px-3">
+                <h3 className="bg-rosspurple  text-white truncate font-bold -ml-1 -mt-1 px-3">
               {buttonText}
               </h3>
           </button>
-        </div>
-            
+        </div>  
         { showFailureMessage === true && (<div className="bg-rosspurple pb-2 pr-2"><div className="bg-rossblue text-black">Error! Please try again. If you continue to encounter problems, please contact <Link href="mailto:ross@rossalanford.com">ross@rossalanford.com</Link></div></div>) }
      { showSuccessMessage === true && (<div className="bg-rosspurple pb-2 pr-2"><h4 className="text-center bg-rossblue -ml-2 -mt-2 text-gray-500">Please allow up to 48 hours for me to review your message. Thanks!</h4></div>) }
-     
       </form>
     )
   }
