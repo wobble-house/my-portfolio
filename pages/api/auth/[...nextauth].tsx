@@ -64,7 +64,7 @@ callbacks: {
 },  
 theme: {
     colorScheme: "auto", // "auto" | "dark" | "light"
-    logo: "https://www.liberaawards.com/logos/color-logos/libera-dancinglady-top-black-logo.png",  
+    logo: "https://www.rossalanford.com/images/rosslogo.png",  
   },
 }
 export default NextAuth(authOptions)

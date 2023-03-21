@@ -66,7 +66,7 @@ export default function MyNavbar({children}) {
           </div>
           <div>
             <div className={`flex-1 mx-auto justify-center md:block ${navbar ? 'sticky' : 'hidden'}`}>
-              <ul ref={Navref} className="md:flex-col mx-auto text-center items-center py-10">
+              <ul ref={Navref} className="md:flex-col py-10">
                 <li 
                 className="
                 py-2
@@ -112,8 +112,7 @@ export default function MyNavbar({children}) {
                   Contact
                   </Link>
                 </li>
-                <li
-              className="font-serif whitespace-nowrap md:text-left pl-2">
+                <li>
           {children}
             </li>
               </ul>
