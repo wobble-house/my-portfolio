@@ -4,12 +4,15 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
-    './node_modules/tw-elements/dist/js/**/*.js'
+    './node_modules/tw-elements/dist/js/**/*.js',
+    './pages/api/**/*.{js,ts,jsx,tsx}',
   ],
   presets: [],
   darkMode: 'media', // or 'class'
   theme: {
+    backgroundColor: '#FFFDE7',
     extend: {
+      backgroundColor: '#FFFDE7',
       boxShadow: {
         '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
         '4xl': '0 45px 70px -10px rgba(0, 0, 0, 0.5)',
@@ -24,6 +27,7 @@ module.exports = {
     },
     supports: {},
     colors: ({ colors }) => ({
+      
       inherit: colors.inherit,
       current: colors.current,
       transparent: colors.transparent,
@@ -51,6 +55,8 @@ module.exports = {
       fuchsia: colors.fuchsia,
       pink: colors.pink,
       rose: colors.rose,
+      backgroundColor: '#FFFDE7',
+      "backgroundColor": '#FFFDE7',
       "rossblue": '#C4E7E4',
       "rosspurple": '#A297C9',
       "rosstan": '#FFFDE7',

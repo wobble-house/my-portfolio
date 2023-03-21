@@ -63,7 +63,8 @@ callbacks: {
   }
 },  
 theme: {
-    colorScheme: "auto", // "auto" | "dark" | "light"
+    colorScheme: 'light',
+    brandColor: '#A297C9',
     logo: "https://www.rossalanford.com/images/rosslogo.png",  
   },
 }
