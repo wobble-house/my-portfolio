@@ -18,7 +18,6 @@ export default function Video({VideoURL}:{VideoURL: string}){
       iv_load_policy: 3,
       loop: 1,
       modestbranding: 1,
-      playsinline: 1,
       rel: 0,
       start: 10,
     },
