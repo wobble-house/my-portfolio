@@ -30,7 +30,7 @@
 @layer base {
   html {
       background-color: #FFFDE7;
-      font-family: Righteous, Manrope, sans-serif, system-ui;
+      font-family: CascadiaCode, sans-serif, system-ui;
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
     }
@@ -51,42 +51,44 @@
       color: blue
     }
     h1 {
-      font-family: Righteous;
+      font-family: MPLUS1Code;
       letter-spacing: 2px;
       line-height: 1.2em;
       font-size: 3vmax;
-      font-weight: 700;
+      font-weight: 500;
       text-transform: uppercase;
       padding-top: 0.25em;
       padding-bottom: 0.25em;
   }
   h2 {
-      font-family: Righteous;
+      font-family: MPLUS1Code;
       letter-spacing: 2px;
       line-height: 1.2em;
       font-size: 2.2vmax;
-      font-weight: 700;
+      font-weight: 500;
       text-transform: uppercase;
       padding-top: 0.25em;
       padding-bottom: 0.25em;
+      width: 100%;
+      max-width: 672px;
   }
   h3 {
-    font-family: Righteous;
+    font-family: MPLUS1Code;
     letter-spacing: 2px;
     line-height: 1.2em;
     font-size: 1.5vmax;
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
   }
   h4 {
-      font-family: Righteous;
+      font-family: MPLUS1Code;
       font-size: 1.5rem;
       padding-bottom: 0.25em;
   }
   p {
-      font-family: Comfortaa;
+      font-family: CascadiaCode;
     }
   li > ul { display: none; }
   li:hover > ul { display: block; }
@@ -146,18 +148,29 @@ a {
 }
 
 @font-face {
-  font-family: 'Righteous';
-  src: url(/fonts/Righteous/Righteous-Regular.ttf) format('truetype');
+  font-family: 'CascadiaCode';
+  src: local('CascadiaCode'), url(/fonts/CascadiaCode/woff2/CascadiaCode.woff2) format('woff2');
+  font-style: 'normal';
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
 
 @font-face {
-  font-family: 'Comfortaa';
-  src: url(/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf) format('truetype');
+  font-family: 'CascadiaCode';
+  src: local('CascadiaCode'), url(/fonts/CascadiaCode/woff2/CascadiaCodeItalic.woff2) format('woff2');
+  font-style: 'italic';
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
+
+@font-face {
+  font-family: 'MPLUS1Code';
+  src: local('MPLUS1Code'), url(/fonts/MPLUS1Code/MPLUS1Code-VariableFont_wght.ttf) format('truetype');
+  font-style: 'normal';
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
 
 @media (prefers-color-scheme: dark) {
   html {

@@ -1,14 +1,15 @@
 import Image from "next/image"
 import Video from "../../components/video"
+import Skills from "../../components/skills"
 export default function About(){
   return (
 <>
     <div className="mx-auto max-w-5xl justify-center text-center">
       <div className="py-20">
         <div className="  flex flex-col">
-
-            <h2 className=" bg-rosspurple text-white mr-auto text-left -ml-4 -mb-2 relative px-5">About</h2>
-
+            <div className=" bg-rosspurple mr-auto -ml-4 -mb-2 relative">
+            <h2 className="  text-white  text-left px-5">About</h2>
+              </div>
             <div className="bg-rosspurple pr-2 pb-2 mb-12 shadow-2xl">
               <div className=" flex-col gap-10 bg-rossblue -ml-2 -mt-2 pt-6 px-10 pb-6">
                       
@@ -27,20 +28,19 @@ export default function About(){
                         </ul>
                       </div>
               <div className="mx-auto max-w-2xl pb-5">
-              <p className="text-left">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-              Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, 
-              when an unknown printer took a galley of type and scrambled it to make a type 
-              specimen book. It has survived not only five centuries, but also the leap into 
-              electronic typesetting, remaining essentially unchanged. It was popularised 
-              in the 1960s with the release of Letraset sheets containing Lorem Ipsum 
-              passages, and more recently with desktop publishing software like Aldus 
-              PageMaker including versions of Lorem Ipsum.</p>
+              <p className="text-left">
+                I am a Full-Stack Developer with experience leading both front-end and back-end
+                development.  I come from an operations focused background, with the past 
+                6 years working for a 501(c)6 not-for-profit trade organization centered 
+                within the US music business industry
+                </p>
               </div>
               <Video VideoURL="https://www.youtube.com/watch?v=gKQOXYB2cd8"/>
 
               </div>
             </div>
             </div>
+            <Skills/>
         </div>
       </div>
   </>

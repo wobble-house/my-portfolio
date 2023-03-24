@@ -10,7 +10,7 @@ export default function Name(){
                         <div className="grid grid-cols-4 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
                         {data.map((data, index) => (
                             <div key={index} className="bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105">
-                                <h2 className="text-3xl text-center">{data}</h2>
+                                <h3 className="text-center text-2xl">{data}</h3>
                                 </div>
                         ))}
                         </div>

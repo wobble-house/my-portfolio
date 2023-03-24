@@ -88,8 +88,8 @@ export default function ContactForm(){
               <form
               className="flex flex-col px-8 py-8 text-white">
                 <div className="mb-20 bg-rosspurple pb-2 pr-2 -mt-2 pt-2">
-                <div className=" bg-rossblue pb-2 pr-2 -ml-2 -mt-4 pt-4 md:whitespace-nowrap">
-                    <h2 className=" bg-rosspurple -ml-2 -mt-8 px-5 mr-auto ">
+                <div className=" bg-rossblue pb-2 pr-2 -ml-2 -mt-4 pt-4 md:whitespace-nowrap relative">
+                    <h2 className=" bg-rosspurple -ml-2 -mt-8 px-5 mr-auto md:text-4xl">
                     Send me a message
                     </h2>
                 </div>

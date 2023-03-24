@@ -1,9 +1,10 @@
 import chrome from 'chrome-aws-lambda'
-import puppeteer from 'puppeteer'
+import puppeteer from 'puppeteer-core'
 
 export default async function ProjectScreenshots(req, res){
     const browser = await puppeteer.launch({
             args: chrome.args,
+            executablePath: '/.cache/puppeteer/chrome/linux-1095492/chrome-linux/chrome',
             headless: true,
           });
     const page = await browser.newPage();

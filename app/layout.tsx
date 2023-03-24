@@ -3,6 +3,12 @@ import './globals.css'
 import AuthContext from '../components/next-auth-provider'
 import MyNavbar from '../components/navbar'
 import LoginButton from '../components/login'
+import { config } from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+library.add(fas)
 
 export const runtime = 'nodejs'
 

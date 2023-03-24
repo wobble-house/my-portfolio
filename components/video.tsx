@@ -21,6 +21,9 @@ export default function Video({VideoURL}:{VideoURL: string}){
       rel: 0,
       start: 10,
     },
+      origin:
+      'https://www.youtube.com',
+
   };
     return(
       <>
