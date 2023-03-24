@@ -13,19 +13,29 @@ export default function About(){
             <div className="bg-rosspurple pr-2 pb-2 mb-12 shadow-2xl">
               <div className=" flex-col gap-10 bg-rossblue -ml-2 -mt-2 pt-6 px-10 pb-6">
                       
-                      <div className="flex shrink gap-10 pb-5 align-bottom items-end">
+                      <div className="flex shrink gap-10 pb-5 align-top">
                         <div className="w-[300px] h-[180px] overflow-hidden">
                           <Image src={"/images/Ross.jpg"} width={800} height={1200} alt={"Ross Alan Ford Headshot"} sizes="(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
                           33vw"/>
                         </div>
-                        <ul className="text-left list-disc">
+                        <div className="flex flex-col justify-between">
+                        <ul className="text-left list-disc ">
                           <li>Name: Ross Ford</li>
                           <li>Gender: Male</li>
                           <li>Height: 6&apos;3&quot;</li>
                           <li>Weight: 175lbs</li>
                           <li>Record: 7-0 (undefeated)</li>
+                          
                         </ul>
+                        <form method="get" 
+                                action="/rossalanford2.pdf" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >
+                            <button className="bg-rosspurple px-2 drop-shadow-lg hover:scale-[1.01]" 
+                            type="submit">Download my Resume</button>
+                            </form></div>
                       </div>
               <div className="mx-auto max-w-2xl pb-5">
               <p className="text-left">
