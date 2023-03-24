@@ -2,6 +2,7 @@ import Footer from './footer'
 import './globals.css'
 import AuthContext from '../components/next-auth-provider'
 import MyNavbar from '../components/navbar'
+import MyModal from '../components/modal'
 import LoginButton from '../components/login'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -32,6 +33,7 @@ export default function RootLayout({
         <MyNavbar><LoginButton/></MyNavbar>
           {children}</main>
         <Footer/>
+        <MyModal/>
         </AuthContext>
         </body>
     </html>
