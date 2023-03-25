@@ -1,4 +1,3 @@
-
 export default function Skills(){
     const skill = "skills"
     const data = skill.split("")
