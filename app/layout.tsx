@@ -1,3 +1,4 @@
+import Background from '../components/background'
 import Footer from './footer'
 import './globals.css'
 import AuthContext from '../components/next-auth-provider'
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body>
       <AuthContext>
         <main className="md:flex flex-row max-w-7xl mx-auto gap-5 justify-evenly pb-32 align-top">
+        <Background/>
         <MyNavbar><LoginButton/></MyNavbar>
           {children}</main>
         <Footer/>
