@@ -1,8 +1,7 @@
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faMicrosoft } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faMicrosoft, faSlack, faDiscord, faLinux, faApple, faUbuntu, faHtml5, faCss3, faJs, faReact, faDocker, faPython, faAws, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { faFileExcel, faFileWord, faFilePowerpoint } from "@fortawesome/free-solid-svg-icons";
-
-  
 export default function Skills(){
     return(
         <div className="mx-auto px-10 pb-32 pt-10 max-w-7xl">
@@ -31,8 +30,6 @@ export default function Skills(){
 }
 
 export function MSSkills(){
-    const skill = "ROSS"
-    const data = skill.split("")
     return(
         <>
             <div className="flex w-[120px] h-[120px] text-white">
@@ -60,25 +57,23 @@ export function MSSkills(){
 }
 
 export function AdobeSkills(){
-    const skill = "ROSS"
-    const data = skill.split("")
     return(
         <>
             <div className="flex w-[120px] h-[120px] text-white">
                 <div className="flex content-center justify-center bg-rosspurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue w-full h-full relative -ml-4 -mt-2">
                         <div className="grid grid-cols-2 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
-                            <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
-                            <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                            <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center ">
+                            <Image src={"/icons/photoshop.ico"} width={40} height={40} alt="after effects logo"/>
                                 </div>
                                 <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
-                            <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                            <Image src={"/icons/illustrator.ico"} width={40} height={40} alt="after effects logo"/>
                                 </div>
                                 <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
-                            <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                            <Image src={"/icons/premiere.ico"} width={40} height={40} alt="after effects logo"/>
                                 </div>
                                 <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
-                            <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                            <Image src={"/icons/aftereffects.ico"} width={40} height={40} alt="after effects logo"/>
                                 </div>
                         </div>
                     </div>
@@ -89,8 +84,6 @@ export function AdobeSkills(){
 }
 
 export function MediaToolsSkills(){
-    const skill = "ROSS"
-    const data = skill.split("")
     return(
         <>
             <div className="flex w-[120px] h-[120px] text-white">
@@ -106,8 +99,8 @@ export function MediaToolsSkills(){
                                 <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                             <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
-                            <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                                <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center p-2">
+                            <svg style={{color: "white"}} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Ableton Live</title><path d="M0 6.4v11.2h1.6V6.4zm3.2 0v11.2h1.6V6.4zm3.2 0v11.2H8V6.4zm3.2 0v11.2h1.6V6.4zm3.2 0V8H24V6.4zm0 3.2v1.6H24V9.6zm0 3.2v1.6H24v-1.6zm0 3.2v1.6H24V16z" fill="white"></path></svg>
                                 </div>
                         </div>
                     </div>
@@ -118,8 +111,6 @@ export function MediaToolsSkills(){
 }
 
 export function FrontendSkills(){
-    const skill = "ROSSALANF"
-    const data = skill.split("")
     return(
         <>
             <div className="flex w-[120px] h-[120px] text-white">
@@ -127,16 +118,16 @@ export function FrontendSkills(){
                     <div className="flex content-center justify-center bg-rossblue w-full h-full relative -ml-4 -mt-2">
                         <div className="grid grid-cols-3 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
                             <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                                <FontAwesomeIcon icon={faHtml5} size="2x"/>
                                 </div>
                                 <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                                <FontAwesomeIcon icon={faCss3} size="2x"/>
                                 </div>
                                 <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                                <FontAwesomeIcon icon={faJs} size="2x"/>
                                 </div>
                                 <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                                <FontAwesomeIcon icon={faReact} size="2x"/>
                                 </div>
                                 <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
@@ -171,10 +162,10 @@ export function BackendSkills(){
                     <div className="flex content-center justify-center bg-rossblue w-full h-full relative -ml-4 -mt-2">
                         <div className="grid grid-cols-3 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
                             <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                                <FontAwesomeIcon icon={faDocker} size="2x"/>
                                 </div>
                                 <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                                <FontAwesomeIcon icon={faPython} size="2x"/>
                                 </div>
                                 <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
@@ -205,63 +196,32 @@ export function BackendSkills(){
     )
 }
 
-
 export function OSSkills(){
-    const skill = "ROSSALANFORD"
-    const data = skill.split("")
-    return(
-        <>
+    return (
             <div className="flex w-[120px] h-[120px] text-white">
                 <div className="flex content-center justify-center bg-rosspurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue w-full h-full relative -ml-4 -mt-2">
-                        <div className="grid grid-cols-4 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
-                            <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                        <div className="grid grid-cols-2 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
+                            <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                            <FontAwesomeIcon icon={faLinux} size="2x"/>
                                 </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                                <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                            <FontAwesomeIcon icon={faUbuntu} size="2x"/>
                                 </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                                <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                            <FontAwesomeIcon icon={faMicrosoft} size="2x"/>
                                 </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
-                                </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
-                                </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
-                                </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
-                                </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
-                                </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
-                                </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
-                                </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
-                                </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"/>
-                                </div>
+                                <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center p-2">
+                            <FontAwesomeIcon icon={faApple} size="2x"/>
                         </div>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
 export function RemoteSkills(){
-    const skill = "ROSSALANFORD"
-    const data = skill.split("")
     return(
         <>
             <div className="flex w-[120px] h-[120px] text-white">
