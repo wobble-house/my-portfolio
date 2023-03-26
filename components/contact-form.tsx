@@ -86,7 +86,7 @@ export default function ContactForm(){
     };
     return (
               <form
-              className="flex flex-col px-8 py-8 text-white">
+              className="flex flex-col px-8 py-8 text-white relative">
                 <div className="mb-20 bg-rosspurple pb-2 pr-2 -mt-2 pt-2">
                 <div className=" bg-rossblue pb-2 pr-2 -ml-2 -mt-4 pt-4 md:whitespace-nowrap relative">
                     <h2 className=" bg-rosspurple -ml-2 -mt-8 px-5 mr-auto md:text-4xl">
@@ -98,32 +98,32 @@ export default function ContactForm(){
             <div className="flex flex-col bg-rosspurple pr-2 mb-12 shadow-2xl">
                 <label 
                 htmlFor="fullname" 
-                className="text-2xl bg-rosspurple px-2 mr-auto -ml-4 -mt-8 -mb-4 relative">
-                Full name
+                className="text-xl bg-rosspurple px-2 mr-auto -ml-4 -mt-8 -mb-4 relative">
+                Full Name
                 <span className="text-rossred">*</span>
                 </label>
                 <input id={id} type="text" value={fullname} onChange={e => setFullname(e.target.value)} name="fullname" className="bg-rossblue py-2 mb-2 pb-2 pl-4 pt-8 -ml-2 focus:outline-none focus:ring-2 ring-rossgreen font-light text-gray-500" />
             </div>
 
             <div className="flex flex-col bg-rosspurple pr-2 mb-12 shadow-2xl">
-                <label htmlFor="email" className="text-2xl bg-rosspurple px-2 mr-auto -ml-4 -mt-8 -mb-4 relative">E-mail<span className="text-rossred">*</span></label>
+                <label htmlFor="email" className="text-xl bg-rosspurple px-2 mr-auto -ml-4 -mt-8 -mb-4 relative">E-mail<span className="text-rossred">*</span></label>
                 <input id={id} type="email" value={email} onChange={e => setEmail(e.target.value)} name="email" className="bg-rossblue py-2 mb-2 pb-2 pl-4 pt-8 -ml-2 focus:outline-none focus:ring-2 ring-rossgreen font-light text-gray-500" />
             </div>
 
             <div className="flex flex-col bg-rosspurple pr-2 mb-12 shadow-2xl">   
-        <label htmlFor="subject" className="text-2xl bg-rosspurple px-2 mr-auto -ml-4 -mt-8 -mb-4 relative">Subject<span className="text-rossred">*</span></label>
+        <label htmlFor="subject" className="text-xl bg-rosspurple px-2 mr-auto -ml-4 -mt-8 -mb-4 relative">Subject<span className="text-rossred">*</span></label>
         <input id={id} type="text" value={subject} onChange={e => setSubject(e.target.value)} name="subject" className=" bg-rossblue py-2 mb-2 pb-2 pl-4 pt-8 -ml-2 focus:outline-none focus:ring-2 ring-rossgreen font-light text-gray-500" />
         </div>
 
 
         <div className="flex flex-col bg-rosspurple pr-2 mb-12 shadow-2xl">
-        <label htmlFor="message" className="text-2xl bg-rosspurple px-2 mr-auto -ml-4 -mt-8 -mb-4 relative">Message<span className="text-rossred">*</span></label>
+        <label htmlFor="message" className="text-xl bg-rosspurple px-2 mr-auto -ml-4 -mt-8 -mb-4 relative">Message<span className="text-rossred">*</span></label>
         <textarea id={id} value={message} onChange={e => setMessage(e.target.value)} name="message" rows={6} className="bg-rossblue py-2 mb-2 pb-2 pl-4 pt-8 -ml-2 focus:outline-none focus:ring-2 ring-rossgreen font-light text-gray-500"></textarea>
         </div>
 
-        <div className="bg-rosspurple mx-auto pb-1 pr-1 mb-10">
+        <div className={`bg-rosspurple mx-auto pb-1 pr-1 mb-10 ${!(message || subject || email || fullname) ? "": "animate-pulse"}`}>
           <button 
-              className=" bg-rossblue drop-shadow-2xl hover:scale-105 justify-center leading-tight mx-auto pb-1 pr-1 -ml-1 -mt-1"
+              className=" bg-rossblue drop-shadow-2xl hover:scale-105 justify-center leading-tight mx-auto pb-1 pr-1 -ml-1 -mt-1 "
               onClick={handleSubmit}>
                 <h3 className="bg-rosspurple  text-white truncate font-bold -ml-1 -mt-1 px-3">
               {buttonText}

@@ -46,17 +46,17 @@ export default function Background(){
                             quantity: 4,
                         },
                         repulse: {
-                            distance: 400,
+                            distance: 300,
                             duration: 0.4,
                         },
                     },
                 },
                 particles: {
                     color: {
-                        value: "#C4E7E4",
+                        value: "#A297C9",
                     },
                     links: {
-                        color: "#A297C9",
+                        color: "#C4E7E4",
                         distance: 100,
                         enable: true,
                         opacity: 0.5,
@@ -72,13 +72,13 @@ export default function Background(){
                             default: "bounce",
                         },
                         random: false,
-                        speed: 6,
+                        speed: 2,
                         straight: false,
                     },
                     number: {
                         density: {
                             enable: true,
-                            area: 300,
+                            area: 200,
                         },
                         value: 90,
                     },
@@ -86,10 +86,10 @@ export default function Background(){
                         value: 1,
                     },
                     shape: {
-                        type: "circle",
+                        type: "square",
                     },
                     size: {
-                        value: { min: 0.5, max: 4 },
+                        value: { min: 0.5, max: 2 },
                     },
                 },
                 detectRetina: true,
@@ -97,3 +97,4 @@ export default function Background(){
         />
     );
 };
+

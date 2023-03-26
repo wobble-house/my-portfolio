@@ -79,7 +79,7 @@ export default function MyNavbar({children}) {
                 rounded
                 ">
                   <Link href="/about" onClick={handleClickOutside}>
-                  ABOUT
+                  ABOUT ME
                   </Link>
                 </li>
                 <li 
@@ -95,21 +95,6 @@ export default function MyNavbar({children}) {
                 ">
                   <Link href="/projects" onClick={handleClickOutside}>
                   Projects
-                  </Link>
-                </li>
-                <li 
-                className="
-                py-2
-                md:py-0
-                text-center
-                md:text-left 
-                text-l 
-                uppercase 
-                px-2 
-                rounded
-                ">
-                  <Link href="/contact" onClick={handleClickOutside}>
-                  Contact
                   </Link>
                 </li>
                 <li>
