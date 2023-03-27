@@ -8,7 +8,7 @@ module.exports = {
     './pages/api/**/*.{js,ts,jsx,tsx}',
   ],
   presets: [],
-  darkMode: 'media', // or 'class'
+  darkMode: 'class', // or 'class'
   theme: {
     backgroundColor: '#FFFDE7',
     extend: {
@@ -59,6 +59,8 @@ module.exports = {
       "backgroundColor": '#FFFDE7',
       "rossblue": '#C4E7E4',
       "rosspurple": '#A297C9',
+      "rossdarkblue": '#579691',
+      "rossdarkpurple": '#6954b1',
       "rosstan": '#FFFDE7',
       "rossgreen": '#00773A',
       "rossred": '#EF4048',

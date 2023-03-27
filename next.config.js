@@ -51,7 +51,13 @@ module.exports = {
         hostname: 'dev.rossalanford.com',
         port: '443',
         pathname: '/***',
-      }
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; sandbox;",

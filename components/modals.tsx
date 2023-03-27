@@ -32,7 +32,7 @@ export function ChatModal () {
 
     return (
         <>
-            <div className="flex fixed bottom-20 right-10 w-14 h-14 bg-rosspurple border-4 border-rossblue hover:border-liberapurple">
+            <div className="flex fixed bottom-20 right-10 w-14 h-14 bg-rosspurple  dark:bg-rossdarkpurple border-4 border-rossblue dark:border-rossdarkblue hover:border-liberapurple">
             {!isModalOpen ? (
                 <motion.button 
                 whileTap={{scale: 0.95}}
@@ -43,7 +43,7 @@ export function ChatModal () {
                  ) : (<motion.div
                 ref={ref}
                 onClick={(e) => e.stopPropagation()}
-                className="fixed bg-rossblue p-5 w-96 shadow-2xl bottom-32 md:right-24 right-7 border-r-4 border-b-4 border-rosspurple"
+                className="fixed bg-rossblue dark:bg-rossdarkblue p-5 w-96 shadow-2xl bottom-32 md:right-24 right-7 border-r-4 border-b-4 border-rosspurple dark:border-rossdarkpurple"
                 variants={dropIn}
                 initial="hidden"
                 animate="visible"
@@ -103,7 +103,7 @@ export function ProjectModal({key, params }) {
               },
           };
           return (
-                  <div ref={ref} key={key} className="flex bg-rosspurple border-4 border-rossblue hover:border-liberapurple relative">
+                  <div ref={ref} key={key} className="flex bg-rosspurple dark:bg-rossdarkpurple  border-4 border-rossblue relative">
                   {isModalOpen ? (
                     <motion.div
                     onClick={(e) => e.stopPropagation()}

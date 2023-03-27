@@ -7,10 +7,10 @@ export function ProjectCard({params}: { params: {
    }}){
     return(
   <div key={params.name} id="project-card" className="flex-col project-card w-64 h-48 hover:scale-105">
-      <div className="flex content-center justify-center bg-rosspurple w-full h-full relative shadow-3xl">
-      <div className="flex-col items-center content-center justify-center bg-rossblue w-full h-full relative -ml-4 -mt-2 p-5">
+      <div className="flex content-center justify-center bg-rosspurple  dark:bg-rossdarkpurple w-full h-full relative shadow-3xl">
+      <div className="flex-col items-center content-center justify-center bg-rossblue  dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2 p-5">
         <div className="flex h-8 -ml-8 -mt-8 ">
-            <div className="flex shrink bg-rosspurple text-white px-2">
+            <div className="flex shrink bg-rosspurple dark:bg-rossdarkpurple  text-white px-2">
                 <h2 className="text-xl uppercase font-bold text-left">{params.name}</h2>
             </div>
         </div>
@@ -30,10 +30,10 @@ export function ProjectDetails({params}: { params: {
 
     return (
         <div id="project-details" className="flex-col project-card hover:scale-105">
-      <div className="flex content-center justify-center bg-rosspurple w-full h-full relative shadow-3xl">
-      <div className="flex-col items-center content-center justify-center bg-rossblue w-full h-full relative -ml-4 -mt-2 p-5">
+      <div className="flex content-center justify-center bg-rosspurple dark:bg-rossdarkpurple  w-full h-full relative shadow-3xl">
+      <div className="flex-col items-center content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2 p-5">
         <div className="flex h-8 -ml-8 -mt-8 ">
-            <div className="flex shrink bg-rosspurple text-white px-2">
+            <div className="flex shrink bg-rosspurple dark:bg-rossdarkpurple  text-white px-2">
                 <h2 className="text-xl uppercase font-bold text-left">{params.name}</h2>
             </div>
         </div>

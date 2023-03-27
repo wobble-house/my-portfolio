@@ -16,7 +16,7 @@ export default function MyNavbar({children}) {
   
   useOnClickOutside(Navref, handleClickOutside)
   return (
-      <nav className="h-full z-50 px-5 mt-16">
+      <nav className="h-full z-50 px-5 mt-24 md:mt-16">
         <div className="justify-between mx-auto">
           <div className="">
             <div className="flex flex-col items-center justify-between md:block">
@@ -66,7 +66,7 @@ export default function MyNavbar({children}) {
           </div>
           <div>
             <div className={`flex-1 mx-auto justify-center md:block ${navbar ? 'sticky' : 'hidden'}`}>
-              <ul ref={Navref} className="md:flex-col py-10">
+              <ul ref={Navref} className="md:flex-col pt-10">
                 <li 
                 className="
                 py-2
@@ -77,6 +77,7 @@ export default function MyNavbar({children}) {
                 uppercase 
                 px-2 
                 rounded
+                dark:text-white
                 ">
                   <Link href="/about" onClick={handleClickOutside}>
                   ABOUT ME
@@ -92,14 +93,15 @@ export default function MyNavbar({children}) {
                 uppercase 
                 px-2 
                 rounded
+                dark:text-white
                 ">
                   <Link href="/projects" onClick={handleClickOutside}>
                   Projects
                   </Link>
                 </li>
-                <li>
-          {children}
-            </li>
+                <li className="flex relative invisible md:visible">
+                  {children}
+                </li>
               </ul>
             </div>
           </div>
