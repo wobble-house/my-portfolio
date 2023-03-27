@@ -36,7 +36,7 @@ export default function MyModal () {
                 <motion.div
                 ref={ref}
                 onClick={(e) => e.stopPropagation()}
-                className="fixed bg-rossblue dark:bg-rossdarkblue p-5 w-96 shadow-2xl bottom-32 md:right-24 right-7 border-r-4 border-b-4 border-rosspurple dark:border-rossdarkpurple"
+                className="fixed bg-rossblue dark:bg-rossdarkblue p-5 right-5 shadow-2xl bottom-32 md:right-24 max-w-xl border-r-4 border-b-4 border-rosspurple dark:border-rossdarkpurple"
                 variants={dropIn}
                 initial="hidden"
                 animate="visible"
@@ -82,7 +82,7 @@ function ModalInfo(){
 
     return (
         <div>
-            <div className="p4 justify-evenly rounded-xl dark:text-white">
+            <div className="p-4 justify-evenly rounded-xl dark:text-white">
                 <p>I am a Full-Stack Developer with experience leading both
                      front-end and back-end development.
                      I come from an operations focused background, 

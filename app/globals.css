@@ -2,22 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.__next-auth-theme-auto {
-  background-color: #FFFDE7;
-  --color-background:#FFFDE7;
-}
-
-.__next-auth-theme-light {
-  background-color: #FFFDE7;
-  --color-background:#FFFDE7;
-}
-
-.page {
-  background-color: #FFFDE7;
-  --color-background:#FFFDE7;
-}
-
 :root {
   background-color: #FFFDE7;
   --color-background:#FFFDE7;
