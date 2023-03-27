@@ -36,16 +36,16 @@ export function MSSkills(){
                 <div className="flex content-center justify-center bg-rosspurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue w-full h-full relative -ml-4 -mt-2">
                         <div className="grid grid-cols-2 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
-                            <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                            <div title="Microsoft Office" className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                             <FontAwesomeIcon icon={faMicrosoft} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Microsoft Excel" className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                             <FontAwesomeIcon icon={faFileExcel} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Microsoft Word" className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                             <FontAwesomeIcon icon={faFileWord} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Microsoft Powerpoint" className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                             <FontAwesomeIcon icon={faFilePowerpoint} size="2x"/>
                                 </div>
                         </div>
@@ -63,17 +63,25 @@ export function AdobeSkills(){
                 <div className="flex content-center justify-center bg-rosspurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue w-full h-full relative -ml-4 -mt-2">
                         <div className="grid grid-cols-2 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
-                            <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center ">
-                            <Image src={"/icons/photoshop.ico"} width={40} height={40} alt="after effects logo"/>
+                            <div title="Adobe Photoshop" className="flex bg-rosspurple  justify-center content-center hover:scale-105 items-center ">
+                            <Image src={"/icons/photoshop.ico"} width={40} height={39} alt="after effects logo" sizes="(max-width: 768px) 100vw,
+            (max-width: 1200px) 50vw,
+            33vw"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
-                            <Image src={"/icons/illustrator.ico"} width={40} height={40} alt="after effects logo"/>
+                                <div title="Adobe Illustrator" className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                            <Image src={"/icons/illustrator.ico"} width={40} height={39} alt="after effects logo" sizes="(max-width: 768px) 100vw,
+            (max-width: 1200px) 50vw,
+            33vw"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
-                            <Image src={"/icons/premiere.ico"} width={40} height={40} alt="after effects logo"/>
+                                <div title="Adobe Premiere" className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                            <Image src={"/icons/premiere.ico"} width={40} height={39} alt="after effects logo" sizes="(max-width: 768px) 100vw,
+            (max-width: 1200px) 50vw,
+            33vw"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
-                            <Image src={"/icons/aftereffects.ico"} width={40} height={40} alt="after effects logo"/>
+                                <div title="Adobe After Effects" className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                            <Image src={"/icons/aftereffects.ico"} width={40} height={39} alt="after effects logo" sizes="(max-width: 768px) 100vw,
+            (max-width: 1200px) 50vw,
+            33vw"/>
                                 </div>
                         </div>
                     </div>
@@ -90,16 +98,16 @@ export function MediaToolsSkills(){
                 <div className="flex content-center justify-center bg-rosspurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue w-full h-full relative -ml-4 -mt-2">
                         <div className="grid grid-cols-2 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
-                            <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                            <div title="Instagram" className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                             <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                             <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                             <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center p-2">
+                                <div title="Instagram" className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center p-2">
                             <svg style={{color: "white"}} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Ableton Live</title><path d="M0 6.4v11.2h1.6V6.4zm3.2 0v11.2h1.6V6.4zm3.2 0v11.2H8V6.4zm3.2 0v11.2h1.6V6.4zm3.2 0V8H24V6.4zm0 3.2v1.6H24V9.6zm0 3.2v1.6H24v-1.6zm0 3.2v1.6H24V16z" fill="white"></path></svg>
                                 </div>
                         </div>
@@ -117,31 +125,31 @@ export function FrontendSkills(){
                 <div className="flex content-center justify-center bg-rosspurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue w-full h-full relative -ml-4 -mt-2">
                         <div className="grid grid-cols-3 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
-                            <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Html5" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faHtml5} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="CSS3" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faCss3} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Javascript" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faJs} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="React" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faReact} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
                         </div>
@@ -161,31 +169,31 @@ export function BackendSkills(){
                 <div className="flex content-center justify-center bg-rosspurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue w-full h-full relative -ml-4 -mt-2">
                         <div className="grid grid-cols-3 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
-                            <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Docker" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faDocker} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Python" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faPython} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[40px] w-[40px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
                         </div>
@@ -202,16 +210,16 @@ export function OSSkills(){
                 <div className="flex content-center justify-center bg-rosspurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue w-full h-full relative -ml-4 -mt-2">
                         <div className="grid grid-cols-2 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
-                            <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                            <div title="Linux" className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                             <FontAwesomeIcon icon={faLinux} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Ubuntu" className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                             <FontAwesomeIcon icon={faUbuntu} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Windows" className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                             <FontAwesomeIcon icon={faMicrosoft} size="2x"/>
                                 </div>
-                                <div className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center p-2">
+                                <div title="macOS" className="flex bg-rosspurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center p-2">
                             <FontAwesomeIcon icon={faApple} size="2x"/>
                         </div>
                     </div>
@@ -228,40 +236,40 @@ export function RemoteSkills(){
                 <div className="flex content-center justify-center bg-rosspurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue w-full h-full relative -ml-4 -mt-2">
                         <div className="grid grid-cols-4 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
-                            <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
-                                <div  className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
+                                <div title="Instagram" className="flex bg-rosspurple h-[34px] w-[31px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faInstagram} size="2x"/>
                                 </div>
                         </div>
