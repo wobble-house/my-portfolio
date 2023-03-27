@@ -25,14 +25,14 @@ export default function MyNavbar({children}) {
               </Link>
               <div className="z-10 md:hidden mr-auto relative">
                 <button
-                  className="pr-2 mr-2 pl-2 bg-rosspurple 
+                  className="pr-2 mr-2 pl-2 bg-rosspurple dark:bg-rossdarkpurple
                  outline-none focus:border-rosspurple focus:border"
                  onClick={handleClickInside}
                 >
                   {navbar ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6 text-rossblue 
+                      className="w-6 h-6 text-rossblue dark:text-rossdarkblue
                       "
                       viewBox="0 0 20 20"
                       fill="currentColor"
@@ -46,7 +46,7 @@ export default function MyNavbar({children}) {
                   ) : (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6 text-rossblue
+                      className="w-6 h-6 text-rossblue dark:text-rossdarkblue
                       "
                       fill="none"
                       viewBox="0 0 24 24"
