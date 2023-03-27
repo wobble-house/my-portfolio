@@ -5,7 +5,6 @@ import AuthContext from '../components/next-auth-provider'
 import ThemeToggle from '../components/theme-switcher'
 import MyNavbar from '../components/navbar'
 import MyModal from '../components/modal'
-import Skills from '../components/skills'
 import LoginButton from '../components/login'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -37,9 +36,11 @@ export default function RootLayout({
         <MyNavbar><ThemeToggle/></MyNavbar>
           {children}
           </main>
-          <Skills/>
         <Footer color={'white'}/>
         <MyModal/>
+        <div className="absolute top-1 left-8 md:invisible">
+          <ThemeToggle/>
+        </div>
         <LoginButton/>
         </AuthContext>
         </body>

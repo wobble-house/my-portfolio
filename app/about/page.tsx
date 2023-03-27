@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Video from "../../components/video"
 import ContactForm from "../../components/contact-form"
+import Skills from "../../components/skills"
 
 export const metadata = {
   title: 'About Me',
@@ -10,9 +11,9 @@ export const metadata = {
 export default function About(){
   return (
 <>
-    <div className="mx-auto max-w-6xl justify-center text-center relative">
-      <div className="md:pt-20 pt-5">
-        <div className="flex flex-col md:flex-row gap-5">
+    <div className="mx-auto justify-center text-center relative">
+      <div className="md:pt-20 pt-5  ">
+        <div className="flex flex-col md:flex-row gap-5 max-w-6xl">
         <div className="flex flex-col">
             <div className=" bg-rosspurple dark:bg-rossdarkpurple mr-auto -ml-4 -mb-2 relative">
             <h2 className="  text-white  text-left px-5 md:text-4xl">About Me</h2>
@@ -57,8 +58,9 @@ export default function About(){
             </div>
             <ContactForm/>
             </div>
-        </div>
+        </div><Skills/>
       </div>
+      
   </>
   )
 }
