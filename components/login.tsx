@@ -9,6 +9,10 @@ export default function LoginButton() {
       resetCookieConsentValue('GA-COOKIES');
       signOut();
     }
+    const handleSignIn = () => {
+      resetCookieConsentValue('GA-COOKIES')
+      signIn();
+    }
     if (status === "authenticated") {
       return (
         <>
@@ -44,7 +48,7 @@ export default function LoginButton() {
       <div className="absolute top-0 md:top-5 md:left-auto right-10 flex ml-3 pt-2 hover:scale-105">
       <div className="bg-rosspurple dark:bg-rossdarkpurple pr-1 pb-1 mt-1 pt-1">
       <div className="bg-rossblue dark:bg-rossdarkblue pr-1 pb-1 -ml-1 -mt-1">
-        <button className=" text-white bg-rosspurple dark:bg-rossdarkpurple px-4 py-1 -ml-1 -mt-1" onClick={() => signIn()}>Sign in</button>
+        <button className=" text-white bg-rosspurple dark:bg-rossdarkpurple px-4 py-1 -ml-1 -mt-1" onClick={handleSignIn}>Sign in</button>
         </div>
         </div>
       </div>
