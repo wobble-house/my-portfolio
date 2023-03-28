@@ -1,9 +1,14 @@
 'use client';
+import { resetCookieConsentValue } from "react-cookie-consent";
 import { useSession, signIn, signOut } from "next-auth/react"
 import Image from "next/image";
 
 export default function LoginButton() {
     const { data: session, status } = useSession()
+    const handleSignOut = () => {
+      resetCookieConsentValue('GA-COOKIES');
+      signOut();
+    }
     if (status === "authenticated") {
       return (
         <>
@@ -26,7 +31,7 @@ export default function LoginButton() {
           <div className="flex ml-3 pt-2 hover:scale-105">
       <div className="bg-rosspurple dark:bg-rossdarkpurple pr-1 pb-1 mt-1 pt-1">
       <div className="bg-rossblue dark:bg-rossdarkblue pr-1 pb-1 -ml-1 -mt-1">
-        <button className=" text-white bg-rosspurple dark:bg-rossdarkpurple px-4 py-1 -ml-1 -mt-1" onClick={() => signOut()}>Sign out</button>
+        <button className=" text-white bg-rosspurple dark:bg-rossdarkpurple px-4 py-1 -ml-1 -mt-1" onClick={handleSignOut}>Sign out</button>
         </div>
       </div>        
         </div>
