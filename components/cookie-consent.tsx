@@ -1,16 +1,17 @@
 'use client';
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import CookieConsent from 'react-cookie-consent';
 
 export function CookieAccept(){
+  const router = useRouter()
   return (
     <CookieConsent
-    debug={true}
       enableDeclineButton
       flipButtons
-      location="top"
+      location="bottom"
       buttonText="I understand"
-      cookieName="YourCookieName"
+      cookieName="GA-COOKIES"
       buttonStyle={{
         color: '#000',
         fontSize: '15px',
@@ -21,14 +22,14 @@ export function CookieAccept(){
       expires={450}
       onAccept={(acceptedByScrolling) => {
         if (acceptedByScrolling) {
-          // triggered if user scrolls past threshold
-          alert("Accept was triggered by user scrolling");
+          router.refresh();
         } else {
-          alert("Accept was triggered by clicking the Accept button");
+          router.refresh();
         }
       }}
       onDecline={() => {
         alert("nay!");
+        router.refresh();
       }}
     >
       This website uses cookies

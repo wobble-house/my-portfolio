@@ -34,6 +34,7 @@ export function ProjectCard({params}: { params: {
 export default function Projects() {
   return (
 <>
+
       <div className="mx-auto max-w-4xl justify-center text-center">
       <div className="w-full py-20">
 

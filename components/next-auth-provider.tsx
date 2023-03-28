@@ -7,9 +7,9 @@ import Loading from "../app/loading";
 export default function AuthContext({ children }) {
   return (
   <SessionProvider>
-<Auth>
-  {children}
-</Auth>
+    <Auth>
+      {children}
+    </Auth>
 </SessionProvider>
 )
 }
@@ -21,6 +21,5 @@ function Auth({ children }) {
   if (status === "loading") {
     return <Loading/>
   }
-
   return children
 }
