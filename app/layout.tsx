@@ -31,7 +31,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" style={{scrollBehavior:'smooth'}}>
+
       <body className="min-h-screen">
+          <noscript>
+          <iframe 
+        src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        height="0" 
+        width="0" 
+        style={{
+          display: 'none',
+          visibility: 'hidden'}}>
+        </iframe>
+        </noscript>
       <AuthContext>
         <main className="md:flex flex-row max-w-7xl mx-auto gap-5 justify-evenly align-top">
           <CookieAccept/>
