@@ -40,6 +40,7 @@ export default function Head() {
           });
         `
       }}></Script>
+      
     </>
   )
 }
