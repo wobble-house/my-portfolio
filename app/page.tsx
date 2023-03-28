@@ -9,7 +9,6 @@ export default async function Home() {
 
   return (
     <>
-    <GABody/>
       <div className="max-w-3xl py-20 mx-auto">
       </div>
     </>

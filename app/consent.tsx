@@ -1,12 +1,14 @@
 import Script from "next/script"
 import { cookies } from 'next/headers'
 
-
-
 export function GAScript(){ 
-  const cookiesList = cookies()
-const cookieStatus = cookiesList.get('GA-COOKIES')
-  return (
+  const cookiesList = cookies();
+  const cookieStatus = cookiesList.get('GA-COOKIES');
+  if (!cookieStatus) return (
+    <>
+    </>
+  ) 
+  else return(
     <>
     {cookieStatus.value === 'true' ? <Script 
 id="google-tag-manager" 
@@ -19,16 +21,22 @@ dangerouslySetInnerHTML={{
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
   `
-}}></Script> : <></>}
+}}></Script> : 
+<>
+</>
+}
 </>
   )
 }
 
 export function GABody(){
   const cookiesList = cookies()
-const cookieStatus = cookiesList.get('GA-COOKIES')
-  return(
-    <>
+  const cookieStatus = cookiesList.get('GA-COOKIES')
+if (!cookieStatus) return (
+  <></>
+) 
+else return(
+  <>
 {cookieStatus.value === 'true' ? <noscript>
           <iframe 
         src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
