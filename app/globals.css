@@ -144,15 +144,6 @@ a {
 @font-face {
   font-family: 'CascadiaCode';
   src: local('CascadiaCode'), url(/fonts/CascadiaCode/woff2/CascadiaCode.woff2) format('woff2');
-  font-style: 'normal';
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
-}
-
-@font-face {
-  font-family: 'CascadiaCode';
-  src: local('CascadiaCode'), url(/fonts/CascadiaCode/woff2/CascadiaCodeItalic.woff2) format('woff2');
-  font-style: 'italic';
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
