@@ -7,7 +7,7 @@ import { useState, useRef, useEffect } from "react";
 
 
 
-export function ProjectList({data, projectname}){
+export function ProjectList({data1, data2}){
   const list = {
     visible: { 
       opacity: 1,
@@ -35,12 +35,13 @@ export function ProjectList({data, projectname}){
     },
   }
   return(
-    <motion.li key={projectname} layout initial="hidden"
+    <>
+    <motion.li key={'Professional'} layout initial="hidden"
           animate="visible"
           variants={listitem} className="flex flex-col py-10 pb-20 relative z-30">
 <div className="flex bg-rosspurple dark:bg-rossdarkpurple  pr-2 pb-2 mr-auto mb-10 shadow-2xl">
             <div className="flex bg-rossblue dark:bg-rossdarkblue  pr-2 pb-2 -ml-2 -mt-2">
-              <h2 className="text-white text-left bg-rosspurple dark:bg-rossdarkpurple  mr-auto -ml-2 -mt-2 relative px-5">{projectname}</h2>
+              <h2 className="text-white text-left bg-rosspurple dark:bg-rossdarkpurple  mr-auto -ml-2 -mt-2 relative px-5">Professional</h2>
             </div>
           </div>
               <motion.ul
@@ -48,12 +49,32 @@ export function ProjectList({data, projectname}){
                 initial="hidden"
                 animate="visible"
                 variants={list}
-                className="flex flex-wrap gap-10 mx-auto max-w-5xl text-center place-content-center z-20">
-                  {data.map(data => (
+                className="flex flex-wrap gap-10 mx-auto max-w-5xl text-center place-content-center">
+                  {data1.map(data => (
                       <ProjectCard key={data.name} params={data}/>
                   ))}
               </motion.ul>
               </motion.li>
+                  <motion.li key={"personal"} layout initial="hidden"
+                  animate="visible"
+                  variants={listitem} className="flex flex-col py-10 pb-20 relative">
+        <div className="flex bg-rosspurple dark:bg-rossdarkpurple  pr-2 pb-2 mr-auto mb-10 shadow-2xl">
+                    <div className="flex bg-rossblue dark:bg-rossdarkblue  pr-2 pb-2 -ml-2 -mt-2">
+                      <h2 className="text-white text-left bg-rosspurple dark:bg-rossdarkpurple  mr-auto -ml-2 -mt-2 relative px-5">Personal</h2>
+                    </div>
+                  </div>
+                      <motion.ul
+                        layout
+                        initial="hidden"
+                        animate="visible"
+                        variants={list}
+                        className="flex flex-wrap gap-10 mx-auto max-w-5xl text-center place-content-center z-30">
+                          {data2.map(data => (
+                              <ProjectCard key={data.name} params={data}/>
+                          ))}
+                      </motion.ul>
+                      </motion.li>
+                      </>
   )
 }
 
@@ -79,12 +100,8 @@ export default function MyProjects(){
     layout
     initial="hidden"
     animate="visible"
-    variants={toplist} className="w-full py-20 relative">
-      <div className="relative z-30">
-        <ProjectList data={professional} projectname={"professional"}/></div>
-        <div className="relative z-20">
-        <ProjectList data={personal} projectname={"Personal"}/>
-        </div>
+    variants={toplist} className="w-full py-20">
+        <ProjectList data1={professional} data2={personal}/>
       </motion.ul>
   )
 }
@@ -167,7 +184,7 @@ export function ProjectCard({params}: { params: {
     key={params.name} 
     variants={item}
     id="project-card" 
-    className="fixed top-0 left-0  h-full w-full  grow shrink hover:scale-105 bg-black bg-opacity-75 z-[90] mx-auto justify-center "
+    className="fixed top-0 left-0  h-full w-full  grow shrink hover:scale-105 bg-black bg-opacity-75 z-50 mx-auto justify-center "
     >
       <div className="flex project-card max-w-4xl justify-center items-center mx-auto pt-64">
                   <motion.div
@@ -209,7 +226,7 @@ else return (
     key={params.name} 
     variants={item}
     id="project-card" 
-    className="flex-col project-card hover:scale-105 relative z-30 grow shrink"
+    className="flex-col project-card hover:scale-105 relative grow shrink"
     >
                 <motion.button 
                 initial="visible"
@@ -217,7 +234,7 @@ else return (
                 exit="exit"
                 layout
                 whileTap={{scale: 0.95}}
-                className="save-button z-30"
+                className="save-button"
                 onClick={!isModalOpen ? open : close }>
                     <div className="flex content-center justify-center  bg-rosspurple  dark:bg-rossdarkpurple w-full h-full relative shadow-3xl">
                     <div className="flex-col items-center content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2 p-5">
