@@ -4,10 +4,7 @@ import type { NextAuthOptions } from 'next-auth'
 import { randomUUID } from 'crypto'
 var id = randomUUID()
 var randomBytes = require('randombytes');
-randomBytes(16);//get 16 random bytes
-randomBytes(16, function (err, resp) {
-  // resp is 16 random bytes
-});
+
 
 
 export const authOptions: NextAuthOptions = {
@@ -25,6 +22,9 @@ providers: [
     }
   }),
 ],
+pages: {
+  signIn: "/auth/signin",
+},
 session: {
   // Choose how you want to save the user session.
   // The default is `"jwt"`, an encrypted JWT (JWE) stored in the session cookie.
@@ -61,11 +61,6 @@ callbacks: {
     session.accessToken = token.accessToken
     return session
   }
-},  
-theme: {
-    colorScheme: 'light',
-    brandColor: '#A297C9',
-    logo: "https://www.rossalanford.com/images/rosslogo.png",  
-  },
+}, 
 }
 export default NextAuth(authOptions)

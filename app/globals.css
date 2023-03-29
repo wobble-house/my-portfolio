@@ -151,7 +151,6 @@ a {
 @font-face {
   font-family: 'MPLUS1Code';
   src: local('MPLUS1Code'), url(/fonts/MPLUS1Code/MPLUS1Code-VariableFont_wght.ttf) format('truetype');
-  font-style: 'normal';
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }

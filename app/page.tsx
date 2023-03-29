@@ -1,4 +1,4 @@
-import { GABody } from "./consent"
+
 
 export const metadata = {
   title: 'Home',

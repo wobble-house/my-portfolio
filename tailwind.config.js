@@ -6,6 +6,7 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
     './node_modules/tw-elements/dist/js/**/*.js',
     './pages/api/**/*.{js,ts,jsx,tsx}',
+    './pages/auth/**/*.{js,ts,jsx,tsx}',
   ],
   presets: [],
   darkMode: 'class', // or 'class'

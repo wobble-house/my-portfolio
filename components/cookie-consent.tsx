@@ -7,6 +7,7 @@ export function CookieAccept(){
   const router = useRouter()
   return (
     <CookieConsent
+    debug={true}
       enableDeclineButton
       flipButtons
       location="bottom"
@@ -28,11 +29,11 @@ export function CookieAccept(){
         }
       }}
       onDecline={() => {
-        alert("nay!");
+        alert("..loser");
         router.refresh();
       }}
     >
-      This website uses cookies
+      Both this website and the owner of this website use cookies.  This site uses cookies for basic web analytics.
     </CookieConsent>
   );
 };
