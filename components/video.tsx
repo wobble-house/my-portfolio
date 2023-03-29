@@ -20,6 +20,7 @@ export default function Video({VideoURL}:{VideoURL: string}){
       modestbranding: 1,
       rel: 0,
       start: 10,
+      mute: 1,
     },
       origin:
       'https://www.youtube.com',

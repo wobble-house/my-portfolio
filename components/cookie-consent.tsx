@@ -33,7 +33,7 @@ export function CookieAccept(){
         router.refresh();
       }}
     >
-      Both this website and the owner of this website use cookies.  This site uses cookies for basic web analytics.
+      Both this website and the owner of this website use cookies.  This site uses cookies for basic web analytics and the owner of this site uses cookies for snack consumption.
     </CookieConsent>
   );
 };
