@@ -1,9 +1,93 @@
 'use client';
 import Link from "next/link"
-import { WebScreenshot } from "../../components/screenshot";
+import { WebScreenshot, WebScreenshotDetails } from "../../components/screenshot";
 import { motion } from "framer-motion";
 import { professional, personal } from "../../lib/projects";
 import { useState, useRef, useEffect } from "react";
+
+
+
+export function ProjectList({data, projectname}){
+  const list = {
+    visible: { 
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.3,
+      },
+    },
+    hidden: { 
+      opacity: 0,
+      transition: {
+        when: "afterChildren",
+      },
+    },
+  }
+
+  const listitem = {
+    visible: { 
+      opacity: 1,
+      x: 0,
+    },
+    hidden: { 
+      opacity: 0,
+      x: -300,
+    },
+  }
+  return(
+    <motion.li key={projectname} layout initial="hidden"
+          animate="visible"
+          variants={listitem} className="flex flex-col py-10 pb-20 relative z-30">
+<div className="flex bg-rosspurple dark:bg-rossdarkpurple  pr-2 pb-2 mr-auto mb-10 shadow-2xl">
+            <div className="flex bg-rossblue dark:bg-rossdarkblue  pr-2 pb-2 -ml-2 -mt-2">
+              <h2 className="text-white text-left bg-rosspurple dark:bg-rossdarkpurple  mr-auto -ml-2 -mt-2 relative px-5">{projectname}</h2>
+            </div>
+          </div>
+              <motion.ul
+                layout
+                initial="hidden"
+                animate="visible"
+                variants={list}
+                className="flex flex-wrap gap-10 mx-auto max-w-5xl text-center place-content-center z-20">
+                  {data.map(data => (
+                      <ProjectCard key={data.name} params={data}/>
+                  ))}
+              </motion.ul>
+              </motion.li>
+  )
+}
+
+export default function MyProjects(){
+  const toplist = {
+    visible: { 
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 3,
+      },
+    },
+    hidden: { 
+      opacity: 0,
+      transition: {
+        when: "afterChildren",
+      },
+    },
+  }
+  
+  return (
+    <motion.ul
+    layout
+    initial="hidden"
+    animate="visible"
+    variants={toplist} className="w-full py-20 relative">
+      <div className="relative z-30">
+        <ProjectList data={professional} projectname={"professional"}/></div>
+        <div className="relative z-20">
+        <ProjectList data={personal} projectname={"Personal"}/>
+        </div>
+      </motion.ul>
+  )
+}
 
 export function ProjectCard({params}: { params: { 
   id: number,
@@ -21,7 +105,7 @@ export function ProjectCard({params}: { params: {
       hidden: {
           opacity: 0,
           transition: {
-            duration: 2,
+            duration: 3,
             type: "spring",
             damping: 40,
             stiffness: 300,
@@ -43,6 +127,7 @@ export function ProjectCard({params}: { params: {
   const item = {
     visible: { 
       opacity: 1,
+      y: 0,
       transition: {
         when: "beforeChildren",
         staggerChildren: 0.3,
@@ -50,6 +135,7 @@ export function ProjectCard({params}: { params: {
     },
     hidden: { 
       opacity: 0,
+      y:-100,
       transition: {
         when: "afterChildren",
       },
@@ -81,14 +167,14 @@ export function ProjectCard({params}: { params: {
     key={params.name} 
     variants={item}
     id="project-card" 
-    className="fixed top-0 left-0 h-full w-full  grow shrink hover:scale-105 bg-black bg-opacity-75 z-[99]"
+    className="fixed top-0 left-0  h-full w-full  grow shrink hover:scale-105 bg-black bg-opacity-75 z-[90] mx-auto justify-center "
     >
-      <div className="project-card  absolute ">
+      <div className="flex project-card max-w-4xl justify-center items-center mx-auto pt-64">
                   <motion.div
                   layout
                   ref={projectref}
                   onClick={close}
-                  className="pt-72 mx-3 md:p-64 md:pt-0"
+                  className="flex  mx-auto justify-center content-center items-center"
                   variants={dropIn}
                   initial="hidden"
                   animate="visible"
@@ -101,7 +187,10 @@ export function ProjectCard({params}: { params: {
                         <h2 className="text-xl uppercase font-bold text-left">{params.name}</h2>
                     </div>
                   </div>
-                <div className="overflow-hidden relative mt-3">
+                  <div className="flex overflow-hidden relative mt-3 justify-center mx-auto">
+                  <WebScreenshotDetails url={params.url} name={params.name}/>
+                </div>
+                <div className="overflow-hidden relative mt-3 max-w-2xl">
                 <p className="pb-3">{params.description}</p>
                 <button className="bg-rosspurple p-2 drop-shadow hover:scale-[1.01]">
                 <Link href={params.url} target="_blank" 
@@ -146,82 +235,3 @@ else return (
               </motion.li>
                 )
               }
-
-export function ProjectList({data, projectname}){
-  const list = {
-    visible: { 
-      opacity: 1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.3,
-      },
-    },
-    hidden: { 
-      opacity: 0,
-      transition: {
-        when: "afterChildren",
-      },
-    },
-  }
-
-  const listitem = {
-    visible: { 
-      opacity: 1,
-      x: 0,
-    },
-    hidden: { 
-      opacity: 0,
-      x: -600,
-    },
-  }
-  return(
-    <motion.li key={projectname} layout initial="hidden"
-          animate="visible"
-          variants={listitem} className="flex flex-col py-10 pb-20 relative z-30">
-<div className="flex bg-rosspurple dark:bg-rossdarkpurple  pr-2 pb-2 mr-auto mb-10 shadow-2xl">
-            <div className="flex bg-rossblue dark:bg-rossdarkblue  pr-2 pb-2 -ml-2 -mt-2">
-              <h2 className="text-white text-left bg-rosspurple dark:bg-rossdarkpurple  mr-auto -ml-2 -mt-2 relative px-5">{projectname}</h2>
-            </div>
-          </div>
-              <motion.ul
-                layout
-                initial="hidden"
-                animate="visible"
-                variants={list}
-                className="flex flex-wrap gap-10 mx-auto max-w-5xl text-center place-content-center">
-                  {data.map(data => (
-                      <ProjectCard key={data.name} params={data}/>
-                  ))}
-              </motion.ul>
-              </motion.li>
-  )
-}
-
-export default function MyProjects(){
-  const toplist = {
-    visible: { 
-      opacity: 1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 3,
-      },
-    },
-    hidden: { 
-      opacity: 0,
-      transition: {
-        when: "afterChildren",
-      },
-    },
-  }
-  
-  return (
-    <motion.ul
-    layout
-    initial="hidden"
-    animate="visible"
-    variants={toplist} className="w-full py-20">
-        <ProjectList data={professional} projectname={"professional"}/>
-        <ProjectList data={personal} projectname={"Personal"}/>
-      </motion.ul>
-  )
-}

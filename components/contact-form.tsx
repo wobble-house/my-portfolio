@@ -2,6 +2,7 @@
 
 import React, { useId, useState } from 'react'
 import Link from 'next/link'
+import { motion } from 'framer-motion';
 
 export default function ContactForm(){
     const id = useId();
@@ -47,7 +48,39 @@ export default function ContactForm(){
       console.log("errors", errors);
       return isValid;
     };
+    const list = {
+      visible: { 
+        opacity: 1,
+        transition: {
+          when: "beforeChildren",
+          staggerChildren: 0.3,
+        },
+      },
+      hidden: { 
+        opacity: 0,
+        transition: {
+          when: "afterChildren",
+        },
+      },
+    }
   
+    const item = {
+      visible: { 
+        opacity: 1,
+        y: 0,
+        transition: {
+          when: "beforeChildren",
+          staggerChildren: 0.3,
+        },
+      },
+      hidden: { 
+        opacity: 0,
+        y:-100,
+        transition: {
+          when: "afterChildren",
+        },
+      },
+    }
     //   Handling form submit
   
     const handleSubmit = async (e) => {
@@ -88,11 +121,15 @@ export default function ContactForm(){
               <form
               className="flex flex-col px-8 py-8 text-white relative">
                 <div className="mb-20 bg-rosspurple dark:bg-rossdarkpurple pb-2 pr-2 -mt-2 pt-2">
-                <div className=" bg-rossblue dark:bg-rossdarkblue pb-2 pr-2 -ml-2 -mt-4 pt-4 md:whitespace-nowrap relative">
+                <motion.div 
+                layout
+                initial="hidden"
+                animate="visible"
+                variants={item} className=" bg-rossblue dark:bg-rossdarkblue pb-2 pr-2 -ml-2 -mt-4 pt-4 md:whitespace-nowrap relative">
                     <h2 className=" bg-rosspurple dark:bg-rossdarkpurple -ml-2 -mt-8 px-5 mr-auto md:text-4xl">
                     Send me a message
                     </h2>
-                </div>
+                </motion.div>
                 </div>
 
             <div className="flex flex-col bg-rosspurple dark:bg-rossdarkpurple pr-2 mb-12 shadow-2xl">

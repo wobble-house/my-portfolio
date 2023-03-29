@@ -12,6 +12,23 @@ export const WebScreenshot = ({ url, name }) => {
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
+              className="justify-center"
+              /> 
+  )
+};
+
+export const WebScreenshotDetails = ({ url, name }) => {
+  const cleanname = name.replace(/ /g, '+');
+  return (
+            <Image
+              src={`/images/chromium/${cleanname}.jpeg`}
+              height={384}
+              width={512}
+              alt={`${url} screenshot`}
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+              className="justify-center"
               /> 
   )
 };

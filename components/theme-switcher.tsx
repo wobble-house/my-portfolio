@@ -48,7 +48,7 @@ export default function ThemeToggle() {
       }};
     return (
       <>
-      <div className="flex bg-rosspurple dark:bg-rossdarkpurple pr-1 pb-1 mt-1 pt-1 mr-auto">
+      <div className="flex bg-rosspurple dark:bg-rossdarkpurple pr-1 pb-1 mt-1 pt-1 mr-auto relative z-20">
       <div className="flex bg-rossblue dark:bg-rossdarkblue pr-1 pb-1 -ml-1 -mt-1">
         <div className="flex bg-rosspurple dark:bg-rossdarkpurple px-3 py-1 mr-auto">
       <label className="toggle-wrapper my-auto " htmlFor="toggle">

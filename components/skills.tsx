@@ -1,7 +1,11 @@
+'use client';
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faMicrosoft, faSlack, faDiscord, faLinux, faApple, faUbuntu, faHtml5, faCss3, faJs, faReact, faDocker, faPython, faAws, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { faFileExcel, faFileWord, faFilePowerpoint } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
+
+
 export default function Skills(){
     return(
         <section className="text-white fill-white">
@@ -32,15 +36,17 @@ export default function Skills(){
 }
 
 export function MSSkills(){
+    
     return(
-        <>
+
             <div className="flex w-[120px] h-[120px]">
                 <div className="flex content-center justify-center bg-rosspurple dark:bg-rossdarkpurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2">
                         <div className="grid grid-cols-2 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
-                            <div title="Microsoft Office" className="flex bg-rosspurple dark:bg-rossdarkpurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                            <div
+                    title="Microsoft Office" className="flex bg-rosspurple dark:bg-rossdarkpurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                             <FontAwesomeIcon icon={faMicrosoft} size="2x"/>
-                                </div>
+                                </div >
                                 <div title="Microsoft Excel" className="flex bg-rosspurple dark:bg-rossdarkpurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                             <FontAwesomeIcon icon={faFileExcel} size="2x"/>
                                 </div>
@@ -54,13 +60,12 @@ export function MSSkills(){
                     </div>
                 </div>
             </div>
-        </>
+
     )
 }
 
 export function AdobeSkills(){
     return(
-        <>
             <div className="flex w-[120px] h-[120px]">
                 <div className="flex content-center justify-center bg-rosspurple dark:bg-rossdarkpurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2">
@@ -94,13 +99,12 @@ export function AdobeSkills(){
                     </div>
                 </div>
             </div>
-        </>
     )
 }
 
 export function MediaToolsSkills(){
     return(
-        <>
+
             <div className="flex w-[120px] h-[120px]">
                 <div className="flex content-center justify-center bg-rosspurple dark:bg-rossdarkpurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2">
@@ -121,13 +125,13 @@ export function MediaToolsSkills(){
                     </div>
                 </div>
             </div>
-        </>
+
     )
 }
 
 export function FrontendSkills(){
     return(
-        <>
+
             <div className="flex w-[120px] h-[120px] text-white">
                 <div className="flex content-center justify-center bg-rosspurple dark:bg-rossdarkpurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2">
@@ -163,7 +167,7 @@ export function FrontendSkills(){
                     </div>
                 </div>
             </div>
-        </>
+
     )
 }
 
@@ -171,7 +175,6 @@ export function BackendSkills(){
     const skill = "ROSSALANF"
     const data = skill.split("")
     return(
-        <>
         <div className="flex w-[120px] h-[120px] text-white">
             <div className="flex content-center justify-center bg-rosspurple dark:bg-rossdarkpurple w-full h-full relative shadow-3xl">
                 <div className="flex content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2">
@@ -207,13 +210,12 @@ export function BackendSkills(){
                     </div>
                 </div>
             </div>
-        </>
+
     )
 }
 
 export function OSSkills(){
     return (
-        <>
             <div className="flex w-[120px] h-[120px]">
                 <div className="flex content-center justify-center bg-rosspurple dark:bg-rossdarkpurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2">
@@ -234,13 +236,11 @@ export function OSSkills(){
                 </div>
             </div>
         </div>
-        </>
     )
 }
 
 export function RemoteSkills(){
     return(
-        <>
             <div className="flex w-[120px] h-[120px] text-white">
                 <div className="flex content-center justify-center bg-rosspurple dark:bg-rossdarkpurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2">
@@ -285,6 +285,5 @@ export function RemoteSkills(){
                     </div>
                 </div>
             </div>
-        </>
     )
 }
