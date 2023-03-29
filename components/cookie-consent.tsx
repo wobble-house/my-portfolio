@@ -7,7 +7,6 @@ export function CookieAccept(){
   const router = useRouter()
   return (
     <CookieConsent
-    debug={true}
       enableDeclineButton
       flipButtons
       location="bottom"

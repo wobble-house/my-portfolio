@@ -1,13 +1,31 @@
 'use client';
 import Link from "next/link"
+import { useInView } from "framer-motion";
 import { WebScreenshot, WebScreenshotDetails } from "../../components/screenshot";
 import { motion } from "framer-motion";
-import { professional, personal } from "../../lib/projects";
 import { useState, useRef, useEffect } from "react";
 
+function Section({ children }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
 
+  return (
+    <section className="py-32" ref={ref}>
+      <span
+        style={{
+          transform: isInView ? "none" : "translateX(-200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+        }}
+      >
+        {children}
+      </span>
+    </section>
+  );
+}
 
-export function ProjectList({data1, data2}){
+export function ProjectList({name, data}){
+
   const list = {
     visible: { 
       opacity: 1,
@@ -24,24 +42,12 @@ export function ProjectList({data1, data2}){
     },
   }
 
-  const listitem = {
-    visible: { 
-      opacity: 1,
-      x: 0,
-    },
-    hidden: { 
-      opacity: 0,
-      x: -300,
-    },
-  }
   return(
-    <>
-    <motion.li key={'Professional'} layout initial="hidden"
-          animate="visible"
-          variants={listitem} className="flex flex-col py-10 pb-20 relative z-30">
-<div className="flex bg-rosspurple dark:bg-rossdarkpurple  pr-2 pb-2 mr-auto mb-10 shadow-2xl">
+          <Section>
+          <div className="flex flex-col relative">
+            <div className="flex bg-rosspurple dark:bg-rossdarkpurple  pr-2 pb-2 mr-auto mb-10 shadow-2xl">
             <div className="flex bg-rossblue dark:bg-rossdarkblue  pr-2 pb-2 -ml-2 -mt-2">
-              <h2 className="text-white text-left bg-rosspurple dark:bg-rossdarkpurple  mr-auto -ml-2 -mt-2 relative px-5">Professional</h2>
+              <h2 className="text-white text-left bg-rosspurple dark:bg-rossdarkpurple  mr-auto -ml-2 -mt-2 relative px-5">{name}</h2>
             </div>
           </div>
               <motion.ul
@@ -49,60 +55,13 @@ export function ProjectList({data1, data2}){
                 initial="hidden"
                 animate="visible"
                 variants={list}
-                className="flex flex-wrap gap-10 mx-auto max-w-5xl text-center place-content-center">
-                  {data1.map(data => (
+                className="flex flex-wrap gap-10 mx-auto max-w-5xl text-center place-content-center z-30">
+                  {data.map(data => (
                       <ProjectCard key={data.name} params={data}/>
                   ))}
               </motion.ul>
-              </motion.li>
-                  <motion.li key={"personal"} layout initial="hidden"
-                  animate="visible"
-                  variants={listitem} className="flex flex-col py-10 pb-20 relative">
-        <div className="flex bg-rosspurple dark:bg-rossdarkpurple  pr-2 pb-2 mr-auto mb-10 shadow-2xl">
-                    <div className="flex bg-rossblue dark:bg-rossdarkblue  pr-2 pb-2 -ml-2 -mt-2">
-                      <h2 className="text-white text-left bg-rosspurple dark:bg-rossdarkpurple  mr-auto -ml-2 -mt-2 relative px-5">Personal</h2>
-                    </div>
-                  </div>
-                      <motion.ul
-                        layout
-                        initial="hidden"
-                        animate="visible"
-                        variants={list}
-                        className="flex flex-wrap gap-10 mx-auto max-w-5xl text-center place-content-center z-30">
-                          {data2.map(data => (
-                              <ProjectCard key={data.name} params={data}/>
-                          ))}
-                      </motion.ul>
-                      </motion.li>
-                      </>
-  )
-}
-
-export default function MyProjects(){
-  const toplist = {
-    visible: { 
-      opacity: 1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 3,
-      },
-    },
-    hidden: { 
-      opacity: 0,
-      transition: {
-        when: "afterChildren",
-      },
-    },
-  }
-  
-  return (
-    <motion.ul
-    layout
-    initial="hidden"
-    animate="visible"
-    variants={toplist} className="w-full py-20">
-        <ProjectList data1={professional} data2={personal}/>
-      </motion.ul>
+              </div>
+              </Section>
   )
 }
 

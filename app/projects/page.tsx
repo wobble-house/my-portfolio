@@ -1,4 +1,6 @@
-import MyProjects from "./projects"
+import { ProjectList } from "./projects"
+import { Animation } from "../../components/animation"
+import { professional, personal } from "../../lib/projects";
 
 export const metadata = {
   title: 'Projects',
@@ -7,10 +9,12 @@ export const metadata = {
 
 export default function Projects() {
   return (
-<>
+    <Animation mode={'wait'} initial={true}>
       <div className="mx-auto max-w-4xl justify-center text-center">
-      <MyProjects/>
+      <ProjectList name={"Professional"} data={professional}/>
+      <ProjectList name={"Professional"} data={professional}/>
+      <ProjectList name={"Professional"} data={professional}/>
       </div>
-      </>
+      </Animation>
   )
 }

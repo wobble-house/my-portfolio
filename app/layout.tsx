@@ -1,10 +1,10 @@
 import { GAScript, GABody } from './consent'
-import { Animation } from '../components/animation'
 import { CookieAccept } from '../components/cookie-consent'
+import { Animation } from '../components/animation'
 import Footer from './footer'
 import './globals.css'
 import AuthContext from '../components/next-auth-provider'
-import ThemeToggle from '../components/theme-switcher'
+import { ThemeToggle } from '../components/theme-switcher'
 import MyNavbar from '../components/navbar'
 import ChatModal from '../components/modal'
 import LoginButton from '../components/login'
@@ -61,23 +61,22 @@ export default function RootLayout({
       <GABody/>
       
         <AuthContext>
-<Animation>
+          <Animation mode={'wait'} initial={false}>
             <main className="md:flex flex-row max-w-7xl mx-auto gap-5 justify-evenly align-top">
               <CookieAccept/>
-                <MyNavbar><ThemeToggle/></MyNavbar>
+                <MyNavbar><ThemeToggle mobile={false}/></MyNavbar>
                   {children}
             </main>
+            </Animation>
 
           <LoginButton/>
 
-          <div className="absolute top-1 left-8 md:invisible">
-            <ThemeToggle/>
-          </div>
+          
+            <ThemeToggle mobile/>
 
           <ChatModal/>
 
           <Footer color={'white'}/>
-        </Animation>
         </AuthContext>
         </body>
     </html>

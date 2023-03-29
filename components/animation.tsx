@@ -2,9 +2,9 @@
 
 import { AnimatePresence } from 'framer-motion'
 
-export function Animation({children}) {
+export function Animation({children, mode, initial}) {
   return (
-    <AnimatePresence mode="wait" initial={false}>
+    <AnimatePresence mode={mode} initial={initial}>
       {children}
     </AnimatePresence>
   );

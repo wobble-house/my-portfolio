@@ -8,9 +8,7 @@ export const metadata = {
 export default async function Home() {
 
   return (
-    <>
       <div className="max-w-3xl py-20 mx-auto">
       </div>
-    </>
   )
 }

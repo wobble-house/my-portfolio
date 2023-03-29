@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon
  } from "@fortawesome/free-solid-svg-icons";
 
-export default function ThemeToggle() {
+export function ThemeToggle({mobile}:{mobile: boolean}) {
     const [isEnabled, setIsEnabled] = useState(false);
 
     useEffect(() => {
@@ -46,8 +46,11 @@ export default function ThemeToggle() {
         document.querySelector("section")?.classList.remove("dark");
         document.querySelector(".navigation")?.classList.remove("dark");
       }};
+
+    
     return (
       <>
+      { mobile ? <div className="absolute top-1 left-8 md:invisible">
       <div className="flex bg-rosspurple dark:bg-rossdarkpurple pr-1 pb-1 mt-1 pt-1 mr-auto relative z-20">
       <div className="flex bg-rossblue dark:bg-rossdarkblue pr-1 pb-1 -ml-1 -mt-1">
         <div className="flex bg-rosspurple dark:bg-rossdarkpurple px-3 py-1 mr-auto">
@@ -73,6 +76,33 @@ export default function ThemeToggle() {
       </div>
       </div>
       </div>
+      </div> : <div className="flex bg-rosspurple dark:bg-rossdarkpurple pr-1 pb-1 mt-1 pt-1 mr-auto relative z-20">
+      <div className="flex bg-rossblue dark:bg-rossdarkblue pr-1 pb-1 -ml-1 -mt-1">
+        <div className="flex bg-rosspurple dark:bg-rossdarkpurple px-3 py-1 mr-auto">
+      <label className="toggle-wrapper my-auto " htmlFor="toggle">
+        <div className={`toggle ${isEnabled ? "enabled" : "disabled"}`}>
+          <span className="hidden">
+          {isEnabled ? "Enable Light Mode" : "Enable Dark Mode"}
+          </span>
+          <div className="icons">
+            <FontAwesomeIcon icon={faMoon} className="text-neutral-50"/>
+            <FontAwesomeIcon icon={faSun} className="text-neutral-900"/>
+      </div>
+          <input
+            id="toggle"
+            name="toggle"
+            type="checkbox"
+            checked={isEnabled}
+            onClick={toggleState}
+            readOnly
+          />
+        </div>
+      </label>
+      </div>
+      </div>
+      </div> }
       </>
     );
   }
+
+  

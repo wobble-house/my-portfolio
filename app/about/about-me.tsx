@@ -60,9 +60,13 @@ export default function AboutMe(){
                 initial="hidden"
                 animate="visible"
                 variants={item} className=" bg-rosspurple dark:bg-rossdarkpurple mr-auto -ml-4 -mb-2 relative">
-            <h2 className="  text-white  text-left px-5 md:text-4xl">About Me</h2>
+                <h2 className="  text-white  text-left px-5 md:text-4xl">About Me</h2>
               </motion.div>
-            <div className="bg-rosspurple dark:bg-rossdarkpurple  pr-2 pb-2 mb-12 shadow-2xl">
+            <motion.div layout
+                initial="hidden"
+                animate="visible"
+                variants={list}
+                className="bg-rosspurple dark:bg-rossdarkpurple  pr-2 pb-2 mb-12 shadow-2xl relative">
               <div className=" flex-col gap-10 bg-rossblue dark:bg-rossdarkblue  -ml-2 -mt-2 pt-6 px-10 pb-6"> 
                     <div className="flex shrink gap-10 pb-5 align-top">
                         <div className="relative overflow-hidden">
@@ -120,7 +124,7 @@ export default function AboutMe(){
                 </p>
               </div>
               </div>
-            </div>
+            </motion.div>
             </div>
     )
 }
