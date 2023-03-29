@@ -1,4 +1,5 @@
 import { GAScript, GABody } from './consent'
+import { Animation } from '../components/animation'
 import { CookieAccept } from '../components/cookie-consent'
 import Footer from './footer'
 import './globals.css'
@@ -60,7 +61,7 @@ export default function RootLayout({
       <GABody/>
       
         <AuthContext>
-
+<Animation>
             <main className="md:flex flex-row max-w-7xl mx-auto gap-5 justify-evenly align-top">
               <CookieAccept/>
                 <MyNavbar><ThemeToggle/></MyNavbar>
@@ -76,7 +77,7 @@ export default function RootLayout({
           <ChatModal/>
 
           <Footer color={'white'}/>
-
+        </Animation>
         </AuthContext>
         </body>
     </html>

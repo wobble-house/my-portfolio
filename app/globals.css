@@ -91,8 +91,8 @@
   p {
       font-family: CascadiaCode;
     }
-  li > ul { display: none; }
-  li:hover > ul { display: block; }
+  nav.li > ul { display: none; }
+  nav.li:hover > ul { display: block; }
   .lvl1 li { display: relative; position:relative; }
   .lvl2 { position: absolute; }
   .lvl2 li { 
@@ -113,11 +113,7 @@
   .font-outline-4 {
     -webkit-text-stroke: 4px black;
   }
-  body {
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
+
  
 @keyframes fadeInAnimation {
     0% {

@@ -99,7 +99,7 @@ export default function MyNavbar({children}) {
                   Projects
                   </Link>
                 </li>
-                <li className="flex relative invisible md:visible">
+                <li className="flex invisible md:visible">
                   {children}
                 </li>
               </ul>
