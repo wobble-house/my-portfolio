@@ -14,6 +14,9 @@ export default function Projects() {
       <ProjectList name={"Professional"} data={professional}/>
       <ProjectList name={"Professional"} data={professional}/>
       <ProjectList name={"Professional"} data={professional}/>
+      <ProjectList name={"Professional"} data={professional}/>
+      <ProjectList name={"Professional"} data={professional}/>
+      <ProjectList name={"Professional"} data={professional}/>
       </div>
       </Animation>
   )

@@ -10,7 +10,7 @@ function Section({ children }) {
   const isInView = useInView(ref, { once: false });
 
   return (
-    <section className="py-32" ref={ref}>
+    <section className="py-48 overscroll-contain" ref={ref}>
       <span
         style={{
           transform: isInView ? "none" : "translateX(-200px)",
