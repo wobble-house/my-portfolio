@@ -54,7 +54,7 @@ export default function AboutMe(){
         },
       }
     return(
-        <div className="flex flex-col max-w-md relative px-4">
+        <div className="flex flex-col max-w-lg relative px-4">
             <motion.div 
                 layout
                 initial="hidden"
@@ -70,7 +70,7 @@ export default function AboutMe(){
               <div className="flex flex-col gap-10 bg-rossblue dark:bg-rossdarkblue  -ml-2 -mt-2 pt-6 px-5 pb-6"> 
                     <div className="flex shrink gap-8 pb-5 align-top">
                         <div className="relative overflow-hidden px-1 md:px-5 pt-4">
-                          <div className="flex w-[100px] overflow-hidden shrink">
+                          <div className="flex w-[100px] md:w-[200px] overflow-hidden shrink">
                           <Image src={"/images/Ross.jpg"} width={262} height={263} alt={"Ross Alan Ford Headshot"} sizes="(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
                           33vw"/>
@@ -117,7 +117,7 @@ export default function AboutMe(){
                             type="submit">Download my Resume</button>
                             </form></div>
                       </div>
-              <div className="mx-auto max-w-sm pb-5 overflow-auto">
+              <div className="mx-auto max-w-md pb-5 overflow-auto">
               <p className="text-left dark:text-white text-overflow">
                 I am a Full-Stack Developer with experience leading both front-end and back-end
                 development.  I come from an operations focused background, with the past 

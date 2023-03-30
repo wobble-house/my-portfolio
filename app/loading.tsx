@@ -1,7 +1,9 @@
+import { NameLarge } from "../components/name";
 export default function Loading() {
     return (
-         <div className="flex flex-col justify-center items-center content-center mx-auto">
-<h2 className="animate-pulse pt-20 grow font-bold align-middle text-center leading-tight text-neutral-200 mx-auto">
+         <div className="flex flex-col justify-center items-center content-center mx-auto py-32">
+          <NameLarge/>
+<h2 className="animate-pulse pt-20 grow font-bold align-middle text-center leading-tight text-neutral-500 mx-auto">
   Loading
   </h2>
   
