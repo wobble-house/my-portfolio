@@ -124,14 +124,14 @@ export function ProjectCard({params}: { params: {
     key={params.name} 
     variants={item}
     id="project-card" 
-    className="fixed top-0 left-0 w-full h-full grow max-h-screen hover:scale-105 bg-black bg-opacity-75 z-50 mx-auto place-content-center pt-20"
+    className="fixed top-0 left-0 w-full h-full grow max-h-screen bg-rossdarkblue dark:bg-black bg-opacity-75 dark:bg-opacity-50 z-50 mx-auto place-content-center pt-20 overflow-hidden overscroll-none"
     >
-      <div className="flex project-card max-w-xl justify-center items-center mx-auto my-auto">
+      <div className="flex project-card max-w-xl justify-center items-center mx-auto my-auto overscroll-none">
                   <motion.div
                   layout
                   ref={projectref}
                   onClick={close}
-                  className="flex  mx-auto justify-center content-center items-center"
+                  className="flex  mx-auto justify-center content-center items-center "
                   variants={dropIn}
                   initial="hidden"
                   animate="visible"
@@ -166,7 +166,7 @@ else return (
     key={params.name} 
     variants={item}
     id="project-card" 
-    className="flex-col project-card hover:scale-105 relative grow shrink"
+    className="flex-col project-card hover:scale-105 relative grow shrink overscroll-none"
     >
                 <motion.button 
                 initial="visible"

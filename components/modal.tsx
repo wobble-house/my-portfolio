@@ -31,7 +31,7 @@ export default function MyModal () {
 
     return (
         <>
-            <div className="flex fixed bottom-20 right-10 w-14 h-14 bg-rosspurple dark:bg-rossdarkpurple border-4 border-rossblue dark:border-rossdarkblue">
+            <div className="flex fixed bottom-20 right-10 w-14 h-14 bg-rosspurple dark:bg-rossdarkpurple border-4 border-rossblue dark:border-rossdarkblue z-[99]">
             {isModalOpen ? (
                 <motion.div
                 ref={ref}
@@ -81,7 +81,7 @@ export default function MyModal () {
 function ModalInfo(){
 
     return (
-        <div>
+        <div className="z-[99]">
             <div className="p-4 justify-evenly rounded-xl dark:text-white">
                 <p>I am a Full-Stack Developer with experience leading both
                      front-end and back-end development.

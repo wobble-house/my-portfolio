@@ -5,8 +5,7 @@ import Footer from './footer'
 import './globals.css'
 import AuthContext from '../components/next-auth-provider'
 import MyNavbar from '../components/navbar'
-import ChatModal from '../components/modal'
-import LoginButton from '../components/login'
+import MyModal from '../components/modal'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
@@ -63,17 +62,11 @@ export default function RootLayout({
           <Animation mode={'wait'} initial={false}>
             <main className="flex flex-col max-w-6xl mx-auto gap-5 justify-evenly align-top">
               <CookieAccept/>
-                <MyNavbar/>
-                  {children}<LoginButton/>
+                <MyNavbar/><MyModal/>
+                  {children}
             </main>
             </Animation>
-
           
-
-          
-
-
-          <ChatModal/>
 
           <Footer color={'white'}/>
         </AuthContext>

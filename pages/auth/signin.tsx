@@ -3,8 +3,8 @@ import type { GetServerSidePropsContext, InferGetServerSidePropsType } from "nex
 import { signIn, getProviders } from 'next-auth/react'
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "../api/auth/[...nextauth]";
-import Image from 'next/image'
-import Name from '../../components/name'
+import Link from "next/link";
+import {NameLarge} from '../../components/name'
 import '../../app/globals.css'
 
 export const metadata = {
@@ -35,7 +35,8 @@ const Signin = ({ providers }: InferGetServerSidePropsType<typeof getServerSideP
       <link rel="icon" href="/favicon/rossalanford.ico" />
         <div className="grid grid-cols-0 py-32 max-w-5xl mx-auto justify-center">
           <div className="ml-5">
-            <Name/>
+          <Link href={"/"}>
+            <NameLarge/></Link>
             </div>
           
             {providers &&

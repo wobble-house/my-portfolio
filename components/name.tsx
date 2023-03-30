@@ -3,8 +3,7 @@ export function NameLarge(){
     const name = "ROSSALANFORD"
     const data = name.split("")
     return(
-        <>
-            <div className="flex w-[175px] h-[130px] text-white">
+            <div className="flex w-[175px] h-[130px] text-white mx-auto mt-10">
                 <div className="flex content-center justify-center bg-rosspurple dark:bg-rossdarkpurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2">
                         <div className="grid grid-cols-4 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
@@ -17,7 +16,7 @@ export function NameLarge(){
                     </div>
                 </div>
             </div>
-        </>
+
     )
 }
 
@@ -25,7 +24,6 @@ export function NameSmall(){
     const name = "ROSSALANFORD"
     const data = name.split("")
     return(
-        <>
             <div className="flex w-[75px] h-[56px] text-white mt-8">
                 <div className="flex content-center justify-center bg-rosspurple dark:bg-rossdarkpurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-2 -mt-1">
@@ -39,6 +37,5 @@ export function NameSmall(){
                     </div>
                 </div>
             </div>
-        </>
     )
 }

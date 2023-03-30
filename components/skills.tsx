@@ -8,11 +8,11 @@ import { faFileExcel, faFileWord, faFilePowerpoint } from "@fortawesome/free-sol
 export default function Skills(){
     return(
         <section className="text-white fill-white">
-        <div className="mx-auto md:px-10 pb-32 pt-10 max-w-7xl">
-        <div className="pl-5 md:pl-0 flex mr-auto">
+        <div className="mx-auto md:px-10 pb-32 pt-10 md:max-w-[160px]">
+        <div className="pl-5 md:pl-0 flex mr-auto -ml-2 drop-shadow-3xl">
             <div className="flex mb-10 bg-rosspurple dark:bg-rossdarkpurple pb-2 pr-2 -mt-2 pt-2">
                 <div className="flex bg-rossblue dark:bg-rossdarkblue pb-2 pr-2 -ml-2 -mt-4 pt-4 relative mr-auto">
-                    <div className="flex bg-rosspurple dark:bg-rossdarkpurple -ml-2 -mt-8 px-5 mr-auto relative">
+                    <div className="flex bg-rosspurple dark:bg-rossdarkpurple -ml-2 -mt-8 px-2 mr-auto relative">
                         <h2 className="md:text-4xl text-white text-left ">
                         Skills
                         </h2>
@@ -20,7 +20,7 @@ export default function Skills(){
                 </div>
             </div>
         </div>
-        <div className="mx-auto md:px-10 lg:px-0 flex flex-row md:flex-col md:content-evenly relative gap-12 justify-evenly">
+        <div className="flex flex-row md:flex-col md:content-evenly relative gap-12 justify-evenly">
                 <MSSkills/>
                 <AdobeSkills/>
                 <MediaToolsSkills/>

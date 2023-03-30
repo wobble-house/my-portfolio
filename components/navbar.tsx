@@ -3,6 +3,8 @@ import { useOnClickOutside } from 'usehooks-ts'
 import Link from 'next/link';
 import React, { useState, useRef } from "react";
 import { NameSmall, NameLarge } from './name';
+import LoginButton from './login';
+import { motion } from 'framer-motion';
 
 export default function MyNavbar() {
   const Navref = useRef();
@@ -15,26 +17,62 @@ export default function MyNavbar() {
   }
   
   useOnClickOutside(Navref, handleClickOutside)
+  const list = {
+    visible: { 
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.3,
+      },
+    },
+    hidden: { 
+      opacity: 0,
+      transition: {
+        when: "afterChildren",
+      },
+    },
+  }
+  const item = {
+    visible: { 
+      opacity: 1,
+      y: 0,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.3,
+      },
+    },
+    hidden: { 
+      opacity: 0,
+      y:400,
+      transition: {
+        when: "afterChildren",
+      },
+    },
+  }
   return (
-      <nav className="w-full top-0 fixed z-50 px-5">
+      <nav className="w-full top-0 fixed z-50 md:px-5">
         <div className="flex flex-col md:flex-row justify-start mx-auto">
           <div className="flex flex-row">
             <div className="flex flex-row-reverse items-center justify-between md:block">
               <div className="invisible md:visible">
-              <Link href={"/"} className="">
+              <Link href={"/"} onClick={() => setNavbar(false)}>
                 <NameSmall/>
               </Link>
               </div>
               <div className="z-10 md:hidden mr-auto relative">
-                <button
+                <motion.button
+                layout
+                initial="hidden"
+                animate="visible"
+                variants={item}
                   className="pr-2 mr-2 pl-2 bg-rosspurple dark:bg-rossdarkpurple
                  outline-none focus:border-rosspurple focus:border"
-                 onClick={handleClickInside}
+                 onClick={() => setNavbar(!navbar)}
                 >
                   {navbar ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6 text-rossblue dark:text-rossdarkblue border-rossblue dark:border-rossdarkblue border-solid border-1
+                      className="w-6 h-6 text-rossblue dark:text-rossdarkblue border-rossblue dark:border-rossdarkblue  border-solid border-1
                       "
                       viewBox="0 0 20 20"
                       fill="currentColor"
@@ -62,14 +100,19 @@ export default function MyNavbar() {
                       />
                     </svg>
                   )}
-                </button>
+                </motion.button>
               </div>
             </div>
           </div>
           <div>
-            <div className={`flex-1 mx-auto bg-rossblue dark:bg-rossdarkblue content-center items-center md:bg-transparent dark:md:bg-transparent justify-center md:block ${navbar ? 'sticky' : 'hidden'}`}>
-              <div className={`${navbar ? 'sticky' : 'hidden'} mx-auto content-center justify-center text-center`}><NameLarge/></div>
-              <ul ref={Navref} className="text-center flex flex-col md:flex-row mt-5 ml-3">
+            <motion.div ref={Navref} layout
+                initial="hidden"
+                animate="visible"
+                variants={list} className={`flex-1 md:mx-auto pt-[200px] pb-[600px] md:py-0 -my-48 md:-my-32 bg-rossblue dark:bg-rossdarkblue content-center items-center md:bg-transparent dark:md:bg-transparent justify-center md:block ${navbar ? 'sticky' : 'hidden'}`}>
+              <div className={`${navbar ? 'sticky' : 'hidden'} mx-auto content-center justify-center text-center`}>
+              <Link href={"/"} onClick={() => setNavbar(false)}><NameLarge/></Link></div>
+              <LoginButton/>
+              <ul  className="text-center flex flex-col md:flex-row mt-36 ml-3">
                 <li 
                 className="
                 py-2
@@ -82,7 +125,7 @@ export default function MyNavbar() {
                 rounded
                 dark:text-white
                 ">
-                  <Link href="/about" onClick={handleClickOutside}>
+                  <Link href="/about" onClick={() => setNavbar(false)}>
                   ABOUT
                   </Link>
                 </li>
@@ -99,14 +142,13 @@ export default function MyNavbar() {
                 rounded
                 dark:text-white
                 ">
-                  <Link href="/projects" onClick={handleClickOutside}>
+                  <Link href="/projects" onClick={() => setNavbar(false)}>
                   Projects
                   </Link>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
+          </motion.div>
+          </div></div>
       </nav>
   );
 };

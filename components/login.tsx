@@ -17,7 +17,7 @@ export default function LoginButton() {
     if (status === "authenticated") {
       return (
         <>
-          <div className=" absolute top-0 md:top-2 md:left-auto right-5 flex flex-col-reverse justify-end content-end items-end z-50">
+          <div className=" fixed top-5 right-5 md:left-auto flex flex-col-reverse justify-end content-end items-end z-50">
           <div className="justify-end">
           <ThemeToggle mobile={false}/></div>
             <div className="flex flex-row items-center">

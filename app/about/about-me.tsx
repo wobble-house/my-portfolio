@@ -89,7 +89,7 @@ export default function AboutMe(){
                           layout
                           initial="hidden"
                           animate="visible"
-                          variants={listitem}>Gender: Male</motion.li>
+                          variants={listitem}>Pronoun: He/Him</motion.li>
                           <motion.li
                           layout
                           initial="hidden"
@@ -104,7 +104,7 @@ export default function AboutMe(){
                           layout
                           initial="hidden"
                           animate="visible"
-                          variants={listitem}>Record: 7-0 (undefeated)</motion.li>
+                          variants={listitem}>Record: 69-0 (undefeated)</motion.li>
                         </motion.ul>
                         <form method="get" 
                                 action="/rossalanford2.pdf" 
