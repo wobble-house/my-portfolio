@@ -44,7 +44,7 @@ export default function GlobalError({
         <AuthContext>
 
             <main className="md:flex flex-row max-w-7xl mx-auto gap-5 justify-evenly align-top">
-                <MyNavbar><ThemeToggle mobile={false}/></MyNavbar>
+                <MyNavbar></MyNavbar>
         <h2 className="text-center">Something went wrong!</h2>
         <button onClick={() => reset()}>Try again</button>
 
