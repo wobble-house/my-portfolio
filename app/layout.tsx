@@ -55,7 +55,7 @@ export default function RootLayout({
       />
       <link rel="icon" href="/favicon/rossalanford.ico" />
       <GAScript/>
-<body className="min-h-screen">
+<body className="min-h-screen mx-auto">
       <GABody/>
       
         <AuthContext>

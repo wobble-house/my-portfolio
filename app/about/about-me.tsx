@@ -54,7 +54,7 @@ export default function AboutMe(){
         },
       }
     return(
-        <div className="flex flex-col max-w-lg relative">
+        <div className="flex flex-col max-w-md relative px-4">
             <motion.div 
                 layout
                 initial="hidden"
@@ -66,13 +66,15 @@ export default function AboutMe(){
                 initial="hidden"
                 animate="visible"
                 variants={list}
-                className=" bg-rosspurple dark:bg-rossdarkpurple pr-2 pb-2 mb-12 shadow-2xl block">
-              <div className="flex flex-col gap-10 bg-rossblue dark:bg-rossdarkblue  -ml-2 -mt-2 pt-6 px-10 pb-6"> 
-                    <div className="flex shrink gap-10 pb-5 align-top">
-                        <div className="relative overflow-hidden px-5 pt-5">
+                className=" bg-rosspurple dark:bg-rossdarkpurple md:pr-2 pb-2 md:mb-12 shadow-2xl block">
+              <div className="flex flex-col gap-10 bg-rossblue dark:bg-rossdarkblue  -ml-2 -mt-2 pt-6 px-5 pb-6"> 
+                    <div className="flex shrink gap-8 pb-5 align-top">
+                        <div className="relative overflow-hidden px-1 md:px-5 pt-4">
+                          <div className="flex w-[100px] overflow-hidden shrink">
                           <Image src={"/images/Ross.jpg"} width={262} height={263} alt={"Ross Alan Ford Headshot"} sizes="(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
                           33vw"/>
+                          </div>
                         </div>
                         <div className="flex flex-col justify-evenly">
                         <motion.ul 
@@ -115,8 +117,8 @@ export default function AboutMe(){
                             type="submit">Download my Resume</button>
                             </form></div>
                       </div>
-              <div className="mx-auto max-w-2xl pb-5">
-              <p className="text-left dark:text-white">
+              <div className="mx-auto max-w-sm pb-5 overflow-auto">
+              <p className="text-left dark:text-white text-overflow">
                 I am a Full-Stack Developer with experience leading both front-end and back-end
                 development.  I come from an operations focused background, with the past 
                 6 years working for a 501(c)6 not-for-profit trade organization centered 

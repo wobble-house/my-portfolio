@@ -1,13 +1,9 @@
-export default function Loading(start, end) {
-    const data = [1,2,3,4,5,6,7,8,9,10]
-    const loadingdata = data.slice(start,end)
+export default function Loading() {
     return (
-      <>
-        <div className="mx-auto">
-         <div className="flex flex-col justify-center items-center content-center">
-<h1 className="animate-pulse pt-20 grow font-bold align-middle text-center leading-tight text-neutral-200">
+         <div className="flex flex-col justify-center items-center content-center mx-auto">
+<h2 className="animate-pulse pt-20 grow font-bold align-middle text-center leading-tight text-neutral-200 mx-auto">
   Loading
-  </h1>
+  </h2>
   
   <div role="status" className="mx-auto justify-center items-center content-center">
     <svg aria-hidden="true" className="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,7 +12,6 @@ export default function Loading(start, end) {
     </svg>
     <span className="sr-only mx-auto text-center">Loading...</span>
   </div>
-            </div></div>
-            </>
+            </div>
     );
 }
