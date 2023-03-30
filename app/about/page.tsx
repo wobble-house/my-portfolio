@@ -1,6 +1,8 @@
 import ContactForm from "../../components/contact-form"
 import Skills from "../../components/skills"
 import AboutMe from "./about-me"
+import { Animation } from "../../components/animation"
+import Section from "../../components/section"
 
 export const metadata = {
   title: 'About Me',
@@ -10,16 +12,17 @@ export const metadata = {
 export default function About(){
 
   return (
-
-    <div className="mx-auto justify-center text-center relative">
-      <div className="md:pt-20 pt-5  ">
-        <div className="flex flex-col md:flex-row gap-5 max-w-6xl">
-        
-<AboutMe/>
+<Animation mode={'wait'} initial={true}>
+    <div className="mx-auto justify-center text-center relative pt-16">
+      <div className="pt-5">
+          <Section>
+            <div className="flex flex-col md:flex-row gap-5 max-w-5xl">
+            <AboutMe/>
+              <Skills/></div>
+              </Section>
             <ContactForm/>
-            </div>
-        </div><Skills/>
+        </div>
       </div>
-
+</Animation>
   )
 }

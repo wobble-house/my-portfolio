@@ -4,7 +4,6 @@ import { Animation } from '../components/animation'
 import Footer from './footer'
 import './globals.css'
 import AuthContext from '../components/next-auth-provider'
-import { ThemeToggle } from '../components/theme-switcher'
 import MyNavbar from '../components/navbar'
 import ChatModal from '../components/modal'
 import LoginButton from '../components/login'
@@ -62,17 +61,17 @@ export default function RootLayout({
       
         <AuthContext>
           <Animation mode={'wait'} initial={false}>
-            <main className="md:flex flex-row max-w-7xl mx-auto gap-5 justify-evenly align-top">
+            <main className="flex flex-col max-w-6xl mx-auto gap-5 justify-evenly align-top">
               <CookieAccept/>
-                <MyNavbar><ThemeToggle mobile={false}/></MyNavbar>
-                  {children}
+                <MyNavbar/>
+                  {children}<LoginButton/>
             </main>
             </Animation>
 
-          <LoginButton/>
+          
 
           
-            <ThemeToggle mobile/>
+
 
           <ChatModal/>
 

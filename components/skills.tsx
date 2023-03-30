@@ -3,7 +3,6 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faMicrosoft, faSlack, faDiscord, faLinux, faApple, faUbuntu, faHtml5, faCss3, faJs, faReact, faDocker, faPython, faAws, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { faFileExcel, faFileWord, faFilePowerpoint } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion";
 
 
 export default function Skills(){
@@ -21,14 +20,11 @@ export default function Skills(){
                 </div>
             </div>
         </div>
-        <div className="mx-auto px-20 md:px-10 lg:px-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 md:content-evenly relative gap-12 justify-evenly">
+        <div className="mx-auto md:px-10 lg:px-0 flex flex-row md:flex-col md:content-evenly relative gap-12 justify-evenly">
                 <MSSkills/>
                 <AdobeSkills/>
                 <MediaToolsSkills/>
-                <FrontendSkills/>
-                <BackendSkills/>
-                <OSSkills/>
-                <RemoteSkills/>
+
             </div>
         </div>
         </section>

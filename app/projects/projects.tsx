@@ -1,28 +1,9 @@
 'use client';
 import Link from "next/link"
-import { useInView } from "framer-motion";
+import Section from "../../components/section";
 import { WebScreenshot, WebScreenshotDetails } from "../../components/screenshot";
 import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
-
-function Section({ children }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
-
-  return (
-    <section className="py-48 overscroll-contain" ref={ref}>
-      <span
-        style={{
-          transform: isInView ? "none" : "translateX(-200px)",
-          opacity: isInView ? 1 : 0,
-          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
-        }}
-      >
-        {children}
-      </span>
-    </section>
-  );
-}
 
 export function ProjectList({name, data}){
 
@@ -55,7 +36,7 @@ export function ProjectList({name, data}){
                 initial="hidden"
                 animate="visible"
                 variants={list}
-                className="flex flex-wrap gap-10 mx-auto max-w-5xl text-center place-content-center z-30">
+                className="flex flex-wrap gap-5 mx-auto max-w-5xl text-center place-content-center z-30">
                   {data.map(data => (
                       <ProjectCard key={data.name} params={data}/>
                   ))}
@@ -143,9 +124,9 @@ export function ProjectCard({params}: { params: {
     key={params.name} 
     variants={item}
     id="project-card" 
-    className="fixed top-0 left-0  h-full w-full  grow shrink hover:scale-105 bg-black bg-opacity-75 z-50 mx-auto justify-center "
+    className="fixed top-0 left-0 w-full h-full grow max-h-screen hover:scale-105 bg-black bg-opacity-75 z-50 mx-auto place-content-center pt-20"
     >
-      <div className="flex project-card max-w-4xl justify-center items-center mx-auto pt-64">
+      <div className="flex project-card max-w-xl justify-center items-center mx-auto my-auto">
                   <motion.div
                   layout
                   ref={projectref}

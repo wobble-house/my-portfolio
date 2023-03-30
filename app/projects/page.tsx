@@ -10,7 +10,7 @@ export const metadata = {
 export default function Projects() {
   return (
     <Animation mode={'wait'} initial={true}>
-      <div className="mx-auto max-w-4xl justify-center text-center">
+      <div className="mx-auto max-w-3xl justify-center text-center pt-20">
       <ProjectList name={"Professional"} data={professional}/>
       <ProjectList name={"Professional"} data={professional}/>
       <ProjectList name={"Professional"} data={professional}/>

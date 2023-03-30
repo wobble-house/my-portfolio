@@ -3,6 +3,7 @@
 import React, { useId, useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion';
+import Section from './section';
 
 export default function ContactForm(){
     const id = useId();
@@ -118,6 +119,7 @@ export default function ContactForm(){
       console.log(fullname, email, subject, message);
     };
     return (
+      <Section>
               <form
               className="flex flex-col px-8 py-8 text-white relative">
                 <div className="mb-20 bg-rosspurple dark:bg-rossdarkpurple pb-2 pr-2 -mt-2 pt-2">
@@ -170,5 +172,6 @@ export default function ContactForm(){
         { showFailureMessage === true && (<div className="bg-rosspurple dark:bg-rossdarkpurple pb-2 pr-2"><div className="bg-rossblue dark:bg-rossdarkblue  text-black">Error! Please try again. If you continue to encounter problems, please contact <Link href="mailto:ross@rossalanford.com">ross@rossalanford.com</Link></div></div>) }
      { showSuccessMessage === true && (<div className="bg-rosspurple dark:bg-rossdarkpurple pb-2 pr-2"><h4 className="text-center bg-rossblue dark:bg-rossdarkblue  -ml-2 -mt-2 text-gray-500 dark:text-gray-100 ">Please allow up to 48 hours for me to review your message. Thanks!</h4></div>) }
       </form>
+      </Section>
     )
   }

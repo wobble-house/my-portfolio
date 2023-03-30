@@ -2,9 +2,9 @@
 import { useOnClickOutside } from 'usehooks-ts'
 import Link from 'next/link';
 import React, { useState, useRef } from "react";
-import Name from './name';
+import { NameSmall, NameLarge } from './name';
 
-export default function MyNavbar({children}) {
+export default function MyNavbar() {
   const Navref = useRef();
   const [navbar, setNavbar] = useState(false);
   const handleClickOutside = () => {
@@ -16,13 +16,15 @@ export default function MyNavbar({children}) {
   
   useOnClickOutside(Navref, handleClickOutside)
   return (
-      <nav className="h-full z-50 px-5 mt-24 md:mt-16">
-        <div className="justify-between mx-auto">
-          <div className="">
-            <div className="flex flex-col items-center justify-between md:block">
+      <nav className="w-full top-0 fixed z-50 px-5">
+        <div className="flex flex-col md:flex-row justify-start mx-auto">
+          <div className="flex flex-row">
+            <div className="flex flex-row-reverse items-center justify-between md:block">
+              <div className="invisible md:visible">
               <Link href={"/"} className="">
-                <Name/>
+                <NameSmall/>
               </Link>
+              </div>
               <div className="z-10 md:hidden mr-auto relative">
                 <button
                   className="pr-2 mr-2 pl-2 bg-rosspurple dark:bg-rossdarkpurple
@@ -32,7 +34,7 @@ export default function MyNavbar({children}) {
                   {navbar ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6 text-rossblue dark:text-rossdarkblue
+                      className="w-6 h-6 text-rossblue dark:text-rossdarkblue border-rossblue dark:border-rossdarkblue border-solid border-1
                       "
                       viewBox="0 0 20 20"
                       fill="currentColor"
@@ -46,7 +48,7 @@ export default function MyNavbar({children}) {
                   ) : (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6 text-rossblue dark:text-rossdarkblue
+                      className="w-6 h-6 text-rossblue dark:text-rossdarkblue border-rossblue dark:border-rossdarkblue border-solid border-1
                       "
                       fill="none"
                       viewBox="0 0 24 24"
@@ -65,8 +67,9 @@ export default function MyNavbar({children}) {
             </div>
           </div>
           <div>
-            <div className={`flex-1 mx-auto justify-center md:block ${navbar ? 'sticky' : 'hidden'}`}>
-              <ul ref={Navref} className="md:flex-col pt-10">
+            <div className={`flex-1 mx-auto bg-rossblue dark:bg-rossdarkblue content-center items-center md:bg-transparent dark:md:bg-transparent justify-center md:block ${navbar ? 'sticky' : 'hidden'}`}>
+              <div className={`${navbar ? 'sticky' : 'hidden'} mx-auto content-center justify-center text-center`}><NameLarge/></div>
+              <ul ref={Navref} className="text-center flex flex-col md:flex-row mt-5 ml-3">
                 <li 
                 className="
                 py-2
@@ -80,9 +83,10 @@ export default function MyNavbar({children}) {
                 dark:text-white
                 ">
                   <Link href="/about" onClick={handleClickOutside}>
-                  ABOUT ME
+                  ABOUT
                   </Link>
                 </li>
+                <>|</>
                 <li 
                 className="
                 py-2
@@ -98,9 +102,6 @@ export default function MyNavbar({children}) {
                   <Link href="/projects" onClick={handleClickOutside}>
                   Projects
                   </Link>
-                </li>
-                <li className="flex invisible md:visible">
-                  {children}
                 </li>
               </ul>
             </div>
