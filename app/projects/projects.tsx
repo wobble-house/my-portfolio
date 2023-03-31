@@ -1,13 +1,14 @@
 'use client';
 import Link from "next/link"
 import Section from "../../components/section";
-import { WebScreenshot, WebScreenshotDetails } from "../../components/screenshot";
+import { WebScreenshot } from "../../components/screenshot";
 import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
+import Details from "../../components/details-card";
 
 export function ProjectList({name, data}){
 
-  const list = {
+  const Projectlist = {
     visible: { 
       opacity: 1,
       transition: {
@@ -34,8 +35,9 @@ export function ProjectList({name, data}){
               <motion.ul
                 layout
                 initial="hidden"
-                animate="visible"
-                variants={list}
+                whileInView="visible"
+                variants={Projectlist}
+                viewport={{ once: false }}
                 className="flex flex-wrap gap-5 mx-auto max-w-5xl text-center place-content-center z-30">
                   {data.map(data => (
                       <ProjectCard key={data.name} params={data}/>
@@ -51,7 +53,9 @@ export function ProjectCard({params}: { params: {
   name: string,
   url : string,
   description: string,
+  stack: [],
  }}){
+  const cleanname = params.name.replace(/ /g, '+');
   const projectref = useRef();
   const [isModalOpen, setModalOpen] = useState(false)
   const close = () => setModalOpen(false);
@@ -61,6 +65,7 @@ export function ProjectCard({params}: { params: {
   const dropIn = {
       hidden: {
           opacity: 0,
+          scale: 0,
           transition: {
             duration: 3,
             type: "spring",
@@ -70,6 +75,7 @@ export function ProjectCard({params}: { params: {
       },
       visible: {
           opacity: 1,
+          scale: 1,
           transition: {
               duration: 2,
               type: "spring",
@@ -79,24 +85,31 @@ export function ProjectCard({params}: { params: {
       },
       exit: {
           opacity: 0,
+          scale:0
       },
   };
   const item = {
     visible: { 
       opacity: 1,
+      scale: 1,
       y: 0,
       transition: {
         when: "beforeChildren",
-        staggerChildren: 0.3,
+        staggerChildren: 0.4,
       },
     },
     hidden: { 
       opacity: 0,
+      scale: 0,
       y:-100,
       transition: {
         when: "afterChildren",
+        staggerChildren: 0.4,
       },
     },
+    exit: {
+      opacity: 0,
+  },
   }
 
   function useOnClickOutside(ref, handler) {
@@ -137,25 +150,7 @@ export function ProjectCard({params}: { params: {
                   animate="visible"
                   exit="exit"
                   >
-                  <div className="flex content-center justify-center bg-rosspurple  dark:bg-rossdarkpurple w-full h-full relative shadow-3xl">
-                    <div className="flex-col items-center content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2 p-5">
-                      <div className="flex h-8 -ml-8 -mt-8 ">
-                          <div className="flex shrink bg-rosspurple dark:bg-rossdarkpurple  text-white px-2">
-                        <h2 className="text-xl uppercase font-bold text-left">{params.name}</h2>
-                    </div>
-                  </div>
-                  <div className="flex overflow-hidden relative mt-3 justify-center mx-auto">
-                  <WebScreenshotDetails url={params.url} name={params.name}/>
-                </div>
-                <div className="overflow-hidden relative mt-3 max-w-2xl">
-                <p className="pb-3">{params.description}</p>
-                <button className="bg-rosspurple p-2 drop-shadow hover:scale-[1.01]">
-                <Link href={params.url} target="_blank" 
-                rel="noopener noreferrer">Visit the Site</Link>
-                </button>
-                </div>
-                </div>
-                </div>
+                  <Details title={params.name} src={`/images/chromium/${cleanname}.jpeg`} alt={`screenshot of ${cleanname}`} details={params.stack} description={params.description} downloadbutton={false} url={params.url} urlvisit={true} />
                 </motion.div>
                 </div>
                 </motion.li>
