@@ -5,7 +5,7 @@ export const WebScreenshot = ({ url, name }) => {
   const cleanname = name.replace(/ /g, '+');
   return (
             <Image
-              src={`/images/chromium/${cleanname}.jpeg`}
+              src={`/images/${cleanname}.jpeg`}
               height={162}
               width={216}
               alt={`${url} screenshot`}
@@ -21,7 +21,7 @@ export const WebScreenshotDetails = ({ url, name }) => {
   const cleanname = name.replace(/ /g, '+');
   return (
             <Image
-              src={`/images/chromium/${cleanname}.jpeg`}
+              src={`/images/${cleanname}.jpeg`}
               height={225}
               width={300}
               alt={`${url} screenshot`}
