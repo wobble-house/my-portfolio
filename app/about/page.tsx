@@ -1,7 +1,7 @@
 
 import ContactForm from "../../components/contact-form"
 import Skills from "../../components/skills"
-import Details from "../../components/details-card"
+import AboutMe from "./about-me"
 import { Animation } from "../../components/animation"
 import Section from "../../components/section"
 import { Me } from "../../lib/me"
@@ -19,7 +19,7 @@ export default function About(){
       <div className="">
           <Section>
             <div className="flex flex-col md:flex-row gap-5 max-w-7xl">
-              <Details title={Me.title} src={Me.img.src} alt={Me.img.alt} description={Me.description} details={Me.details} downloadbutton={true} url="" urlvisit={false}/>
+              <AboutMe params={Me}/>
               <Skills/></div>
               </Section>
             <ContactForm/>
