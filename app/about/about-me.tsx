@@ -230,7 +230,7 @@ return (
 
                 {status === 'authenticated' ? (
                     <form method="get" 
-                    action="/rossalanford2.pdf" 
+                    action={process.env.RESUME}
                     target="_blank"
                     rel="noopener noreferrer"
                     >
