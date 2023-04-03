@@ -87,7 +87,7 @@ export default function Details({ params }: { params: {
               <div className="flex flex-col gap-10 bg-rossblue dark:bg-rossdarkblue  -ml-2 -mt-2 pt-6 px-5 pb-6"> 
                     <div className="flex shrink gap-8 pb-5 align-top">
                         <div className="relative overflow-hidden px-1 md:px-5 pt-4">
-                          <div className="flex w-[100px] md:w-[200px] overflow-hidden shrink">
+                          <div className="flex overflow-hidden shrink">
                           <Image src={params.img.src} width={262} height={263} alt={params.img.alt} sizes="(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
                           33vw"/>
@@ -110,14 +110,6 @@ export default function Details({ params }: { params: {
                                 <p>{details}</p>
                             </motion.li> ))}
                         </motion.ul>
-                        {params.downloadbutton ? <form method="get" 
-                            action="/rossalanford2.pdf" 
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            >
-                            <button className="bg-rosspurple dark:bg-rossdarkpurple  px-2 drop-shadow-lg hover:scale-[1.01] dark:text-white" 
-                            type="submit">Download my Resume</button>
-                            </form> : <></>}
                         </div>
                       </div>
               <div className="mx-auto max-w-xl overflow-auto">

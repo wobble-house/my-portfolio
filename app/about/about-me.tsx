@@ -155,6 +155,13 @@ export default function AboutMe({params}: { params: {
         );
     }
 
+    const handleConfirm = () => {
+      if (confirm("Please Sign In to Download my Resume")){
+      handleSignIn();
+      } else {
+      console.log("please just sign in")
+      }
+    }
     const handleSignIn = () => {
         resetCookieConsentValue('GA-COOKIES')
         signIn();
@@ -228,7 +235,7 @@ return (
                     rel="noopener noreferrer"
                     >
                     <button type="submit" className="bg-rosspurple dark:bg-rossdarkpurple  px-2 drop-shadow-lg hover:scale-[1.01] dark:text-white"
-                    >Download my Resume</button></form> ) :(<button className="bg-rosspurple dark:bg-rossdarkpurple  px-2 drop-shadow-lg hover:scale-[1.01] dark:text-white" onClick={() => alert("please log in to Download")}
+                    >Download my Resume</button></form> ) :(<button className="bg-rosspurple dark:bg-rossdarkpurple  px-2 drop-shadow-lg hover:scale-[1.01] dark:text-white" onClick={handleConfirm}
                     >Download my Resume</button> ) }
                 </div>
               </div>
@@ -244,7 +251,7 @@ return (
         ):
         (<>
         <div className="blur w-[400px] h-[400px] -mb-[400px] z-0">
-            <p >{FakeMe.description}</p>
+            <p className="text-left text-black dark:text-white">{FakeMe.description}</p>
             </div>
 
             {  isModalOpen ? (
@@ -278,7 +285,7 @@ return (
             onHoverStart={open}
             >
             { /* modal button goes in here */ }
-            <div className="blur">
+            <div className="blur text-left text-black dark:text-white">
                 <p >{FakeMe.description}</p>
             </div>
                 </motion.button>
