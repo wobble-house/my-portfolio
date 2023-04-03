@@ -60,7 +60,7 @@ export default function RootLayout({
       
         <AuthContext>
           <Animation mode={'wait'} initial={false}>
-            <main className="flex flex-col max-w-6xl mx-auto gap-5 justify-evenly align-top">
+            <main className="flex flex-col mx-auto gap-5 justify-evenly align-top">
               <CookieAccept/>
                 <MyNavbar/><MyModal/>
                   {children}

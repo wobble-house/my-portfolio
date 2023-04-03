@@ -250,8 +250,15 @@ return (
             </div>
         ):
         (<>
-        <div className="blur w-[400px] h-[400px] -mb-[400px] z-0">
-            <p className="text-left text-black dark:text-white">{FakeMe.description}</p>
+        <div className="blur w-[275px] md:w-[500px] h-[1000px] -mb-[1000px] md:h-[700px] md:-mb-[700px] z-0">
+        <div className="flex flex-col">
+            <div className="blur text-left text-black dark:text-white">
+                <p >{FakeMe.description}</p>
+            </div>
+            <div className="blur text-left text-black dark:text-white">
+                <p >{FakeMe.description}</p>
+            </div>
+            </div>
             </div>
 
             {  isModalOpen ? (
@@ -261,7 +268,7 @@ return (
             ref={aboutref}
             onClick={close}
             onHoverEnd={close}
-            className="flex w-[400px] h-[400px]"
+            className="flex w-[275px] md:w-[500px] h-[1000px] md:h-[700px]"
             exit="exit"
             >
 
@@ -281,12 +288,17 @@ return (
             <motion.button 
             layout
             whileTap={{scale: 0.95}}
-            className="flex save-button w-[400px] h-[400px]"
+            className="flex save-button w-[275px] md:w-[500px] h-[1000px] md:h-[700px]"
             onHoverStart={open}
             >
             { /* modal button goes in here */ }
+            <div className="flex flex-col" onClick={open}>
             <div className="blur text-left text-black dark:text-white">
                 <p >{FakeMe.description}</p>
+            </div>
+            <div className="blur text-left text-black dark:text-white">
+                <p >{FakeMe.description}</p>
+            </div>
             </div>
                 </motion.button>
                 )}</>
