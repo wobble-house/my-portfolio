@@ -2,6 +2,9 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import remarkGfm from "remark-gfm";
+import remarkBreaks from "remark-breaks";
 
 export default function Details({title, src, alt, details, description, downloadbutton, url, urlvisit}){
     const list = {
@@ -101,9 +104,9 @@ export default function Details({title, src, alt, details, description, download
                         </div>
                       </div>
               <div className="mx-auto max-w-md overflow-auto">
-              <p className="text-left dark:text-white text-overflow">
+              <ReactMarkdown className="paragraph line-break list-inside text-left" remarkPlugins={[remarkGfm, remarkBreaks]}>
                 {description}
-                </p>
+                </ReactMarkdown>
               </div>
               {urlvisit ? <button className="bg-rosspurple dark:bg-rossdarkpurple  p-2 drop-shadow hover:scale-[1.01]">
                 <Link href={url} target="_blank" 

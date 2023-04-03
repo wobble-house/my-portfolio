@@ -113,6 +113,7 @@
   .font-outline-4 {
     -webkit-text-stroke: 4px black;
   }
+  .paragraph p { margin-bottom: 20px; }
 
  
 @keyframes fadeInAnimation {
