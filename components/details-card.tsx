@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
+import Carousel from "react-multi-carousel";
 
 export default function Details({title, src, alt, details, description, downloadbutton, url, urlvisit}){
     const list = {
@@ -21,7 +22,7 @@ export default function Details({title, src, alt, details, description, download
             when: "afterChildren",
           },
         },
-      }
+      };
     
       const item = {
         visible: { 
@@ -37,7 +38,8 @@ export default function Details({title, src, alt, details, description, download
             when: "afterChildren",
           },
         },
-      }
+      };
+
       const listitem = {
         visible: { 
           opacity: 1,
@@ -54,9 +56,30 @@ export default function Details({title, src, alt, details, description, download
             when: "afterChildren",
           },
         },
-      }
+      };
+
+      const responsive = {
+        superLargeDesktop: {
+          // the naming can be any, depends on you.
+          breakpoint: { max: 4000, min: 3000 },
+          items: 5
+        },
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 3
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 3
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 3
+        }
+      };
+      
     return(
-        <div className="flex flex-col max-w-lg relative px-4">
+        <div className="flex flex-col max-w-3xl relative px-4">
             <motion.div 
                 layout
                 initial="hidden"
@@ -103,7 +126,7 @@ export default function Details({title, src, alt, details, description, download
                             </form> : <></>}
                         </div>
                       </div>
-              <div className="mx-auto max-w-md overflow-auto">
+              <div className="mx-auto max-w-xl overflow-auto">
               <ReactMarkdown className="paragraph line-break list-inside text-left" remarkPlugins={[remarkGfm, remarkBreaks]}>
                 {description}
                 </ReactMarkdown>

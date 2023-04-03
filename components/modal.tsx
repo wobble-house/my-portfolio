@@ -3,6 +3,11 @@
 import React from "react"
 import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
+import { Me } from "../lib/me";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import remarkGfm from "remark-gfm";
+import remarkBreaks from "remark-breaks";
+import Link from "next/link";
 
 export default function MyModal () {
     const ref = useRef();
@@ -55,6 +60,21 @@ export default function MyModal () {
             </div>
      </>
     );
+    function ModalInfo(){
+
+        return (
+            <div className="z-[99]">
+                <div className="flex flex-col justify-end p-4 rounded-xl dark:text-white">
+                    <div className="max-h-48 max-w-32 overflow-hidden text-ellipsis">
+                <ReactMarkdown className="paragraph line-break list-inside text-left text-ellipsis overflow-hidden" remarkPlugins={[remarkGfm, remarkBreaks]}>
+                    {Me.description}
+                    </ReactMarkdown></div>
+                    <Link href="/about" onClick={close}>...Read More</Link>
+                    
+                    </div>
+            </div>
+        )
+    }
     }
 
     function useOnClickOutside(ref, handler) {
@@ -78,18 +98,5 @@ export default function MyModal () {
       }
       
 
-function ModalInfo(){
 
-    return (
-        <div className="z-[99]">
-            <div className="p-4 justify-evenly rounded-xl dark:text-white">
-                <p>I am a Full-Stack Developer with experience leading both
-                     front-end and back-end development.
-                     I come from an operations focused background, 
-                     with the past 6 years working for a 501(c)6 not-for-profit 
-                     trade organization centered within the US music business industry</p>
-                </div>
-        </div>
-    )
-}
 
