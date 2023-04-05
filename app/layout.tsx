@@ -10,6 +10,7 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import { cookies } from 'next/headers';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
@@ -33,7 +34,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-
+  const cookieStore = cookies();
+  const data = cookieStore.get('GA-COOKIES');
+  console.log(data)
   return (
 <html lang="en" style={{scrollBehavior:'smooth'}}>
       <link
@@ -61,7 +64,7 @@ export default function RootLayout({
         <AuthContext>
           <Animation mode={'wait'} initial={false}>
             <main className="flex flex-col mx-auto gap-5 justify-evenly align-top">
-              <CookieAccept/>
+              <CookieAccept data={data}/>
                 <MyNavbar/><MyModal/>
                   {children}
             </main>
