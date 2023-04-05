@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHtml5, faCss3, faJs, faReact, faDocker, faPython} from "@fortawesome/free-brands-svg-icons";
 import { motion, AnimatePresence } from "framer-motion";
+import Section from "../../components/section";
 
 export default function Skills(){
     const skillslist = {
@@ -45,9 +46,9 @@ export default function Skills(){
     }
     return(
         
-        <section className="text-white fill-white mx-auto">
+        <Section>
             <AnimatePresence mode="wait">
-            <div className="mx-auto md:px-10 pb-32 pt-10 md:max-w-[160px]">
+            <div className="flex flex-col mx-auto md:px-10 pb-32 pt-8 md:max-w-[160px] text-white text-center justify-center items-center">
         <div className="pl-5 md:pl-0 flex mr-auto -ml-2 drop-shadow-3xl">
             <div className="flex mb-10 bg-rosspurple dark:bg-rossdarkpurple pb-2 pr-2 -mt-2 pt-2">
                 <div className="flex bg-rossblue dark:bg-rossdarkblue pb-2 pr-2 -ml-2 -mt-4 pt-4 relative mr-auto">
@@ -64,7 +65,7 @@ export default function Skills(){
             initial="hidden"
             whileInView="visible"
             variants={skillslist}
-            viewport={{ once: false }}  className="flex flex-col md:content-evenly relative gap-12 justify-evenly ">
+            viewport={{ once: false }}  className="flex flex-col md:content-evenly relative gap-12 justify-evenly mx-auto ">
             
             <motion.div 
                 layout
@@ -90,7 +91,7 @@ export default function Skills(){
             </motion.div>
         </div>
         </AnimatePresence>
-        </section>
+        </Section>
     )
 }
 

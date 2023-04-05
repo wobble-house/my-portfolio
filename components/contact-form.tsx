@@ -121,7 +121,7 @@ export default function ContactForm(){
     return (
       <Section>
               <form
-              className="flex flex-col px-8 py-8 text-white relative">
+              className="flex flex-col px-8 text-white relative">
                 <div className="mb-20 bg-rosspurple dark:bg-rossdarkpurple pb-2 pr-2 -mt-2 pt-2">
                 <motion.div 
                 layout

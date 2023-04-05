@@ -7,6 +7,7 @@ import Image from "next/image";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
+import Section from "../../components/section";
 
 export const FakeMe = {
     id: 1, 
@@ -167,6 +168,7 @@ export default function AboutMe({params}: { params: {
         signIn();
       }
 return (
+  <Section>
     <div className="flex flex-col max-w-3xl relative px-4">
     <motion.div 
         layout
@@ -307,6 +309,7 @@ return (
                 </div>
                 </motion.div>
     </div>
+    </Section>
 )
                         
 }

@@ -1,9 +1,9 @@
 
 import ContactForm from "../../components/contact-form"
-import Skills from "../../components/skills"
+import Skills from "./skills"
 import AboutMe from "./about-me"
 import { Animation } from "../../components/animation"
-import Section from "../../components/section"
+import { Header, Spacer } from "../../components/section"
 import { Me } from "../../lib/me"
 
 export const metadata = {
@@ -15,13 +15,14 @@ export default function About(){
 
   return (
 <Animation mode={'wait'} initial={true}>
-    <div className="mx-auto justify-center text-center relative -mt-48">
+    <div className="mx-auto justify-center text-center relative pb-32">
       <div className="">
-          <Section>
+        <Header/>
             <div className="flex flex-col md:flex-row gap-5 max-w-7xl">
               <AboutMe params={Me}/>
-              <Skills/></div>
-              </Section>
+              <Skills/>
+              </div>
+              <Spacer/>
             <ContactForm/>
         </div>
       </div>
