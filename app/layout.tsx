@@ -59,6 +59,7 @@ export default function RootLayout({
 <body className="min-h-screen mx-auto">
       <GABody/>
       <AuthContextProvider>
+        <Footer color={'white'}/>
           <Animation mode={'wait'} initial={false}>
             <main className="flex flex-col mx-auto gap-5 justify-evenly align-top">
               <CookieAccept data={data}/>
@@ -66,7 +67,7 @@ export default function RootLayout({
                   {children}
             </main>
             </Animation>
-          <Footer color={'white'}/>
+
         </AuthContextProvider>
         </body>
     </html>

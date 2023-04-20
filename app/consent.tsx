@@ -33,7 +33,7 @@ dangerouslySetInnerHTML={{
 }}></Script>
   );
 else if (cookieStatus?.value === 'false') return (
-  <></>
+  <span></span>
 )
 }
 
@@ -67,7 +67,7 @@ else if (cookieStatus?.value === 'true') return (
         </noscript>
   )
   else if (cookieStatus?.value === 'false') return (
-    <></>
+    <span></span>
   )
 }
 

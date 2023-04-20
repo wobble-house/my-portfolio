@@ -10,7 +10,7 @@ import { ThemeToggle } from "../components/theme-switcher";
 export default function Footer({color}:{color: string}){
     const textcolor = `text-${color}`
     return (
-        <div className="w-full flex bottom-0 bg-black  mx-auto justify-center fixed py-2 z-50">
+        <div className="w-full flex bottom-0 bg-black mx-auto justify-center fixed py-2 z-50">
             <div className="ml-2 my-auto">
         <ThemeToggle mobile={false}/>
         </div>
