@@ -18,8 +18,9 @@ export function GAScript(){
       `
     }}></Script> 
   );
-  else if (cookieStatus?.value === 'true') return (
-<Script 
+  else return (
+    <>
+    {cookieStatus.value === 'true' ? <Script 
 id="google-tag-manager" 
 strategy="afterInteractive"
 dangerouslySetInnerHTML={{
@@ -30,10 +31,11 @@ dangerouslySetInnerHTML={{
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
   `
-}}></Script>
-  );
-else if (cookieStatus?.value === 'false') return (
-  <span></span>
+}}></Script> : 
+<>
+</>
+}
+</>
 )
 }
 
@@ -54,7 +56,9 @@ if (!cookieStatus) return (
       `
     }}></Script> 
 ) 
-else if (cookieStatus?.value === 'true') return (
+else return (
+<>
+{cookieStatus.value === 'true' ?
 <noscript>
           <iframe 
         src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
@@ -64,12 +68,7 @@ else if (cookieStatus?.value === 'true') return (
           display: 'none',
           visibility: 'hidden'}}>
         </iframe>
-        </noscript>
+        </noscript> : <></> }
+        </>
   )
-  else if (cookieStatus?.value === 'false') return (
-    <span></span>
-  )
-}
-
-
-
+        }
