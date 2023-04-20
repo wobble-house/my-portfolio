@@ -39,7 +39,7 @@ export function ProjectList({name, data}){
                 viewport={{ once: false }}
                 className="flex flex-wrap gap-5 mx-auto max-w-5xl text-center place-content-center z-30">
                   {data.map(data => (
-                      <ProjectCard key={data.name} params={data}/>
+                      <ProjectCard key={data.title} params={data}/>
                   ))}
               </motion.ul>
               </div>
@@ -182,7 +182,7 @@ else return (
                         <h2 className="text-xl uppercase font-bold text-left">{params.title}</h2>
                     </div>
                   </div>
-                <div className="bg-zinc-50 h-32 overflow-hidden relative mt-3">
+                <div className="bg-zinc-50 h-32 w-full overflow-hidden relative mt-3">
                   <WebScreenshot url={params.url} name={params.title}/>
                 </div>
                 </div>

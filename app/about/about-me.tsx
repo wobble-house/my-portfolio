@@ -1,13 +1,17 @@
 'use client';
 import { motion } from "framer-motion";
+import { useRouter } from 'next/navigation';
 import { useState, useRef, useEffect } from "react";
 import { resetCookieConsentValue } from "react-cookie-consent";
-import { useSession, signIn } from "next-auth/react"
 import Image from "next/image";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
 import Section from "../../components/section";
+import { getAuth } from 'firebase/auth';
+import firebase_app from '../../utils/firebase/config';
+
+const auth = getAuth(firebase_app);
 
 export const FakeMe = {
     id: 1, 
@@ -30,7 +34,7 @@ export default function AboutMe({params}: { params: {
     description: string,
     details: string[],
    }}){
-    const { data: session, status } = useSession()
+    const router = useRouter();
     const aboutref = useRef();
     const [isModalOpen, setModalOpen] = useState(false)
     const close = () => setModalOpen(false);
@@ -165,7 +169,7 @@ export default function AboutMe({params}: { params: {
     }
     const handleSignIn = () => {
         resetCookieConsentValue('GA-COOKIES')
-        signIn();
+        router.push('/signin')
       }
 return (
   <Section>
@@ -199,7 +203,7 @@ return (
                 variants={detailslist} className="text-left list-disc dark:text-white ">
                
                
-                {status === 'authenticated' ? (
+                {auth.currentUser != null ? (
                     <>
                     {params.details.map((details, index ) => (
                         <motion.li
@@ -230,7 +234,7 @@ return (
                 </motion.ul>
 
 
-                {status === 'authenticated' ? (
+                {auth.currentUser != null ? (
                     <form method="get" 
                     action={process.env.RESUME}
                     target="_blank"
@@ -243,7 +247,7 @@ return (
               </div>
       <div className="mx-auto ">
 
-      {status === 'authenticated' ? 
+      {auth.currentUser != null ? 
       (
         <div className="flex relative">
               <ReactMarkdown className="paragraph line-break list-inside text-left text-black dark:text-white relative" remarkPlugins={[remarkGfm, remarkBreaks]}>

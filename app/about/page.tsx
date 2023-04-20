@@ -1,10 +1,10 @@
-
 import ContactForm from "../../components/contact-form"
 import Skills from "./skills"
 import AboutMe from "./about-me"
 import { Animation } from "../../components/animation"
 import { Header, Spacer } from "../../components/section"
 import { Me } from "../../lib/me"
+import MyNavbar from "../../components/navbar"
 
 export const metadata = {
   title: 'About Me',
@@ -14,6 +14,8 @@ export const metadata = {
 export default function About(){
 
   return (
+    <>
+    <MyNavbar/>
 <Animation mode={'wait'} initial={true}>
     <div className="mx-auto justify-center text-center relative pb-32">
       <div className="">
@@ -27,5 +29,6 @@ export default function About(){
         </div>
       </div>
 </Animation>
+</>
   )
 }

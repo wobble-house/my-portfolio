@@ -2,6 +2,7 @@ import { ProjectList } from "./projects"
 import { Animation } from "../../components/animation"
 import { professional, personal } from "../../lib/projects";
 import { Header, Spacer } from "../../components/section";
+import MyNavbar from "../../components/navbar";
 
 export const metadata = {
   title: 'Projects',
@@ -10,6 +11,8 @@ export const metadata = {
 
 export default function Projects() {
   return (
+    <>
+    <MyNavbar/>
     <Animation mode={'wait'} initial={true}>
       <div className="mx-auto max-w-3xl justify-center text-center pb-48">
         <Header/>
@@ -18,5 +21,6 @@ export default function Projects() {
       <ProjectList name={"Personal"} data={personal}/>
       </div>
       </Animation>
+      </>
   )
 }

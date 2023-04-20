@@ -1,4 +1,5 @@
 import { NameLarge } from "../components/name"
+import MyNavbar from '../components/navbar'
 
 export const metadata = {
   title: 'Home',
@@ -8,8 +9,11 @@ export const metadata = {
 export default async function Home() {
 
   return (
+    <>
+    <MyNavbar/>
       <div className="max-w-3xl py-20 mx-auto">
         <NameLarge/>
       </div>
+      </>
   )
 }

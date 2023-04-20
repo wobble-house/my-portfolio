@@ -1,7 +1,6 @@
 'use client';
 import Footer from './footer'
 import './globals.css'
-import AuthContext from '../components/next-auth-provider'
 import { ThemeToggle } from '../components/theme-switcher'
 import MyNavbar from '../components/navbar'
 import ChatModal from '../components/modal'
@@ -40,9 +39,6 @@ export default function GlobalError({
       />
       <link rel="icon" href="/favicon/rossalanford.ico" />
 <body className="min-h-screen">
-      
-        <AuthContext>
-
             <main className="md:flex flex-row max-w-7xl mx-auto gap-5 justify-evenly align-top">
                 <MyNavbar></MyNavbar>
         <h2 className="text-center">Something went wrong!</h2>
@@ -55,12 +51,8 @@ export default function GlobalError({
 <div className="absolute top-1 left-8 md:invisible">
   <ThemeToggle mobile/>
 </div>
-
 <ChatModal/>
-
 <Footer color={'white'}/>
-
-</AuthContext>
 </body>
 </html>
 )

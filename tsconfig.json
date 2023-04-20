@@ -30,7 +30,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "pages/auth/signin"  ],
+    "utils/**/*.ts",
+    "utils/**/*.tsx",
+    "utils/**/*.js", ],
   "exclude": [
     "node_modules"
   ]
