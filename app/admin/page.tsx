@@ -1,19 +1,22 @@
 'use client';
 import React from "react";
-import { useAuthContext } from "../../utils/context/AuthContext";
 import { useRouter } from "next/navigation";
 import MyNavbar from "../../components/navbar";
+import { getAuth } from 'firebase/auth';
+import firebase_app from '../../utils/firebase/config';
+import { ThemeToggle } from "../../components/theme-switcher";
+
+const auth = getAuth(firebase_app);
+
 export default function Page() {
-    const { user } = useAuthContext()
+
     const router = useRouter()
 
-    React.useEffect(() => {
-        if (user == null) router.push("/")
-    }, [user])
-
+    if (auth.currentUser != null)
     return (
         <>
     <MyNavbar/>
-    <h1>Only logged in users can view this page</h1>
+    <h1 className="my-64">Only logged in users can view this page</h1>
     </>);
+    else router.push('/')
 }

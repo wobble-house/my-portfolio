@@ -6,7 +6,7 @@ import { faSun, faMoon
  } from "@fortawesome/free-solid-svg-icons";
 
 export function ThemeToggle({mobile}:{mobile: boolean}) {
-    const [isEnabled, setIsEnabled] = useState(false);
+    const [isEnabled, setIsEnabled] = useState(null);
 
     useEffect(() => {
         // Pass in the isEnabled state

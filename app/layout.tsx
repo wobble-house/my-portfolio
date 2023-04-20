@@ -66,8 +66,6 @@ export default function RootLayout({
                   {children}
             </main>
             </Animation>
-          
-
           <Footer color={'white'}/>
         </AuthContextProvider>
         </body>
