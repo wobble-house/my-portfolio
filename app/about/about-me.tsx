@@ -21,7 +21,8 @@ export const FakeMe = {
         alt:"Ross Alan Ford Headshot"
     }, 
     details:["Name: Ross Ford","Pronoun: Ho/Hohoho","Height: 9'9", "Weight: 999lbs","Other: 99-0"], 
-    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." }
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." 
+  }
 
 
 export default function AboutMe({params}: { params: { 
@@ -41,55 +42,6 @@ export default function AboutMe({params}: { params: {
     const open = () => setModalOpen(true);
     useOnClickOutside(aboutref, () => setModalOpen(false));
     
-    const dropIn = {
-        hidden: {
-            opacity: 0,
-            scale: 0,
-            transition: {
-                duration: 3,
-                type: "spring",
-                damping: 40,
-                stiffness: 300,
-            },
-        },
-        visible: {
-            opacity: 1,
-            scale: 1,
-            transition: {
-                duration: 2,
-                type: "spring",
-                damping: 40,
-                stiffness: 300,
-            }
-        },
-        exit: {
-            opacity: 0,
-            scale:0
-        },
-    };
-    const item = {
-        visible: { 
-        opacity: 1,
-        scale: 1,
-        y: 0,
-        transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.4,
-        },
-        },
-        hidden: { 
-        opacity: 0,
-        scale: 0,
-        y:-100,
-        transition: {
-            when: "afterChildren",
-            staggerChildren: 0.4,
-        },
-        },
-        exit: {
-        opacity: 0,
-    },
-    }
     const detailslist = {
         visible: { 
           opacity: 1,
@@ -161,10 +113,10 @@ export default function AboutMe({params}: { params: {
     }
 
     const handleConfirm = () => {
-      if (confirm("Please Sign In to Download my Resume")){
+      if (confirm("Please Sign Up or Sign In to Download my Resume")){
       handleSignIn();
       } else {
-      console.log("please just sign in")
+      console.log("please just sign up")
       }
     }
     const handleSignIn = () => {

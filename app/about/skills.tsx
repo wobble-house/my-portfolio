@@ -355,10 +355,10 @@ export function OtherSkills(){
                                 <motion.div 
                                 layout
                                 variants={item} 
-                                viewport={{ once: false }} title="Nextjs" className="flex bg-rosspurple dark:bg-rossdarkpurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
+                                viewport={{ once: false }} title="Nextjs" className="flex bg-rosspurple dark:bg-rossdarkpurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center p-3">
                                     <Image src={"/icons/nextjs-icon.png"} 
-                                        width={40} 
-                                        height={39} 
+                                        width={60} 
+                                        height={60} 
                                         alt="nextjs logo" 
                                         sizes="(max-width: 768px) 100vw,
                                                     (max-width: 1200px) 50vw,
