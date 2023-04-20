@@ -1,6 +1,6 @@
 import { GAScript, GABody } from './consent'
 import { CookieAccept } from '../components/cookie-consent'
-import { Animation } from '../components/animation'
+import { Animation } from '../utils/animation/animation'
 import Footer from './footer'
 import './globals.css'
 import MyModal from '../components/modal'

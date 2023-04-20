@@ -1,5 +1,5 @@
 import { ProjectList } from "./projects"
-import { Animation } from "../../components/animation"
+import { Animation } from "../../utils/animation/animation"
 import { professional, personal } from "../../lib/projects";
 import { Header, Spacer } from "../../components/section";
 import MyNavbar from "../../components/navbar";
