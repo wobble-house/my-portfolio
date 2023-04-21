@@ -1,7 +1,6 @@
 'use client';
 import Footer from './footer'
 import './globals.css'
-import { ThemeToggle } from '../components/theme-switcher'
 import MyNavbar from '../components/navbar'
 import ChatModal from '../components/modal'
 import LoginButton from '../components/login'
@@ -49,7 +48,7 @@ export default function GlobalError({
 <LoginButton/>
 
 <div className="absolute top-1 left-8 md:invisible">
-  <ThemeToggle mobile/>
+
 </div>
 <ChatModal/>
 <Footer color={'white'}/>

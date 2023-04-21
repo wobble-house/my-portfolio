@@ -3,7 +3,7 @@ import { NameLarge } from "../../components/name";
 import SignUpForm from "./signup";
 
 export default function Page() {
-   
+
     
     return (
         <>

@@ -24,39 +24,15 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'http',
-        hostname: 'www.rossalanford.com',
+        hostname: '**.rossalanford.com',
         port: '80',
-        pathname: '/***',
-      },
-      {
-        protocol: 'http',
-        hostname: 'rossalanford.com',
-        port: '80',
-        pathname: '/***',
-      },
-      {
-        protocol: 'http',
-        hostname: 'dev.rossalanford.com',
-        port: '80',
-        pathname: '/***',
+        pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: 'www.rossalanford.com',
+        hostname: '**.rossalanford.com',
         port: '443',
-        pathname: '/***',
-      },
-      {
-        protocol: 'https',
-        hostname: 'rossalanford.com',
-        port: '443',
-        pathname: '/***',
-      },
-      {
-        protocol: 'https',
-        hostname: 'dev.rossalanford.com',
-        port: '443',
-        pathname: '/***',
+        pathname: '/**',
       },
       {
         protocol: 'https',
@@ -66,7 +42,6 @@ module.exports = {
       },
     ],
     dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; sandbox;",
     minimumCacheTTL: 60,
 },
   experimental: {

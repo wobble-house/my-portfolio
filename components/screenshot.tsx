@@ -13,7 +13,7 @@ export const WebScreenshot = ({ url, name }) => {
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
-              className="justify-center"
+              className="justify-center" priority
               /> 
               </div>
   )
@@ -30,7 +30,7 @@ export const WebScreenshotDetails = ({ url, name }) => {
               alt={`${url} screenshot`}
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
-              33vw"
+              33vw" priority
               /> 
               </div>
   )

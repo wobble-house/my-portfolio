@@ -1,4 +1,3 @@
-'use client'
 import React from "react";
 import MyNavbar from "../../components/navbar";
 import { NameLarge } from "../../components/name";
