@@ -1,6 +1,8 @@
 import "server-only";
 import { NameLarge } from "../components/name"
 import MyNavbar from '../components/navbar'
+import { Suspense } from 'react'
+import Loading from './loading'
 
 export const metadata = {
   title: 'Home',
@@ -11,10 +13,15 @@ export default async function Home() {
 
   return (
     <>
-    <MyNavbar/>
+
+    <MyNavbar/>    
       <div className="max-w-3xl py-20 mx-auto">
         <NameLarge/>
+        <Suspense fallback={<Loading/>}>
+
+        </Suspense>
       </div>
+     
       </>
   )
 }

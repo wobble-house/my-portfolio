@@ -1,4 +1,3 @@
-import "server-only";
 import ContactForm from "../../components/contact-form"
 import Skills from "./skills"
 import AboutMe from "./about-me"
@@ -6,6 +5,8 @@ import { Animation } from "../../utils/animation/animation"
 import { Header, Spacer } from "../../components/section"
 import { Me } from "../../lib/me"
 import MyNavbar from "../../components/navbar"
+import { Suspense } from 'react'
+import Loading from '../loading'
 
 export const metadata = {
   title: 'About Me',
@@ -16,8 +17,9 @@ export default function About(){
 
   return (
     <>
+  
     <MyNavbar/>
-<Animation mode={'wait'} initial={true}>
+<Animation mode={'wait'} initial={true}><Suspense fallback={<Loading/>}>
     <div className="mx-auto justify-center text-center relative pb-32">
       <div className="">
         <Header/>
@@ -28,7 +30,7 @@ export default function About(){
               <Spacer/>
             <ContactForm/>
         </div>
-      </div>
+      </div></Suspense>
 </Animation>
 </>
   )
