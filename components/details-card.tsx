@@ -88,7 +88,7 @@ export default function Details({ params }: { params: {
                     <div className="flex shrink gap-8 pb-5 align-top">
                         <div className="relative overflow-hidden px-1 md:px-5 pt-4">
                           <div className="flex overflow-hidden w-full h-full shrink">
-                          <Image src={params.img.src} width={262} height={263} alt={params.img.alt} sizes="(max-width: 768px) 100vw,
+                          <Image src={params.img.src} width={1024} height={768} alt={params.img.alt} sizes="(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
                           33vw"/>
                           </div>
