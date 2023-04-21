@@ -1,3 +1,4 @@
+import "server-only";
 import ContactForm from "../../components/contact-form"
 import Skills from "./skills"
 import AboutMe from "./about-me"

@@ -1,3 +1,4 @@
+import "server-only";
 import MyNavbar from "../../components/navbar";
 import { NameLarge } from "../../components/name";
 import SignUpForm from "./signup";

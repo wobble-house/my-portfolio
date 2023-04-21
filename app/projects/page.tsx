@@ -1,3 +1,4 @@
+import "server-only";
 import { ProjectList } from "./projects"
 import { Animation } from "../../utils/animation/animation"
 import { professional, personal } from "../../lib/projects";

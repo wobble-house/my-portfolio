@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import MyNavbar from "../../components/navbar";
 import { getAuth } from 'firebase/auth';
 import firebase_app from '../../utils/firebase/config';
-import { ThemeToggle } from "../../components/theme-switcher";
 
 const auth = getAuth(firebase_app);
 

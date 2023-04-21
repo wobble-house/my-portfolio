@@ -1,6 +1,6 @@
+import "server-only";
 import { NameLarge } from "../components/name"
 import MyNavbar from '../components/navbar'
-import { ThemeToggle } from "../components/theme-switcher"
 
 export const metadata = {
   title: 'Home',
