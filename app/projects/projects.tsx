@@ -182,7 +182,7 @@ else return (
                         <h2 className="text-xl uppercase font-bold text-left">{params.title}</h2>
                     </div>
                   </div>
-                <div className="bg-zinc-50 h-32 w-full overflow-hidden relative mt-3">
+                <div className="bg-zinc-50 h-32 overflow-hidden relative mt-3">
                   <WebScreenshot url={params.url} name={params.title}/>
                 </div>
                 </div>
