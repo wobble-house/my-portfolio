@@ -17,7 +17,7 @@ export const FakeMe = {
     id: 1, 
     title:"About Me", 
     img: { 
-        src:"/images/Ross.jpg", 
+        src:"/images/Ross.png", 
         alt:"Ross Alan Ford Headshot"
     }, 
     details:["Name: Ross Ford","Pronoun: Ho/Hohoho","Height: 9'9", "Weight: 999lbs","Other: 99-0"], 

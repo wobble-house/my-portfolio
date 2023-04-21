@@ -6,7 +6,7 @@ export const WebScreenshot = ({ url, name }) => {
   return (
     <div className="h-[162px] w-[216px]">
             <Image
-              src={`/images/${cleanname}.jpg`}
+              src={`/images/${cleanname}.png`}
               height={768}
               width={1024}
               alt={`${url} screenshot`}
@@ -24,7 +24,7 @@ export const WebScreenshotDetails = ({ url, name }) => {
   return (
     <div className="h-[225px] w-[300px]">
             <Image
-              src={`/images/${cleanname}.jpg`}
+              src={`/images/${cleanname}.png`}
               height={768}
               width={1024}
               alt={`${url} screenshot`}
