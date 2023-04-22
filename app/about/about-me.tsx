@@ -10,6 +10,7 @@ import remarkBreaks from "remark-breaks";
 import Section from "../../components/section";
 import { getAuth } from 'firebase/auth';
 import firebase_app from '../../utils/firebase/config';
+import ImageWithFallback from "../../components/image-handler";
 
 const auth = getAuth(firebase_app);
 
@@ -141,10 +142,8 @@ return (
       <div className="flex flex-col gap-10 bg-rossblue dark:bg-rossdarkblue  -ml-2 -mt-2 pt-6 px-5 pb-6"> 
             <div className="flex shrink gap-8 pb-5 align-top">
                 <div className="relative px-1 md:px-5 pt-4">
-                  <div className="flex shrink">
-                  <Image src={params.img.src} width={262} height={263} alt={params.img.alt} sizes="(max-width: 768px) 100vw,
-                  (max-width: 1200px) 50vw,
-                  33vw" />
+                  <div className="flex w-32 h-48 md:w-64 md:h-72">
+                      <ImageWithFallback src={params.img.src} alt={params.img.alt} fallbackSrc={'/images/oof.png'}/>
                   </div>
                 </div>
                 <div className="flex flex-col justify-evenly">

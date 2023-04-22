@@ -14,7 +14,8 @@ module.exports = {
     domains: [
       'www.rossalanford.com',
       'rossalanford.com',
-      'dev.rossalanford.com'
+      'dev.rossalanford.com',
+      's3.amazonaws.com'
     ],
     remotePatterns: [
       {
