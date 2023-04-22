@@ -29,8 +29,13 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "app/**/*.tsx",
+    "lib/**/*.tsx",
     ".next/types/**/*.ts",
-    "pages/auth/signin"  ],
+    "utils/**/*.ts",
+    "utils/**/*.tsx",
+    "utils/**/*.js", 
+    "components/getMultiple.tsx", ],
   "exclude": [
     "node_modules"
   ]

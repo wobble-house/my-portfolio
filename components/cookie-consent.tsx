@@ -20,6 +20,7 @@ export function CookieAccept({data}){
         } 
       else {
         console.log("Alrighty!");
+        resetCookieConsentValue('_ga');
         router.refresh();
         } 
       } 

@@ -14,7 +14,6 @@ export default function MyNavbar() {
   const handleClickInside = () => {
     setNavbar(!navbar)
   }
-  
   useOnClickOutside(Navref, handleClickOutside)
   const list = {
     visible: { 
@@ -124,7 +123,7 @@ export default function MyNavbar() {
                 rounded
                 dark:text-white
                 ">
-                  <Link href="/about" onClick={() => setNavbar(false)}>
+                  <Link href="/about" onClick={() => setNavbar(false)} prefetch={false}>
                   ABOUT
                   </Link>
                 </li>
@@ -141,7 +140,7 @@ export default function MyNavbar() {
                 rounded
                 dark:text-white
                 ">
-                  <Link href="/projects" onClick={() => setNavbar(false)}>
+                  <Link href="/projects" onClick={() => setNavbar(false)} prefetch={false}>
                   Projects
                   </Link>
                 </li>

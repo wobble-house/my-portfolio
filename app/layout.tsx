@@ -1,16 +1,15 @@
 import { GAScript, GABody } from './consent'
 import { CookieAccept } from '../components/cookie-consent'
-import { Animation } from '../components/animation'
+import { Animation } from '../utils/animation/animation'
 import Footer from './footer'
 import './globals.css'
-import AuthContext from '../components/next-auth-provider'
-import MyNavbar from '../components/navbar'
 import MyModal from '../components/modal'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { cookies } from 'next/headers';
+import { AuthContextProvider } from '../utils/context/AuthContext'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
@@ -59,19 +58,16 @@ export default function RootLayout({
       <GAScript/>
 <body className="min-h-screen mx-auto">
       <GABody/>
-      
-        <AuthContext>
+      <AuthContextProvider>
+        <Footer color={'white'}/>
           <Animation mode={'wait'} initial={false}>
             <main className="flex flex-col mx-auto gap-5 justify-evenly align-top">
               <CookieAccept data={data}/>
-                <MyNavbar/><MyModal/>
+                <MyModal/>
                   {children}
             </main>
             </Animation>
-          
-
-          <Footer color={'white'}/>
-        </AuthContext>
+        </AuthContextProvider>
         </body>
     </html>
   )

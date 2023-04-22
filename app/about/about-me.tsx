@@ -1,23 +1,28 @@
 'use client';
 import { motion } from "framer-motion";
+import { useRouter } from 'next/navigation';
 import { useState, useRef, useEffect } from "react";
 import { resetCookieConsentValue } from "react-cookie-consent";
-import { useSession, signIn } from "next-auth/react"
 import Image from "next/image";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
 import Section from "../../components/section";
+import { getAuth } from 'firebase/auth';
+import firebase_app from '../../utils/firebase/config';
+
+const auth = getAuth(firebase_app);
 
 export const FakeMe = {
     id: 1, 
     title:"About Me", 
     img: { 
-        src:"/images/Ross.jpg", 
+        src:"/images/Ross.png", 
         alt:"Ross Alan Ford Headshot"
     }, 
-    details:["Name: Ross Ford","Pronoun: Ho/Hohoho","Height: 9'9", "Weight: 999lbs","Other: 99-0"], 
-    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." }
+    details:["Name: Ross Ford","Pronouns: Ho/Hohoho","Height: 9'9", "Weight: 999lbs","Other: 99-0"], 
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." 
+  }
 
 
 export default function AboutMe({params}: { params: { 
@@ -30,62 +35,13 @@ export default function AboutMe({params}: { params: {
     description: string,
     details: string[],
    }}){
-    const { data: session, status } = useSession()
+    const router = useRouter();
     const aboutref = useRef();
     const [isModalOpen, setModalOpen] = useState(false)
     const close = () => setModalOpen(false);
     const open = () => setModalOpen(true);
     useOnClickOutside(aboutref, () => setModalOpen(false));
     
-    const dropIn = {
-        hidden: {
-            opacity: 0,
-            scale: 0,
-            transition: {
-                duration: 3,
-                type: "spring",
-                damping: 40,
-                stiffness: 300,
-            },
-        },
-        visible: {
-            opacity: 1,
-            scale: 1,
-            transition: {
-                duration: 2,
-                type: "spring",
-                damping: 40,
-                stiffness: 300,
-            }
-        },
-        exit: {
-            opacity: 0,
-            scale:0
-        },
-    };
-    const item = {
-        visible: { 
-        opacity: 1,
-        scale: 1,
-        y: 0,
-        transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.4,
-        },
-        },
-        hidden: { 
-        opacity: 0,
-        scale: 0,
-        y:-100,
-        transition: {
-            when: "afterChildren",
-            staggerChildren: 0.4,
-        },
-        },
-        exit: {
-        opacity: 0,
-    },
-    }
     const detailslist = {
         visible: { 
           opacity: 1,
@@ -157,15 +113,15 @@ export default function AboutMe({params}: { params: {
     }
 
     const handleConfirm = () => {
-      if (confirm("Please Sign In to Download my Resume")){
+      if (confirm("Please Sign Up or Sign In to Download my Resume")){
       handleSignIn();
       } else {
-      console.log("please just sign in")
+      console.log("please just sign up")
       }
     }
     const handleSignIn = () => {
         resetCookieConsentValue('GA-COOKIES')
-        signIn();
+        router.push('/signin')
       }
 return (
   <Section>
@@ -184,11 +140,11 @@ return (
         className=" bg-rosspurple dark:bg-rossdarkpurple md:pr-2 pb-2 md:mb-12 shadow-2xl block">
       <div className="flex flex-col gap-10 bg-rossblue dark:bg-rossdarkblue  -ml-2 -mt-2 pt-6 px-5 pb-6"> 
             <div className="flex shrink gap-8 pb-5 align-top">
-                <div className="relative overflow-hidden px-1 md:px-5 pt-4">
-                  <div className="flex w-[100px] md:w-[200px] overflow-hidden shrink">
+                <div className="relative px-1 md:px-5 pt-4">
+                  <div className="flex shrink">
                   <Image src={params.img.src} width={262} height={263} alt={params.img.alt} sizes="(max-width: 768px) 100vw,
                   (max-width: 1200px) 50vw,
-                  33vw"/>
+                  33vw" />
                   </div>
                 </div>
                 <div className="flex flex-col justify-evenly">
@@ -199,7 +155,7 @@ return (
                 variants={detailslist} className="text-left list-disc dark:text-white ">
                
                
-                {status === 'authenticated' ? (
+                {auth.currentUser != null ? (
                     <>
                     {params.details.map((details, index ) => (
                         <motion.li
@@ -230,7 +186,7 @@ return (
                 </motion.ul>
 
 
-                {status === 'authenticated' ? (
+                {auth.currentUser != null ? (
                     <form method="get" 
                     action={process.env.RESUME}
                     target="_blank"
@@ -243,7 +199,7 @@ return (
               </div>
       <div className="mx-auto ">
 
-      {status === 'authenticated' ? 
+      {auth.currentUser != null ? 
       (
         <div className="flex relative">
               <ReactMarkdown className="paragraph line-break list-inside text-left text-black dark:text-white relative" remarkPlugins={[remarkGfm, remarkBreaks]}>

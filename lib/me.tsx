@@ -2,7 +2,7 @@ export const Me = {
     id: 1, 
     title:"About Me", 
     img: { 
-        src:"/images/Ross.jpg", 
+        src:"/images/Ross.png", 
         alt:"Ross Alan Ford Headshot"
     }, 
     details:["Name: Ross Ford","Pronoun: He/Him","Height: 6'4", "Weight: 175lbs","Record: 69-0 (undefeated)"], 
