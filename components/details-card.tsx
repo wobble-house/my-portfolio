@@ -6,9 +6,14 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
 
-export default function Details({ params }: { params: { 
-  id: number,
-  downloadbutton: boolean, 
+export default function Details({ 
+  description,
+  details,
+  img, 
+  title,
+  url,
+  urlvisit,
+}:{ 
   description: string, 
   details: string[],   
   img: { 
@@ -18,7 +23,7 @@ export default function Details({ params }: { params: {
   title: string, 
   url: string, 
   urlvisit: boolean
-}}){
+}){
 
     const list = {
         visible: { 
@@ -77,7 +82,7 @@ export default function Details({ params }: { params: {
                 initial="hidden"
                 animate="visible"
                 variants={item} className=" bg-rosspurple dark:bg-rossdarkpurple mr-auto -ml-4 -mb-2 relative z-30">
-                <h2 className=" relative text-white  text-left px-5 md:text-4xl">{params.title}</h2>
+                <h2 className=" relative text-white  text-left px-5 md:text-4xl">{title}</h2>
               </motion.div>
             <motion.div layout
                 initial="hidden"
@@ -88,7 +93,7 @@ export default function Details({ params }: { params: {
                     <div className="flex shrink gap-8 pb-5 align-top">
                         <div className="relative overflow-hidden px-1 md:px-5 pt-4">
                           <div className="flex overflow-hidden w-full h-full shrink">
-                          <Image src={params.img.src} width={1024} height={768} alt={params.img.alt} sizes="(max-width: 768px) 100vw,
+                          <Image src={img.src} width={1024} height={768} alt={img.alt} sizes="(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
                           33vw"/>
                           </div>
@@ -99,7 +104,7 @@ export default function Details({ params }: { params: {
                         initial="hidden"
                         animate="visible"
                         variants={list} className="text-left list-disc dark:text-white ">
-                            {params.details.map((details, index ) => (
+                            {details.map((details, index ) => (
                                 <motion.li
                                 layout
                                 initial="hidden"
@@ -114,11 +119,11 @@ export default function Details({ params }: { params: {
                       </div>
               <div className="mx-auto max-w-xl overflow-auto">
               <ReactMarkdown className="paragraph line-break list-inside text-left text-black dark:text-white" remarkPlugins={[remarkGfm, remarkBreaks]}>
-                {params.description}
+                {description}
                 </ReactMarkdown>
               </div>
-              {params.urlvisit ? <button className="bg-rosspurple dark:bg-rossdarkpurple  p-2 drop-shadow hover:scale-[1.01]">
-                <Link href={params.url} target="_blank" 
+              {urlvisit ? <button className="bg-rosspurple dark:bg-rossdarkpurple  p-2 drop-shadow hover:scale-[1.01]">
+                <Link href={url} target="_blank" 
                 rel="noopener noreferrer" className="text-white dark:text-white">Visit the Site</Link>
                 </button> : <></>}
               </div>

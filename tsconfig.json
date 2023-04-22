@@ -34,7 +34,7 @@
     ".next/types/**/*.ts",
     "utils/**/*.ts",
     "utils/**/*.tsx",
-    "utils/**/*.js", ],
+    "utils/**/*.js", "components/getMultiple.tsx", ],
   "exclude": [
     "node_modules"
   ]

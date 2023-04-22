@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import Details from "../../components/details-card";
 
-export function ProjectList({name, data}){
-
+export function ProjectList({data}){
+  console.log(data)
   const Projectlist = {
     visible: { 
       opacity: 1,
@@ -28,7 +28,7 @@ export function ProjectList({name, data}){
           <div className="flex flex-col relative">
             <div className="flex bg-rosspurple dark:bg-rossdarkpurple  pr-2 pb-2 mr-auto mb-10 shadow-2xl">
             <div className="flex bg-rossblue dark:bg-rossdarkblue  pr-2 pb-2 -ml-2 -mt-2">
-              <h2 className="text-white text-left bg-rosspurple dark:bg-rossdarkpurple  mr-auto -ml-2 -mt-2 relative px-5">{name}</h2>
+              <h2 className="text-white text-left bg-rosspurple dark:bg-rossdarkpurple  mr-auto -ml-2 -mt-2 relative px-5">Professional</h2>
             </div>
           </div>
               <motion.ul
@@ -38,17 +38,31 @@ export function ProjectList({name, data}){
                 variants={Projectlist}
                 viewport={{ once: false }}
                 className="flex flex-wrap gap-5 mx-auto max-w-5xl text-center place-content-center z-30">
-                  {data.map(data => (
-                      <ProjectCard key={data.title} params={data}/>
-                  ))}
+                 {data.map(docs => (
+                    <ProjectCard 
+                    key={docs.name} 
+                    title={docs.title}
+                    url={docs.url}
+                    details={docs.details}
+                    description={docs.description}
+                    img={docs.img}
+                    urlvisit={false}/>
+                 ))
+                  }
               </motion.ul>
               </div>
               </Section>
   )
 }
 
-export function ProjectCard({params}: { params: { 
-  id: number,
+export function ProjectCard({ 
+  title,
+  url,
+  details,
+  description,
+  img,
+  urlvisit,
+ }:{ 
   title: string,
   url : string,
   details: string[],
@@ -57,9 +71,8 @@ export function ProjectCard({params}: { params: {
     src: string,
     alt: string
   },
-  downloadbutton: boolean,
   urlvisit: boolean
- }}){
+ }){
   const projectref = useRef();
   const [isModalOpen, setModalOpen] = useState(false)
   const close = () => setModalOpen(false);
@@ -138,7 +151,7 @@ export function ProjectCard({params}: { params: {
  if (isModalOpen) return (
 <motion.li
     layout
-    key={params.title} 
+    key={title} 
     variants={item}
     id="project-card" 
     className="fixed top-0 left-0 w-full h-full grow max-h-screen bg-rossdarkblue dark:bg-black bg-opacity-75 dark:bg-opacity-50 z-50 mx-auto place-content-center pt-20 overflow-hidden overscroll-none"
@@ -154,7 +167,12 @@ export function ProjectCard({params}: { params: {
                   animate="visible"
                   exit="exit"
                   >
-                  <Details params={params}/>
+                  <Details description={description}
+                    details={details}
+                    img={img}
+                    title={title}
+                    url={url}
+                    urlvisit={urlvisit} />
                 </motion.div>
                 </div>
                 </motion.li>
@@ -162,7 +180,7 @@ export function ProjectCard({params}: { params: {
 else return (
   <motion.li
     layout
-    key={params.title} 
+    key={title} 
     variants={item}
     id="project-card" 
     className="flex-col project-card hover:scale-105 relative grow shrink overscroll-none"
@@ -179,11 +197,11 @@ else return (
                     <div className="flex-col items-center content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2 p-5">
                       <div className="flex h-8 -ml-8 -mt-8 ">
                           <div className="flex shrink bg-rosspurple dark:bg-rossdarkpurple  text-white px-2">
-                        <h2 className="text-xl uppercase font-bold text-left">{params.title}</h2>
+                        <h2 className="text-xl uppercase font-bold text-left">{title}</h2>
                     </div>
                   </div>
                 <div className="bg-zinc-50 h-32 overflow-hidden relative mt-3">
-                  <WebScreenshot url={params.url} name={params.title}/>
+                  <WebScreenshot url={url} name={title}/>
                 </div>
                 </div>
                 </div>
