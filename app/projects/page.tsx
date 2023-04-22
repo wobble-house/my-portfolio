@@ -10,26 +10,28 @@ import { collection, getFirestore, query, where, getDocs } from "firebase/firest
 async function getProjects({type}:{type: String}){
   const projects = [];
   const db = getFirestore(firebase_app)
-  const q = query(collection(db, "Projects"), where("type", "==", type));
+  const q = query(collection(db, "projects"), where("type", "==", type));
   const querySnapshot = await getDocs(q)
   querySnapshot.forEach(doc => {
-    let projects = doc.data().title;
-    projects.id = doc.id;
-    projects.push(projects);
+    let myprojects = doc.data();
+    myprojects.id = doc.id;
+    projects.push(myprojects)
   });
-  return { projects }
+  return projects
 };
 
 export default async function Projects() {
-
+const professional = await getProjects({type: "professional"})
+const personal = await getProjects({type: "personal"})
   return (
     <>
     <MyNavbar/>
     <Animation mode={'wait'} initial={true}><Suspense fallback={<Loading/>}>
       <div className="mx-auto max-w-3xl justify-center text-center pb-48">
         <Header/>
-      <ProjectList data={getProjects({type: "Professional"})}/>
+      <ProjectList data={professional}/>
       <Spacer/>
+      <ProjectList data={personal}/>
       </div>
       </Suspense>
       </Animation>
