@@ -36,7 +36,6 @@ export default function RootLayout({
 }) {
   const cookieStore = cookies();
   const data = cookieStore.get('GA-COOKIES');
-  console.log(data)
   return (
 <html lang="en" style={{scrollBehavior:'smooth'}}>
       <link
