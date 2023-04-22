@@ -141,7 +141,7 @@ return (
       <div className="flex flex-col gap-10 bg-rossblue dark:bg-rossdarkblue  -ml-2 -mt-2 pt-6 px-5 pb-6"> 
             <div className="flex shrink gap-8 pb-5 align-top">
                 <div className="relative overflow-hidden px-1 md:px-5 pt-4">
-                  <div className="flex w-[100px] h-[100px] md:h-[200px] md:w-[200px] lg:w-[262px] lg:h-[263px] overflow-hidden shrink">
+                  <div className="flex overflow-hidden shrink">
                   <Image src={params.img.src} width={262} height={263} alt={params.img.alt} sizes="(max-width: 768px) 100vw,
                   (max-width: 1200px) 50vw,
                   33vw" />
