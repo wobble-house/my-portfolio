@@ -144,7 +144,7 @@ return (
                   <div className="flex w-[100px] h-[100px] md:h-[200px] md:w-[200px] lg:w-[262px] lg:h-[263px] overflow-hidden shrink">
                   <Image src={params.img.src} width={262} height={263} alt={params.img.alt} sizes="(max-width: 768px) 100vw,
                   (max-width: 1200px) 50vw,
-                  33vw" priority />
+                  33vw" />
                   </div>
                 </div>
                 <div className="flex flex-col justify-evenly">

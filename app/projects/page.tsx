@@ -7,6 +7,11 @@ import Loading from '../loading'
 import firebase_app from "../../utils/firebase/config";
 import { collection, getFirestore, query, where, getDocs } from "firebase/firestore";
 
+export const metadata = {
+  title: 'Projects',
+  description: 'Here are a few projects that Ross has worked on.',
+}
+
 async function getProjects({type}:{type: String}){
   const projects = [];
   const db = getFirestore(firebase_app)
