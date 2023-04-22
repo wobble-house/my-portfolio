@@ -6,7 +6,6 @@ import { useState, useRef, useEffect } from "react";
 import Details from "../../components/details-card";
 
 export function ProjectList({data}){
-  console.log(data)
   const Projectlist = {
     visible: { 
       opacity: 1,
@@ -40,7 +39,7 @@ export function ProjectList({data}){
                 className="flex flex-wrap gap-5 mx-auto max-w-5xl text-center place-content-center z-30">
                  {data.map(docs => (
                     <ProjectCard 
-                    key={docs.name} 
+                    key={docs.id} 
                     title={docs.title}
                     url={docs.url}
                     details={docs.details}

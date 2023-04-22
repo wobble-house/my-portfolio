@@ -112,7 +112,7 @@ export default function Details({
                                 variants={listitem} 
                                 key={index}
                                 className="">
-                                <p>{details}</p>
+                                {details}
                             </motion.li> ))}
                         </motion.ul>
                         </div>
