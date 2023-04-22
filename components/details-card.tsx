@@ -92,7 +92,7 @@ export default function Details({
               <div className="flex flex-col gap-10 bg-rossblue dark:bg-rossdarkblue -ml-2 -mt-2 pt-6 px-5 pb-6"> 
                     <div className="flex shrink gap-8 pb-5 align-top">
                         <div className="relative overflow-hidden px-1 md:px-5 pt-4">
-                          <div className="flex">
+                          <div className="flex max-w-md">
                           <Image src={img.src} width={1024} height={768} alt={img.alt} sizes="(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
                           33vw"/>

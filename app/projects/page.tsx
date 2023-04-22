@@ -1,3 +1,4 @@
+import "server-only"
 import { ProjectList } from "./projects"
 import { Animation } from "../../utils/animation/animation"
 import { Header, Spacer } from "../../components/section";
@@ -6,6 +7,7 @@ import { Suspense } from 'react'
 import Loading from '../loading'
 import firebase_app from "../../utils/firebase/config";
 import { collection, getFirestore, query, where, getDocs } from "firebase/firestore";
+import { cache } from 'react';
 
 export const metadata = {
   title: 'Projects',
