@@ -152,7 +152,7 @@ export function ProjectCard({
     layout
     key={title} 
     variants={item}
-    id="project-card" 
+    id="" 
     className="fixed top-0 left-0 w-full h-full grow max-h-screen bg-rossdarkblue dark:bg-black bg-opacity-75 dark:bg-opacity-50 z-50 mx-auto place-content-center pt-20 overflow-hidden overscroll-none"
     >
       <div className="flex project-card max-w-xl justify-center items-center mx-auto my-auto overscroll-none">
@@ -193,13 +193,13 @@ else return (
                 className="save-button"
                 onClick={!isModalOpen ? open : close }>
                     <div className="flex content-center justify-center  bg-rosspurple  dark:bg-rossdarkpurple w-full h-full relative shadow-3xl">
-                    <div className="flex-col items-center content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2 p-5">
+                    <div className="flex-col items-center content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2 p-5 mb-2">
                       <div className="flex h-8 -ml-8 -mt-8 ">
                           <div className="flex shrink bg-rosspurple dark:bg-rossdarkpurple  text-white px-2">
                         <h2 className="text-xl uppercase font-bold text-left">{title}</h2>
                     </div>
                   </div>
-                <div className="bg-zinc-50 h-32 overflow-hidden relative mt-3">
+                <div className="bg-zinc-50 h-32 w-48 m-5 relative mt-3">
                   <WebScreenshot url={url} name={title}/>
                 </div>
                 </div>

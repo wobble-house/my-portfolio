@@ -14,6 +14,13 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
 
+export const dynamic = 'force-dynamic',
+  dynamicParams = true,
+  revalidate = 0,
+  fetchCache = 'auto',
+  runtime = 'nodejs',
+  preferredRegion = 'auto'
+
 export const metadata = {
   title: {
     default: 'Ross Alan Ford',

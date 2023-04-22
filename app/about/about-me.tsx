@@ -20,7 +20,7 @@ export const FakeMe = {
         src:"/images/Ross.png", 
         alt:"Ross Alan Ford Headshot"
     }, 
-    details:["Name: Ross Ford","Pronoun: Ho/Hohoho","Height: 9'9", "Weight: 999lbs","Other: 99-0"], 
+    details:["Name: Ross Ford","Pronouns: Ho/Hohoho","Height: 9'9", "Weight: 999lbs","Other: 99-0"], 
     description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." 
   }
 
@@ -140,8 +140,8 @@ return (
         className=" bg-rosspurple dark:bg-rossdarkpurple md:pr-2 pb-2 md:mb-12 shadow-2xl block">
       <div className="flex flex-col gap-10 bg-rossblue dark:bg-rossdarkblue  -ml-2 -mt-2 pt-6 px-5 pb-6"> 
             <div className="flex shrink gap-8 pb-5 align-top">
-                <div className="relative overflow-hidden px-1 md:px-5 pt-4">
-                  <div className="flex overflow-hidden shrink">
+                <div className="relative px-1 md:px-5 pt-4">
+                  <div className="flex shrink">
                   <Image src={params.img.src} width={262} height={263} alt={params.img.alt} sizes="(max-width: 768px) 100vw,
                   (max-width: 1200px) 50vw,
                   33vw" />

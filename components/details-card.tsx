@@ -76,7 +76,7 @@ export default function Details({
       };
       
   return (
-        <div className="flex flex-col max-w-3xl relative px-4">
+        <div className="flex flex-col relative px-4">
             <motion.div 
                 layout
                 initial="hidden"
@@ -89,10 +89,10 @@ export default function Details({
                 animate="visible"
                 variants={list}
                 className=" bg-rosspurple dark:bg-rossdarkpurple md:pr-2 pb-2 md:mb-12 shadow-2xl block">
-              <div className="flex flex-col gap-10 bg-rossblue dark:bg-rossdarkblue  -ml-2 -mt-2 pt-6 px-5 pb-6"> 
+              <div className="flex flex-col gap-10 bg-rossblue dark:bg-rossdarkblue -ml-2 -mt-2 pt-6 px-5 pb-6"> 
                     <div className="flex shrink gap-8 pb-5 align-top">
                         <div className="relative overflow-hidden px-1 md:px-5 pt-4">
-                          <div className="flex overflow-hidden w-full h-full shrink">
+                          <div className="flex">
                           <Image src={img.src} width={1024} height={768} alt={img.alt} sizes="(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
                           33vw"/>
