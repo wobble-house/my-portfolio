@@ -122,10 +122,10 @@ export default function Details({
                 {description}
                 </ReactMarkdown>
               </div>
-              {urlvisit ? <button className="bg-rosspurple dark:bg-rossdarkpurple  p-2 drop-shadow hover:scale-[1.01]">
+              <button className={` p-2 drop-shadow hover:scale-[1.01] ${ !urlvisit ?'bg-rosspurple dark:bg-rossdarkpurple':'hidden'}`}>
                 <Link href={url} target="_blank" 
                 rel="noopener noreferrer" className="text-white dark:text-white">Visit the Site</Link>
-                </button> : <></>}
+                </button> 
               </div>
             </motion.div>
             </div>

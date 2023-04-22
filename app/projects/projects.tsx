@@ -25,18 +25,13 @@ export function ProjectList({data}){
   return(
           <Section>
           <div className="flex flex-col relative">
-            <div className="flex bg-rosspurple dark:bg-rossdarkpurple  pr-2 pb-2 mr-auto mb-10 shadow-2xl">
-            <div className="flex bg-rossblue dark:bg-rossdarkblue  pr-2 pb-2 -ml-2 -mt-2">
-              <h2 className="text-white text-left bg-rosspurple dark:bg-rossdarkpurple  mr-auto -ml-2 -mt-2 relative px-5">Professional</h2>
-            </div>
-          </div>
               <motion.ul
                 layout
                 initial="hidden"
                 whileInView="visible"
                 variants={Projectlist}
                 viewport={{ once: false }}
-                className="flex flex-wrap gap-5 mx-auto max-w-5xl text-center place-content-center z-30">
+                className="flex flex-wrap gap-5 mx-auto text-center place-content-center z-30">
                  {data.map(docs => (
                     <ProjectCard 
                     key={docs.id} 
@@ -45,7 +40,7 @@ export function ProjectList({data}){
                     details={docs.details}
                     description={docs.description}
                     img={docs.img}
-                    urlvisit={false}/>
+                    urlvisit={docs.urlvisit}/>
                  ))
                   }
               </motion.ul>
