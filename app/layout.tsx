@@ -1,3 +1,4 @@
+import 'server-only'
 import { GAScript, GABody } from './consent'
 import { CookieAccept } from '../components/cookie-consent'
 import { Animation } from '../utils/animation/animation'
@@ -13,13 +14,6 @@ import { AuthContextProvider } from '../utils/context/AuthContext'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
-
-export const dynamic = 'force-dynamic',
-  dynamicParams = true,
-  revalidate = 0,
-  fetchCache = 'auto',
-  runtime = 'nodejs',
-  preferredRegion = 'auto'
 
 export const metadata = {
   title: {

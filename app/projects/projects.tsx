@@ -1,6 +1,6 @@
 'use client';
 import Section from "../../components/section";
-import { WebScreenshot } from "../../components/screenshot";
+import ImageWithFallback from "../../components/image-handler";
 import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import Details from "../../components/details-card";
@@ -31,7 +31,7 @@ export function ProjectList({data}){
                 whileInView="visible"
                 variants={Projectlist}
                 viewport={{ once: false }}
-                className="flex flex-wrap gap-5 mx-auto text-center place-content-center z-30">
+                className="flex flex-wrap gap-5 mx-auto text-center place-content-center z-30 relative">
                  {data.map(docs => (
                     <ProjectCard 
                     key={docs.id} 
@@ -150,12 +150,12 @@ export function ProjectCard({
     id="" 
     className="fixed top-0 left-0 w-full h-full grow max-h-screen bg-rossdarkblue dark:bg-black bg-opacity-75 dark:bg-opacity-50 z-50 mx-auto place-content-center pt-20 overflow-hidden overscroll-none"
     >
-      <div className="flex project-card max-w-xl justify-center items-center mx-auto my-auto overscroll-none">
+      <div className="flex project-card justify-center items-center mx-auto my-auto overscroll-none">
                   <motion.div
                   layout
                   ref={projectref}
                   onClick={close}
-                  className="flex  mx-auto justify-center content-center items-center "
+                  className="flex  mx-auto justify-center content-center items-center"
                   variants={dropIn}
                   initial="hidden"
                   animate="visible"
@@ -194,8 +194,8 @@ else return (
                         <h2 className="text-xl uppercase font-bold text-left">{title}</h2>
                     </div>
                   </div>
-                <div className="bg-zinc-50 h-32 w-48 m-5 relative mt-3">
-                  <WebScreenshot url={url} name={title}/>
+                <div className="flex bg-zinc-50 m-2 relative mt-3 w-48 h-32 mr-5">
+                  <ImageWithFallback src={img.src} alt={img.alt} fallbackSrc={'/images/oof.png'} />
                 </div>
                 </div>
                 </div>

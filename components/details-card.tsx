@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
+import ImageWithFallback from "./image-handler";
 
 export default function Details({ 
   description,
@@ -90,14 +91,10 @@ export default function Details({
                 variants={list}
                 className=" bg-rosspurple dark:bg-rossdarkpurple md:pr-2 pb-2 md:mb-12 shadow-2xl block">
               <div className="flex flex-col gap-10 bg-rossblue dark:bg-rossdarkblue -ml-2 -mt-2 pt-6 px-5 pb-6"> 
-                    <div className="flex shrink gap-8 pb-5 align-top">
-                        <div className="relative overflow-hidden px-1 md:px-5 pt-4">
-                          <div className="flex max-w-md">
-                          <Image src={img.src} width={1024} height={768} alt={img.alt} sizes="(max-width: 768px) 100vw,
-                          (max-width: 1200px) 50vw,
-                          33vw"/>
+                    <div className="flex grow shrink gap-8 pb-5 align-top">
+                          <div className="relative w-80 h-60 md:w-96 md:h-72 lg:w-[500px] lg:h-[350px] m-3">
+                            <ImageWithFallback src={img.src} alt={img.alt} fallbackSrc={'/images/oof.png'}/>
                           </div>
-                        </div>
                         <div className="flex flex-col justify-evenly">
                         <motion.ul 
                         layout
@@ -117,8 +114,8 @@ export default function Details({
                         </motion.ul>
                         </div>
                       </div>
-              <div className="mx-auto max-w-xl overflow-auto">
-              <ReactMarkdown className="paragraph line-break list-inside text-left text-black dark:text-white" remarkPlugins={[remarkGfm, remarkBreaks]}>
+              <div className="mx-auto overflow-auto">
+              <ReactMarkdown className="paragraph line-break list-inside text-left text-black dark:text-white max-w-2xl" remarkPlugins={[remarkGfm, remarkBreaks]}>
                 {description}
                 </ReactMarkdown>
               </div>
