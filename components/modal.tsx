@@ -36,7 +36,7 @@ export default function MyModal ({children}) {
                 <motion.div
                 ref={ref}
                 onClick={(e) => e.stopPropagation()}
-                className="fixed flex my-auto bg-rossblue dark:bg-rossdarkblue p-5 right-0 shadow-2xl bottom-32 md:right-24 max-w-xl border-r-4 border-b-4 border-rosspurple dark:border-rossdarkpurple mx-auto"
+                className="flex fixed bg-rossblue dark:bg-rossdarkblue border-rosspurple dark:border-rossdarkpurple p-5 right-0 shadow-2xl bottom-32 md:right-24 max-w-xl border-r-4 border-b-4 overflow-hidden"
                 variants={dropIn}
                 initial="hidden"
                 animate="visible"

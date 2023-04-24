@@ -249,3 +249,47 @@ a {
 .dark::before {
   transform: translateX(0);
 }
+
+.bottext pre { 
+  white-space: pre-wrap;
+  list-style: none;
+  padding-left: 0;
+  padding: 0;
+}
+
+.bottext code { 
+  white-space: pre-wrap;
+  list-style: none;
+  padding-left: 0;
+  padding: 0;
+}
+
+.bottext ol { 
+  list-style: none;
+  padding-left: 0;
+  padding: 0;
+}
+
+.bottext li { 
+  margin-top: 1em;
+  margin-bottom:1em;
+  font-weight: 100;
+  font-family: MPLUS1Code;
+}
+
+.bottext p { 
+line-height: normal
+}
+
+.modalinfobg {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.modalinfo {
+  position: absolute;
+  margin: auto;
+  z-index: 99;
+ }

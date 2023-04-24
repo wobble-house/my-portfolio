@@ -37,35 +37,34 @@ export default function Chatbot({interchanges}) {
     scrollDown()
   }
   return (
-<div className="flex flex-col font-mono items-center justify-center z-80 max-w-sm">
-          <form className="flex flex-col w-full" onSubmit={handleSubmit}>
-            <div className="flex flex-col overflow-auto dark:bg-neutral-800 w-full" style={{ height: "60vh", width: "50vw"}}>
+<div className="flex flex-col font-mono items-center justify-center z-80">
+          <form className="flex flex-col max-w-sm" onSubmit={handleSubmit}>
+            <div className="flex flex-col overflow-auto dark:bg-neutral-800 p-2 max-w-sm justify-between" style={{ height: "60vh"}}>
             {interchange.map((chat,i) => (
               chat.owner ? 
-              <div key={i} className = "user flex flex-row my-2 w-full p-2">
+              <div key={i} className = "user flex flex-row my-2  p-2">
               <span className="w-2/3"/>
               <span className="w-1/3 dark:bg-neutral-800 p-1 rounded">
                 <div className="flex-col">
                   <h2 className="text-sm text-neutral-400 dark:text-a2imblue">USERNAME</h2>
-                  <ReactMarkdown className="bottext text-xs dark:text-white whitespace-normal relative" remarkPlugins={[remarkGfm]}>{chat.text}</ReactMarkdown>
+                  <ReactMarkdown className="bottext text-xs dark:text-white " remarkPlugins={[remarkGfm]}>{chat.text}</ReactMarkdown>
                 </div>
-               
               </span>
             </div>
              :   
-              <div key={i} className = "bot  dark:bg-neutral-800 w-3/4  p-2 rounded">
+              <div key={i} className = "bot flex flex-row dark:bg-neutral-800 w-2/3  p-2 rounded">
                 <div className="flex flex-col relative">
                 <h2 className="text-sm animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent">RossBot</h2>
-                <ReactMarkdown className="bottext text-xs dark:text-white whitespace-normal relative" remarkPlugins={[remarkGfm]}>{chat.text}</ReactMarkdown>
+                <ReactMarkdown className="bottext text-xs dark:text-white overflow-auto" remarkPlugins={[remarkGfm]}>{chat.text}</ReactMarkdown>
                 </div>
               </div>
             ))}
             <div id="scrollTo"></div>
             </div>
-            <footer className = "flex flex-row justify-between items-center p-1 w-full">
-            <div className = "flex flex-row justify-between  w-full">
-              <input className = " bg-gray-200 w-2/3 p-2 " placeholder="Type a message" value={userQuestion} onChange={ (e) => { setUserQuestion(e.target.value)}}/>
-              <button className = " bg-rosspurple dark:bg-rossdarkpurple p-2 ml-2 w-1/3  text-white" type="submit"> Send</button>
+            <footer className= "flex flex-row justify-between items-center p-1 w-full bottom-0">
+            <div className= "flex flex-row justify-between  w-full">
+              <input className=" bg-gray-200 w-2/3 p-2 " placeholder="Type a message" value={userQuestion} onChange={ (e) => {setUserQuestion(e.target.value)}}/>
+              <button className=" bg-rosspurple dark:bg-rossdarkpurple p-2 ml-2 w-1/3  text-white" type="submit"> Send</button>
             </div>
             </footer>
           </form>
