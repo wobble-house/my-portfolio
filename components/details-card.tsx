@@ -76,7 +76,7 @@ export default function Details({
       };
       
   if (urlvisit == true) return (
-        <div className="flex flex-col relative px-4">
+        <div className="flex flex-col relative px-4 max-w-sm md:max-w-2xl lg:max-w-6xl">
             <motion.div 
                 layout
                 initial="hidden"
@@ -91,7 +91,7 @@ export default function Details({
                 className=" bg-rosspurple dark:bg-rossdarkpurple md:pr-2 pb-2 md:mb-12 shadow-2xl block">
               <div className="flex flex-col gap-10 bg-rossblue dark:bg-rossdarkblue -ml-2 -mt-2 pt-6 px-5 pb-6"> 
                     <div className="flex grow shrink gap-8 pb-5 align-top">
-                          <div className="relative w-80 h-60 md:w-96 md:h-72 lg:w-[500px] lg:h-[350px] m-3">
+                          <div className="relative w-60 h-40 md:w-96 md:h-72 lg:w-[500px] lg:h-[350px] m-3">
                             <ImageWithFallback src={img.src} alt={img.alt} fallbackSrc={'/images/oof.png'}/>
                           </div>
                         <div className="flex flex-col justify-evenly">

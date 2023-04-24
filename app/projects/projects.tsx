@@ -156,15 +156,15 @@ export function ProjectCard({
                   animate="visible"
                   exit="exit"
                   >
-                    <div className="justify-self-end z-50 relative -mb-10">
-                     <div className=" bg-rosspurple dark:bg-rossdarkpurple pr-1 pb-1">
+                    <button className="justify-self-end z-50 relative -mb-10 hover:scale-105">
+                     <div className=" bg-rosspurple dark:bg-rossdarkpurple pr-1 pb-1 -mt-1">
       <div className="bg-rossblue dark:bg-rossdarkblue pr-1 pb-1 -ml-1 -mt-2 pt-1">
-      <div className="bg-rosspurple dark:bg-rossdarkpurple p-1 -ml-1 -mt-2 text-white">
-      <button className="text-2xl animate-pulse">x</button>
+      <div className="bg-rosspurple dark:bg-rossdarkpurple p-1 -ml-1 -mt-2 text-white pt-1">
+      <span className="text-xl hover:animate-pulse px-1">x</span>
         </div>
         </div>
       </div>
-      </div>
+      </button>
                   <div ref={ref}>
                   <Details 
                   description={description}
