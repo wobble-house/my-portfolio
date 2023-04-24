@@ -67,11 +67,11 @@ export function ProjectCard({
   },
   urlvisit: boolean
  }){
-  const projectref = useRef();
+  const ref = useRef();
   const [isModalOpen, setModalOpen] = useState(false)
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
-  useOnClickOutside(projectref, () => setModalOpen(false));
+  useOnClickOutside(ref, () => setModalOpen(false));
 
   const dropIn = {
       hidden: {
@@ -153,20 +153,30 @@ export function ProjectCard({
       <div className="flex project-card justify-center items-center mx-auto my-auto overscroll-none">
                   <motion.div
                   layout
-                  ref={projectref}
-                  onClick={close}
-                  className="flex  mx-auto justify-center content-center items-center"
+                  className="grid grid-cols-0"
                   variants={dropIn}
                   initial="hidden"
                   animate="visible"
                   exit="exit"
                   >
-                  <Details description={description}
+                    <div className="justify-self-end z-50 relative -mb-10">
+                     <div className=" bg-rosspurple dark:bg-rossdarkpurple pr-1 pb-1">
+      <div className="bg-rossblue dark:bg-rossdarkblue pr-1 pb-1 -ml-1 -mt-2 pt-1">
+      <div className="bg-rosspurple dark:bg-rossdarkpurple p-1 -ml-1 -mt-2 text-white">
+      <button className="text-2xl animate-pulse">x</button>
+        </div>
+        </div>
+      </div>
+      </div>
+                  <div ref={ref}>
+                  <Details 
+                  description={description}
                     details={details}
                     img={img}
                     title={title}
                     url={url}
                     urlvisit={urlvisit} />
+                    </div>
                 </motion.div>
                 </div>
                 </motion.li>
@@ -185,6 +195,7 @@ else return (
                 exit="exit"
                 layout
                 whileTap={{scale: 0.95}}
+                whileHover={{scale: 1.05}}
                 className="save-button"
                 onClick={!isModalOpen ? open : close }>
                     <div className="flex content-center justify-center  bg-rosspurple  dark:bg-rossdarkpurple w-full h-full relative shadow-3xl">
