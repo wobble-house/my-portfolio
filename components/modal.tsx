@@ -3,13 +3,8 @@
 import React from "react"
 import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
-import { Me } from "../lib/me";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import remarkGfm from "remark-gfm";
-import remarkBreaks from "remark-breaks";
-import Link from "next/link";
 
-export default function MyModal () {
+export default function MyModal ({children}) {
     const ref = useRef();
     const [isModalOpen, setModalOpen] = useState(false)
     const close = () => setModalOpen(false);
@@ -47,7 +42,7 @@ export default function MyModal () {
                 animate="visible"
                 exit="exit"
                 >
-                <ModalInfo/>
+                {children}
                 </motion.div>
                  ) : (
                 <motion.button 
@@ -60,22 +55,7 @@ export default function MyModal () {
             </div>
      </>
     );
-    function ModalInfo(){
-
-        return (
-            <div className="z-[99]">
-                <div className="flex flex-col justify-end p-4 rounded-xl dark:text-white">
-                    <div className="max-h-48 max-w-32 overflow-hidden text-ellipsis">
-                <ReactMarkdown className="paragraph line-break list-inside text-left text-ellipsis overflow-hidden" remarkPlugins={[remarkGfm, remarkBreaks]}>
-                    {Me.description}
-                    </ReactMarkdown></div>
-                    <Link href="/about" onClick={close}>...Read More</Link>
-                    
-                    </div>
-            </div>
-        )
-    }
-    }
+};
 
     function useOnClickOutside(ref, handler) {
         useEffect(

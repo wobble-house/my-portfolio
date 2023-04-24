@@ -5,12 +5,15 @@ import { Animation } from '../utils/animation/animation'
 import Footer from './footer'
 import './globals.css'
 import MyModal from '../components/modal'
+import Chatbot from '../components/chatbot'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { cookies } from 'next/headers';
 import { AuthContextProvider } from '../utils/context/AuthContext'
+import firebase_app from "../utils/firebase/config";
+import { collection, getFirestore, query, where, getDocs } from "firebase/firestore";
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
@@ -22,11 +25,34 @@ export const metadata = {
   },
 }
 
-export default function RootLayout({
+async function getData() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/interchanges`, { next: { revalidate: 60 }});
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data');
+  }
+  return res.json();
+}
+
+async function getInterchanges(){
+  const interchanges = [];
+  const db = getFirestore(firebase_app)
+  const q = query(collection(db, "interchanges"));
+  const querySnapshot = await getDocs(q)
+  querySnapshot.forEach(doc => {
+    let myinterchanges = doc.data();
+    myinterchanges.id = doc.id;
+    interchanges.push(myinterchanges)
+  });
+  return interchanges
+};
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const interchanges = await getInterchanges()
   const cookieStore = cookies();
   const data = cookieStore.get('GA-COOKIES');
   return (
@@ -57,7 +83,7 @@ export default function RootLayout({
           <Animation mode={'wait'} initial={false}>
             <main className="flex flex-col mx-auto gap-5 justify-evenly align-top">
               <CookieAccept data={data}/>
-                <MyModal/>
+              <MyModal><Chatbot interchanges={interchanges}></Chatbot></MyModal>
                   {children}
             </main>
             </Animation>
