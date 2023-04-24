@@ -1,5 +1,4 @@
 'use client';
-import Section from "../../components/section";
 import ImageWithFallback from "../../components/image-handler";
 import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
@@ -23,7 +22,6 @@ export function ProjectList({data}){
   }
 
   return(
-          <Section>
           <div className="flex flex-col relative">
               <motion.ul
                 layout
@@ -45,7 +43,6 @@ export function ProjectList({data}){
                   }
               </motion.ul>
               </div>
-              </Section>
   )
 }
 

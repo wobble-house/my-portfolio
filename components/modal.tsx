@@ -31,7 +31,7 @@ export default function MyModal ({children}) {
 
     return (
         <>
-            <div className="flex fixed bottom-20 right-10 w-14 h-14 bg-rosspurple dark:bg-rossdarkpurple border-4 border-rossblue dark:border-rossdarkblue z-[99]">
+            <div className=" flex fixed bottom-20 right-10 w-14 h-14 bg-rosspurple dark:bg-rossdarkpurple border-4 border-rossblue dark:border-rossdarkblue z-[99]">
             {isModalOpen ? (
                 <motion.div
                 ref={ref}
@@ -49,7 +49,7 @@ export default function MyModal ({children}) {
                 whileTap={{scale: 0.95}}
                 className="save-button"
                 onClick={!isModalOpen ? open : close }>
-                <h2 className="text-5xl ml-2 -mt-3 hover:text-black text-white dark:hover:text-white dark:text-black text-center hover:scale-105">   ?   </h2>
+                <h2 className="animate-pulse text-5xl ml-2 -mt-3 hover:text-black text-white text-center hover:scale-105">   ?   </h2>
             </motion.button>
                 )}
             </div>

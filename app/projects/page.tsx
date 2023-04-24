@@ -7,6 +7,7 @@ import { Suspense } from 'react'
 import Loading from '../loading'
 import firebase_app from "../../utils/firebase/config";
 import { collection, getFirestore, query, where, getDocs } from "firebase/firestore";
+import Section from "../../components/section";
 
 export const metadata = {
   title: 'Projects',
@@ -35,19 +36,27 @@ const personal = await getProjects({type: "personal"})
     <Animation mode={'wait'} initial={true}><Suspense fallback={<Loading/>}>
       <div className="flex flex-col mx-auto max-w-4xl justify-center text-center pb-48">
         <Header/>
+        <Section>
+        <div className="flex relative mr-auto">
         <div className="flex bg-rosspurple dark:bg-rossdarkpurple  pr-2 pb-2 mr-auto mb-10 shadow-2xl relative">
             <div className="flex bg-rossblue dark:bg-rossdarkblue  pr-2 pb-2 -ml-2 -mt-2">
               <h2 className="text-white text-left bg-rosspurple dark:bg-rossdarkpurple  mr-auto -ml-2 -mt-2 relative px-5">Professional</h2>
             </div>
           </div>
+          </div>
       <ProjectList data={professional}/>
+      </Section>
       <Spacer/>
+      <Section>
+        <div className="flex relative mr-auto">
       <div className="flex bg-rosspurple dark:bg-rossdarkpurple  pr-2 pb-2 mr-auto mb-10 shadow-2xl">
             <div className="flex bg-rossblue dark:bg-rossdarkblue  pr-2 pb-2 -ml-2 -mt-2">
               <h2 className="text-white text-left bg-rosspurple dark:bg-rossdarkpurple  mr-auto -ml-2 -mt-2 relative px-5">Personal</h2>
             </div>
           </div>
+          </div>
       <ProjectList data={personal}/>
+      </Section>
       </div>
       </Suspense>
       </Animation>
