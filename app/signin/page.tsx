@@ -5,6 +5,11 @@ import SignInForm, { GoogleButton } from "./signin";
 import { Suspense } from 'react'
 import Loading from '../loading'
 
+export const metadata = {
+    title: 'Sign-In',
+    description: 'Sign In to learn more about Ross Alan Ford',
+  }
+
 export default function Page() {
     return (
         <>

@@ -4,7 +4,10 @@ import SignUpForm from "./signup";
 import { GoogleButton } from "../signin/signin";
 import { Suspense } from 'react'
 import Loading from '../loading'
-
+export const metadata = {
+    title: 'Sign-Up',
+    description: 'Sign Up to learn more about Ross Alan Ford',
+  }
 export default function Page() {
     return (
         <>
