@@ -14,6 +14,7 @@ export default function Details({
   title,
   url,
   urlvisit,
+  git
 }:{ 
   description: string, 
   details: string[],   
@@ -24,6 +25,7 @@ export default function Details({
   title: string, 
   url: string, 
   urlvisit: boolean,
+  git: string,
 }){
     const list = {
         visible: { 
@@ -94,7 +96,8 @@ export default function Details({
                           <div className="relative w-60 h-40 md:w-96 md:h-72 lg:w-[500px] lg:h-[350px] m-3">
                             <ImageWithFallback src={img.src} alt={img.alt} fallbackSrc={'/images/oof.png'}/>
                           </div>
-                        <div className="flex flex-col justify-evenly">
+                        <div className="flex flex-col">
+                          <h2>Tech Stack</h2>
                         <motion.ul 
                         layout
                         initial="hidden"
@@ -118,11 +121,16 @@ export default function Details({
                 {description}
                 </ReactMarkdown>
               </div>
+              <div className="flex flex-row gap-10 mx-auto">
               <button className={` p-2 drop-shadow hover:scale-[1.01] bg-rosspurple dark:bg-rossdarkpurple`}>
                 <Link href={url} target="_blank" 
                 rel="noopener noreferrer" className="text-white dark:text-white">Visit the Site</Link>
                 </button> 
-              </div>
+              {git ?  <button className={` p-2 drop-shadow hover:scale-[1.01] bg-rosspurple dark:bg-rossdarkpurple`}>
+                <Link href={git} target="_blank" 
+                rel="noopener noreferrer" className="text-white dark:text-white">Git Repository</Link>
+                </button> : <></>}
+              </div></div>
             </motion.div>
             </div>
     ) 
@@ -145,12 +153,12 @@ export default function Details({
                     <div className="relative w-80 h-60 md:w-96 md:h-72 lg:w-[500px] lg:h-[350px] m-3">
                       <ImageWithFallback src={img.src} alt={img.alt} fallbackSrc={'/images/oof.png'}/>
                     </div>
-                  <div className="flex flex-col justify-evenly">
+                  <div className="flex flex-col">
                   <motion.ul 
                   layout
                   initial="hidden"
                   animate="visible"
-                  variants={list} className="text-left list-disc dark:text-white ">
+                  variants={list} className="text-left list-disc dark:text-white">
                       {details.map((details, index ) => (
                           <motion.li
                           layout
@@ -169,6 +177,10 @@ export default function Details({
           {description}
           </ReactMarkdown>
         </div>
+        {git ?  <button className={` p-2 drop-shadow hover:scale-[1.01] bg-rosspurple dark:bg-rossdarkpurple mx-auto`}>
+                <Link href={git} target="_blank" 
+                rel="noopener noreferrer" className="text-white dark:text-white">Git Repository</Link>
+                </button> : <></>}
         </div>
       </motion.div>
       </div>

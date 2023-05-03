@@ -38,7 +38,8 @@ export function ProjectList({data}){
                     details={docs.details}
                     description={docs.description}
                     img={docs.img}
-                    urlvisit={docs.urlvisit}/>
+                    urlvisit={docs.urlvisit}
+                    git={docs.git}/>
                  ))
                   }
               </motion.ul>
@@ -53,6 +54,7 @@ export function ProjectCard({
   description,
   img,
   urlvisit,
+  git
  }:{ 
   title: string,
   url : string,
@@ -62,7 +64,8 @@ export function ProjectCard({
     src: string,
     alt: string
   },
-  urlvisit: boolean
+  urlvisit: boolean,
+  git: string
  }){
   const ref = useRef();
   const [isModalOpen, setModalOpen] = useState(false)
@@ -172,7 +175,8 @@ export function ProjectCard({
                     img={img}
                     title={title}
                     url={url}
-                    urlvisit={urlvisit} />
+                    urlvisit={urlvisit}
+                    git={git} />
                     </div>
                 </motion.div>
                 </div>
