@@ -98,7 +98,7 @@ export function GoogleButton(){
 <button className="flex content-center items-center gap-3 py-2 pl-2 pr-4 bg-rosspurple dark:bg-rossdarkpurple -mt-2 text-white " onClick={signInGoogle}>
     <div className="relative w-[30px] h-[30px]">
     <ImageWithFallback 
-    src="/icons/google_signin_buttons/web/vector/btn_google_light_normal_ios.svg"
+    src="/icons/google_signin_buttons/web/vector/btn_google_light_normal_ios.svg" alt="Google Logo"
     /></div>
     Sign in With Google
 </button>
