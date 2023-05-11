@@ -23,7 +23,7 @@ export default function SignInForm(){
 
         // else successful
         console.log(result)
-        return router.back();
+        return router.push('/admin');
     }
 
     const item = {

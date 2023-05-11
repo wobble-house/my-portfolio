@@ -15,10 +15,8 @@ export const metadata = {
 }
 
 export default function About(){
-
   return (
     <>
-  
     <MyNavbar/>
 <Animation mode={'wait'} initial={true}><Suspense fallback={<Loading/>}>
     <div className="mx-auto justify-center text-center relative pb-32">
