@@ -14,35 +14,21 @@ import ImageWithFallback from "../../components/image-handler";
 
 const auth = getAuth(firebase_app);
 
-export const FakeMe = {
-    id: 1, 
-    title:"About Me", 
-    img: { 
-        src:"/images/Ross.png", 
-        alt:"Ross Alan Ford Headshot"
-    }, 
-    details:["Name: Ross Ford","Pronouns: Ho/Hohoho","Height: 9'9", "Weight: 999lbs","Other: 99-0"], 
-    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." 
-  }
-
-
-export default function AboutMe({params}: { params: { 
-    id: number,
-    img: { 
-        src: string, 
-        alt: string
-    },
-    title: string,
-    description: string,
-    details: string[],
-   }}){
+export default function AboutMe({visible, hidden}){
     const router = useRouter();
     const aboutref = useRef();
     const [isModalOpen, setModalOpen] = useState(false)
     const close = () => setModalOpen(false);
     const open = () => setModalOpen(true);
     useOnClickOutside(aboutref, () => setModalOpen(false));
-    
+    let visibledata = {};
+    for(let i = 0; i < visible.length; i++ ) {
+      Object.assign(visibledata, visible[i]);
+    };
+    let hiddendata = {};
+    for(let i = 0; i < hidden.length; i++ ) {
+      Object.assign(hiddendata, hidden[i]);
+    };
     const detailslist = {
         visible: { 
           opacity: 1,
@@ -78,7 +64,6 @@ export default function AboutMe({params}: { params: {
       const detailslistitem = {
         visible: { 
           opacity: 1,
-          y: 0,
           transition: {
             when: "beforeChildren",
             staggerChildren: 0.3,
@@ -86,7 +71,6 @@ export default function AboutMe({params}: { params: {
         },
         hidden: { 
           opacity: 0,
-          y: 200,
           transition: {
             when: "afterChildren",
           },
@@ -132,7 +116,7 @@ return (
         initial="hidden"
         animate="visible"
         variants={detailsitem} className=" bg-rosspurple dark:bg-rossdarkpurple mr-auto -ml-4 -mb-2 relative z-30">
-        <h2 className=" relative text-white  text-left px-5 md:text-4xl">{params.title}</h2>
+        <h2 className=" relative text-white  text-left px-5 md:text-4xl">{visibledata.title}</h2>
       </motion.div>
     <motion.div layout
         initial="hidden"
@@ -143,7 +127,7 @@ return (
             <div className="flex shrink gap-8 pb-5 align-top">
                 <div className="relative px-1 md:px-5 pt-4">
                   <div className="flex w-32 h-48 md:w-64 md:h-72">
-                      <ImageWithFallback src={params.img.src} alt={params.img.alt} fallbackSrc={'/images/oof.png'}/>
+                      <ImageWithFallback src={visibledata.img.src} alt={visibledata.img.alt} fallbackSrc={'/images/oof.png'}/>
                   </div>
                 </div>
                 <div className="flex flex-col justify-evenly">
@@ -152,11 +136,7 @@ return (
                 initial="hidden"
                 animate="visible"
                 variants={detailslist} className="text-left list-disc dark:text-white ">
-               
-               
-                {auth.currentUser != null ? (
-                    <>
-                    {params.details.map((details, index ) => (
+                    {visibledata.details.map((details, index ) => (
                         <motion.li
                         layout
                         initial="hidden"
@@ -166,33 +146,16 @@ return (
                         className="">
                         <p>{details}</p>
                     </motion.li> 
-                    ))}
-                    </>
-                    ) : (
-                    <>
-                    {FakeMe.details.map((details, index ) => (
-                        <motion.li
-                        layout
-                        initial="hidden"
-                        animate="visible"
-                        variants={detailslistitem} 
-                        key={index}
-                        className="first:blur-none blur">
-                        <p>{details}</p>
-                    </motion.li> ))}
-                    </>
-                    )}
+                    ))} 
                 </motion.ul>
-
-
                 {auth.currentUser != null ? (
                     <form method="get" 
                     action={process.env.RESUME}
                     target="_blank"
                     rel="noopener noreferrer"
                     >
-                    <button type="submit" className="bg-rosspurple dark:bg-rossdarkpurple  px-2 drop-shadow-lg hover:scale-[1.01] dark:text-white"
-                    >Download my Resume</button></form> ) :(<button className="bg-rosspurple dark:bg-rossdarkpurple  px-2 drop-shadow-lg hover:scale-[1.01] dark:text-white" onClick={handleConfirm}
+                    <button type="submit" className="bg-rosspurple dark:bg-rossdarkpurple  px-2 drop-shadow-lg hover:scale-[1.01] text-white"
+                    >Download my Resume</button></form> ) :(<button className="bg-rosspurple dark:bg-rossdarkpurple  px-2 drop-shadow-lg hover:scale-[1.01] text-white" onClick={handleConfirm}
                     >Download my Resume</button> ) }
                 </div>
               </div>
@@ -201,63 +164,49 @@ return (
       {auth.currentUser != null ? 
       (
         <div className="flex relative">
-              <ReactMarkdown className="paragraph line-break list-inside text-left text-black dark:text-white relative" remarkPlugins={[remarkGfm, remarkBreaks]}>
-               {params.description}
+              <ReactMarkdown className="paragraph line-break text-left text-black dark:text-white relative whitespace-pre-line" remarkPlugins={[remarkGfm, remarkBreaks]}>
+               {visibledata.description}
                 </ReactMarkdown>
             </div>
-        ):
+        )
+        :
         (<>
-        <div className="blur w-[275px] md:w-[500px] h-[1000px] -mb-[1000px] md:h-[700px] md:-mb-[700px] z-0">
-        <div className="flex flex-col">
-            <div className="blur text-left text-black dark:text-white">
-                <p >{FakeMe.description}</p>
-            </div>
-            <div className="blur text-left text-black dark:text-white">
-                <p >{FakeMe.description}</p>
-            </div>
-            </div>
-            </div>
+
 
             {  isModalOpen ? (
 
-            <motion.div
-            layout
-            ref={aboutref}
-            onClick={close}
-            onHoverEnd={close}
-            className="flex w-[275px] md:w-[500px] h-[1000px] md:h-[700px]"
-            exit="exit"
-            >
-
-            { /* modal details go in here */ }
-
-            <div className="flex content-center justify-center items-center mx-auto relative">
-                <div className="bg-rosspurple dark:bg-rossdarkpurple pr-1 pb-1 mt-1 pt-1">
-                <div className="bg-rossblue dark:bg-rossdarkblue pr-1 pb-1 -ml-1 -mt-1 mr-auto">
-                    <button className=" text-white bg-rosspurple dark:bg-rossdarkpurple px-4 py-1 -ml-1 -mt-1" onClick={handleSignIn}>Sign in to read about me</button>
-                    </div>
-                    </div>
-                </div>
-
-            </motion.div>
-            )
-            : (
-            <motion.button 
+                      <motion.div
+                      layout
+                      ref={aboutref}
+                      onClick={close}
+                      onHoverEnd={close}
+                      className="flex w-[275px] md:w-[500px] h-[1000px]"
+                      exit="exit"
+                      >
+                        <div className="flex mx-auto top-0 relative">
+                          <div>
+                        <div className="bg-rosspurple dark:bg-rossdarkpurple pr-1 pb-1 mt-1 pt-1 mb-1 ">
+                        <div className="bg-rossblue dark:bg-rossdarkblue pr-1 pb-1 -ml-1 -mt-1 mr-auto">
+                            <button className=" text-white bg-rosspurple dark:bg-rossdarkpurple px-4 py-1 -ml-1 -mt-1" onClick={handleSignIn}>
+                              Sign in to read about me
+                              </button>
+                            </div>
+                            </div></div>
+                        </div>
+                    </motion.div> )
+                    : 
+            (<motion.button 
             layout
             whileTap={{scale: 0.95}}
-            className="flex save-button w-[275px] md:w-[500px] h-[1000px] md:h-[700px]"
+            className="flex save-button w-[275px] md:w-[500px] h-[1000px]"
             onHoverStart={open}
             >
-            { /* modal button goes in here */ }
-            <div className="flex flex-col" onClick={open}>
-            <div className="blur text-left text-black dark:text-white">
-                <p >{FakeMe.description}</p>
-            </div>
-            <div className="blur text-left text-black dark:text-white">
-                <p >{FakeMe.description}</p>
-            </div>
-            </div>
-                </motion.button>
+                <div className="flex flex-col" onClick={open}>
+                <div className="blur text-left text-black dark:text-white">
+                    <p >{hiddendata.description}</p>
+                </div>
+              </div>
+            </motion.button>
                 )}</>
        )}   
             </div>

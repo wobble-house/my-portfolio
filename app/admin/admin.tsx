@@ -59,7 +59,7 @@ export default function AdminContent() {
                 htmlFor="Company Name" 
                 className="text-xl bg-rosspurple dark:bg-rossdarkpurple px-2 mr-auto -ml-4 -mt-8 -mb-4 relative text-white">
                     Company Name</label>
-                <input onSubmite={(e) => setCompanyName(e.target.value)} type="text" name="Company Name" id="Company Name" placeholder="Google" className="bg-rossblue dark:bg-rossdarkblue  py-2 mb-2 pb-2 pl-4 pt-8 -ml-2 focus:outline-none focus:ring-2 ring-rossgreen font-light text-gray-500  dark:text-gray-100 "/>
+                <input onChange={(e) => setCompanyName(e.target.value)} type="text" name="Company Name" id="Company Name" placeholder="Google" className="bg-rossblue dark:bg-rossdarkblue  py-2 mb-2 pb-2 pl-4 pt-8 -ml-2 focus:outline-none focus:ring-2 ring-rossgreen font-light text-gray-500  dark:text-gray-100 "/>
                 </div>
 
                 <div className="flex justify-center mx-auto py-5 z-50">
