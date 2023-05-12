@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import { getAuth } from 'firebase/auth';
 import addData from "../../utils/firebase/firestore/addData";
 import firebase_app from "../../utils/firebase/config";
-import { useState } from 'react';
 import getDocument from "../../utils/firebase/firestore/getData";
 import { use } from "react";
 
@@ -14,20 +13,14 @@ export default function AdminContent() {
     const user = use(getDocument("users", auth?.currentUser?.uid || "0" ))
     const data = user.result.data();
     const router = useRouter()
-    const [firstName, setFirstName] = React.useState(data?.firstName)
-    const [lastName, setLastName] = React.useState(data?.lastName)
-    const [companyName, setCompanyName] = React.useState(data?.companyName)
+    const [firstName, setFirstName] = React.useState('')
+    const [lastName, setLastName] = React.useState('')
+    const [companyName, setCompanyName] = React.useState('')
     const userdata = {firstName,lastName,companyName}
     const handleForm = async (event) => {
-        event.preventDefault()
-
+        event.preventDefault();
         const { result, error } = await addData("users", auth.currentUser.uid, userdata);
-
-        if (error) {
-            return console.log(error)
-        }
-
-        // else successful
+        if (error) {return console.log(error)}
         console.log(result)
         return router.refresh();
     };
@@ -66,7 +59,7 @@ export default function AdminContent() {
                 htmlFor="Company Name" 
                 className="text-xl bg-rosspurple dark:bg-rossdarkpurple px-2 mr-auto -ml-4 -mt-8 -mb-4 relative text-white">
                     Company Name</label>
-                <input onChange={(e) => setCompanyName(e.target.value)} type="text" name="Company Name" id="Company Name" placeholder="Google" className="bg-rossblue dark:bg-rossdarkblue  py-2 mb-2 pb-2 pl-4 pt-8 -ml-2 focus:outline-none focus:ring-2 ring-rossgreen font-light text-gray-500  dark:text-gray-100 "/>
+                <input onSubmite={(e) => setCompanyName(e.target.value)} type="text" name="Company Name" id="Company Name" placeholder="Google" className="bg-rossblue dark:bg-rossdarkblue  py-2 mb-2 pb-2 pl-4 pt-8 -ml-2 focus:outline-none focus:ring-2 ring-rossgreen font-light text-gray-500  dark:text-gray-100 "/>
                 </div>
 
                 <div className="flex justify-center mx-auto py-5 z-50">
