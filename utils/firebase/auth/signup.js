@@ -1,6 +1,6 @@
 'use client'
 import firebase_app from "../config";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, getAdditionalUserInfo } from "firebase/auth";
 import addData from "../firestore/addData";
 
 const auth = getAuth(firebase_app);
@@ -37,13 +37,14 @@ export async function signUpGoogle() {
           const user = result.user;
           const details = getAdditionalUserInfo(result)
           // ...
-        }).then((user) => {
+          let data = {}
             data.uid = user.user.uid;
             data.email = user.user.email
-            data.firstName = details.displayName
+            data.firstName = ""
             data.lastName = ""
             data.companyName = ""
-            addData("users", user.user.uid, data)}).catch((error) => {
+            addData("users", user.user.uid, data)})
+        .catch((error) => {
           // Handle Errors here.
           const errorCode = error.code;
           const errorMessage = error.message;
