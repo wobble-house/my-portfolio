@@ -6,14 +6,18 @@ import Section from "../../components/section";
 import { motion } from "framer-motion";
 
 export default function SignUpForm(){
+    const [firstName, setFirstName] = React.useState('')
+    const [lastName, setLastName] = React.useState('')
+    const [companyName, setCompanyName] = React.useState('')
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
+    const data = {firstName,lastName,companyName,email}
     const router = useRouter()
 
     const handleForm = async (event) => {
         event.preventDefault()
 
-        const { result, error } = await signUp(email, password);
+        const { result, error } = await signUp({email, password, data});
 
         if (error) {
             return console.log(error)
@@ -58,6 +62,30 @@ export default function SignUpForm(){
 
 
             <form onSubmit={handleForm} className=" text-black dark:text-white max-w-[222px] mx-auto z-50">
+
+            <div className="flex flex-col bg-rosspurple dark:bg-rossdarkpurple pr-2 mb-12 shadow-2xl">
+                <label 
+                htmlFor="First Name" 
+                className="text-xl bg-rosspurple dark:bg-rossdarkpurple px-2 mr-auto -ml-4 -mt-8 -mb-4 relative text-white">
+                    First Name</label>
+                    <input onChange={(e) => setFirstName(e.target.value)} required type="text" name="First Name" id="First Name" placeholder="Your First Name" className="bg-rossblue dark:bg-rossdarkblue  py-2 mb-2 pb-2 pl-4 pt-8 -ml-2 focus:outline-none focus:ring-2 ring-rossgreen font-light text-gray-500  dark:text-gray-100 "/>
+                </div>
+
+                <div className="flex flex-col bg-rosspurple dark:bg-rossdarkpurple pr-2 mb-12 shadow-2xl">
+                <label 
+                htmlFor="Last Name" 
+                className="text-xl bg-rosspurple dark:bg-rossdarkpurple px-2 mr-auto -ml-4 -mt-8 -mb-4 relative text-white">
+                    Last Name</label>
+                <input onChange={(e) => setLastName(e.target.value)} required type="text" name="Last Name" id="Last Name" placeholder="Your Last Name" className="bg-rossblue dark:bg-rossdarkblue  py-2 mb-2 pb-2 pl-4 pt-8 -ml-2 focus:outline-none focus:ring-2 ring-rossgreen font-light text-gray-500  dark:text-gray-100 "/>
+                </div>
+
+                <div className="flex flex-col bg-rosspurple dark:bg-rossdarkpurple pr-2 mb-12 shadow-2xl">
+                <label 
+                htmlFor="Company Name" 
+                className="text-xl bg-rosspurple dark:bg-rossdarkpurple px-2 mr-auto -ml-4 -mt-8 -mb-4 relative text-white">
+                    Company Name</label>
+                <input onChange={(e) => setCompanyName(e.target.value)} required type="text" name="Company Name" id="Company Name" placeholder="Google" className="bg-rossblue dark:bg-rossdarkblue  py-2 mb-2 pb-2 pl-4 pt-8 -ml-2 focus:outline-none focus:ring-2 ring-rossgreen font-light text-gray-500  dark:text-gray-100 "/>
+                </div>
                 
             <div className="flex flex-col bg-rosspurple dark:bg-rossdarkpurple pr-2 mb-12 shadow-2xl">
                 <label 

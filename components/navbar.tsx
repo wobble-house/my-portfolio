@@ -4,6 +4,10 @@ import React, { useState, useRef, useEffect } from "react";
 import { NameSmall, NameLarge } from './name';
 import LoginButton from './login';
 import { motion } from 'framer-motion';
+import { getAuth, signOut } from 'firebase/auth';
+import firebase_app from '../utils/firebase/config';
+
+const auth = getAuth(firebase_app);
 
 export default function MyNavbar() {
   const Navref = useRef();
@@ -144,6 +148,24 @@ export default function MyNavbar() {
                   Projects
                   </Link>
                 </li>
+                {auth.currentUser === null ? <></> : <><>|</>
+                <li 
+                className="
+                py-2
+                md:py-0
+                text-center
+                md:text-left 
+                text-l 
+                uppercase 
+                px-2 
+                rounded
+                dark:text-white
+                ">
+                  <Link href="/admin" onClick={() => setNavbar(false)} prefetch={false}>
+                  Admin
+                  </Link>
+                </li> </>}
+                
               </ul>
           </motion.div>
           </div></div>

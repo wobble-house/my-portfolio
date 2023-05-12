@@ -1,21 +1,14 @@
-'use client';
 import React from "react";
-import { useRouter } from "next/navigation";
 import MyNavbar from "../../components/navbar";
-import { getAuth } from 'firebase/auth';
-import firebase_app from '../../utils/firebase/config';
+import firebase_app from "../../utils/firebase/config";
+import AdminContent from "./admin";
 
-const auth = getAuth(firebase_app);
 
-export default function Page() {
+export default async function Admin() {
 
-    const router = useRouter()
-
-    if (auth.currentUser != null)
     return (
         <>
     <MyNavbar/>
-    <h1 className="my-64">Only logged in users can view this page</h1>
+    <AdminContent/>
     </>);
-    else router.push('/')
 }
