@@ -39,7 +39,8 @@ export function AdminContent({data}) {
     return (
         <>
         <div className="pt-10 pb-64">
-        <h2 className="mx-auto text-center ">Hi!{data.firstName} {data.lastName}</h2>
+            
+        <h2 className="mx-auto text-center ">Hi, {data.firstName} {data.lastName}!</h2>
         <div className="flex flex-col max-w-xl mx-auto">
             <div>
 
