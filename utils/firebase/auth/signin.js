@@ -2,6 +2,7 @@
 import firebase_app from "../config";
 import { signInWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
 import addData from "../firestore/addData";
+import getDocument from "../firestore/getData";
 
 const auth = getAuth(firebase_app);
 
@@ -33,13 +34,21 @@ export async function signInGoogle() {
     const user = result.user;
     // IdP data available using getAdditionalUserInfo(result)
     // ...
+    const getdata = getDocument("users", user.uid )
+    const userdata = getdata.result.data();
     let data = {}
-    data.uid = user.uid
-    data.email = user.email
-    data.firstName = "Your First Name"
-    data.lastName = "Your Last Name"
-    data.companyName = "Your Company Name"
-    addData("users", user.uid, data)
+    if (userdata !== null) return (data.uid = user.uid,
+    data.email = user.email,
+    data.firstName = userdata.firstName,
+    data.lastName = userdata.lastName,
+    data.companyName = userdata.companyName,
+    addData("users", user.uid, data))
+    else return ( data.uid = user.uid,
+    data.email = user.email,
+    data.firstName = "First Name",
+    data.lastName = "Last Name",
+    data.companyName = "Company Name",
+    addData("users", user.uid, data));
   }).catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
