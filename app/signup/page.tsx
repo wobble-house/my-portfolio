@@ -1,13 +1,15 @@
 import "server-only";
+import React from "react";
 import MyNavbar from "../../components/navbar";
-import SignUpForm from "./signup";
-import { GoogleSignupButton } from "./signup";
+import SignUpForm, { GoogleSignupButton } from "./signup";
 import { Suspense } from 'react'
 import Loading from '../loading'
+
 export const metadata = {
     title: 'Sign-Up',
     description: 'Sign Up to learn more about Ross Alan Ford',
   }
+  
 export default function Page() {
     return (
         <>
