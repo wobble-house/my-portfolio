@@ -1,6 +1,7 @@
 'use client'
 import firebase_app from "../config";
-import { signInWithEmailAndPassword, getAuth, getRedirectResult, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import { signInWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
+import addData from "../firestore/addData";
 
 const auth = getAuth(firebase_app);
 
@@ -23,27 +24,33 @@ export async function signInGoogle() {
     try {
         provider.addScope('profile');
         provider.addScope('email');
-        await signInWithRedirect(auth, provider);
-        result = await getRedirectResult(auth)
-        .then((result) => {
-          // This gives you a Google Access Token. You can use it to access Google APIs.
-          const credential = GoogleAuthProvider.credentialFromResult(result);
-          const token = credential.accessToken;
-      
-          // The signed-in user info.
-          const user = result.user;
-          // IdP data available using getAdditionalUserInfo(result)
-          // ...
-        }).catch((error) => {
-          // Handle Errors here.
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // The email of the user's account used.
-          const email = error.customData.email;
-          // The AuthCredential type that was used.
-          const credential = GoogleAuthProvider.credentialFromError(error);
-          // ...
-        });
+        signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+    let data = {}
+    data.uid = user.uid
+    data.email = user.email
+    data.firstName = "Your First Name"
+    data.lastName = "Your Last Name"
+    data.companyName = "Your Company Name"
+    addData("users", user.uid, data)
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
+
     } catch (e) {
         error = e;
     }
