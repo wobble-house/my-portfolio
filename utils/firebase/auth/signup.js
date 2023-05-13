@@ -27,8 +27,7 @@ export async function signUpGoogle() {
         provider.addScope('profile');
         provider.addScope('email');
         await signInWithRedirect(auth, provider);
-        result = await getRedirectResult(auth)
-        .then((result) => {
+        result = await getRedirectResult(auth).then((result) => {
           // This gives you a Google Access Token. You can use it to access Google APIs.
           const credential = GoogleAuthProvider.credentialFromResult(result);
           const token = credential.accessToken;
@@ -36,12 +35,12 @@ export async function signUpGoogle() {
           // The signed-in user info.
           const user = result.user;
           let data = {}
-          data.uid = user.user.uid;
-          data.email = user.user.email
-          data.firstName = ""
-          data.lastName = ""
-          data.companyName = ""
-            addData("users", user.user.uid, data)
+          data.uid = user.uid
+          data.email = user.email
+          data.firstName = "Your First Name"
+          data.lastName = "Your Last Name"
+          data.companyName = "Your Company Name"
+          addData("users", user.uid, data)
         }).catch((error) => {
           // Handle Errors here.
           const errorCode = error.code;
