@@ -1,6 +1,6 @@
 'use client'
 import firebase_app from "../config";
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, getAdditionalUserInfo } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult} from "firebase/auth";
 import addData from "../firestore/addData";
 
 const auth = getAuth(firebase_app);
