@@ -1,9 +1,10 @@
 'use client'
 import React from "react";
-import signUp from "../../utils/firebase/auth/signup"
+import signUp, { signUpGoogle } from "../../utils/firebase/auth/signup"
 import { useRouter } from 'next/navigation'
 import Section from "../../components/section";
 import { motion } from "framer-motion";
+import ImageWithFallback from "../../components/image-handler";
 
 export default function SignUpForm(){
     const [firstName, setFirstName] = React.useState('')
@@ -14,15 +15,12 @@ export default function SignUpForm(){
     const data = {firstName,lastName,companyName,email}
     const router = useRouter()
 
-    const handleForm = async (event) => {
-        event.preventDefault()
-
+    const handleForm = async (e) => {
+        e.preventDefault();
         const { result, error } = await signUp({email, password, data});
-
         if (error) {
             return console.log(error)
         }
-
         // else successful
         console.log(result)
         return router.push('/admin');
@@ -113,4 +111,24 @@ export default function SignUpForm(){
             </form>
             </Section>
 )
+}
+
+export function GoogleSignupButton(){
+  return(
+      <Section>
+      <div className="flex justify-center mx-auto py-5 z-50">
+      <div className="bg-rosspurple dark:bg-rossdarkpurple pr-1 pb-1 mt-2 pt-1 hover:scale-105">
+            <div className="bg-rossblue dark:bg-rossdarkblue pr-1 pb-1 -ml-1 -mt-2 pt-1">
+<button className="flex content-center items-center gap-3 py-2 pl-2 pr-4 bg-rosspurple dark:bg-rossdarkpurple -mt-2 text-white " type="button" onClick={signUpGoogle}>
+  <div className="relative w-[30px] h-[30px]">
+  <ImageWithFallback 
+  src="/icons/google_signin_buttons/web/vector/btn_google_light_normal_ios.svg" alt="Google Logo"
+  /></div>
+  Sign up With Google
+</button>
+</div>
+</div>
+</div>
+</Section>
+  )
 }

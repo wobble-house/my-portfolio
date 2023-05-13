@@ -1,7 +1,7 @@
 import "server-only";
 import MyNavbar from "../../components/navbar";
 import SignUpForm from "./signup";
-import { GoogleButton } from "../signin/signin";
+import { GoogleSignupButton } from "./signup";
 import { Suspense } from 'react'
 import Loading from '../loading'
 export const metadata = {
@@ -22,7 +22,7 @@ export default function Page() {
                 </p>
             <SignUpForm/>
             <h2 className="text-center text-black dark:text-white">or</h2>
-            <GoogleButton/>
+            <GoogleSignupButton/>
         </div>
     </div></Suspense>
     </>

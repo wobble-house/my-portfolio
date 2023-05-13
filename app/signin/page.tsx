@@ -1,7 +1,7 @@
 import 'server-only'
 import React from "react";
 import MyNavbar from "../../components/navbar";
-import SignInForm, { GoogleButton } from "./signin";
+import SignInForm, { GoogleSigninButton } from "./signin";
 import { Suspense } from 'react'
 import Loading from '../loading'
 
@@ -18,7 +18,7 @@ export default function Page() {
         <div className="mx-auto py-20 relative">
             <SignInForm/>
             <h2 className="text-center text-black dark:text-white">or</h2>
-            <GoogleButton/>
+            <GoogleSigninButton/>
         </div>
     </div>
     </Suspense>

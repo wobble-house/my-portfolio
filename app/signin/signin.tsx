@@ -12,7 +12,7 @@ export default function SignInForm(){
     const [password, setPassword] = React.useState('')
     const router = useRouter()
 
-    const handleForm = async (event) => {
+    const handleSigninForm = async (event) => {
         event.preventDefault()
 
         const { result, error } = await signIn(email, password);
@@ -59,7 +59,7 @@ export default function SignInForm(){
                 </div>
 
 
-            <form onSubmit={handleForm} className="text-black dark:text-white ">
+            <form onSubmit={handleSigninForm} className="text-black dark:text-white ">
             <div className="flex flex-col bg-rosspurple dark:bg-rossdarkpurple pr-2 mb-12 shadow-2xl">
                 <label 
                 htmlFor="email" 
@@ -89,13 +89,13 @@ export default function SignInForm(){
 )
 }
 
-export function GoogleButton(){
+export function GoogleSigninButton(){
     return(
         <Section>
         <div className="flex justify-center mx-auto py-5 z-50">
         <div className="bg-rosspurple dark:bg-rossdarkpurple pr-1 pb-1 mt-2 pt-1 hover:scale-105">
               <div className="bg-rossblue dark:bg-rossdarkblue pr-1 pb-1 -ml-1 -mt-2 pt-1">
-<button className="flex content-center items-center gap-3 py-2 pl-2 pr-4 bg-rosspurple dark:bg-rossdarkpurple -mt-2 text-white " onClick={signInGoogle}>
+<button className="flex content-center items-center gap-3 py-2 pl-2 pr-4 bg-rosspurple dark:bg-rossdarkpurple -mt-2 text-white " type="button" onClick={signInGoogle}>
     <div className="relative w-[30px] h-[30px]">
     <ImageWithFallback 
     src="/icons/google_signin_buttons/web/vector/btn_google_light_normal_ios.svg" alt="Google Logo"
