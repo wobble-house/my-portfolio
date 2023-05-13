@@ -68,6 +68,6 @@ function AuthCheck(){
   if (data == undefined)
   return(<></>)
   else return (
-<p> {data.firstName} </p>
+<p className="text-black dark:text-white"> {data.firstName} </p>
   )
 }

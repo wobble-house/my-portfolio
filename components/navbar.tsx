@@ -131,7 +131,7 @@ export default function MyNavbar() {
                   ABOUT
                   </Link>
                 </li>
-                <>|</>
+                <p className="text-black dark:text-white">|</p>
                 <li 
                 className="
                 py-2
@@ -148,7 +148,7 @@ export default function MyNavbar() {
                   Projects
                   </Link>
                 </li>
-                {auth.currentUser === null ? <></> : <><>|</>
+                {auth.currentUser === null ? <></> : <p className="text-black dark:text-white">|</p>}
                 <li 
                 className="
                 py-2
