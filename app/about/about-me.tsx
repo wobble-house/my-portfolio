@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { useRouter } from 'next/navigation';
 import { useState, useRef, useEffect } from "react";
 import { resetCookieConsentValue } from "react-cookie-consent";
-import Image from "next/image";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
@@ -106,7 +105,7 @@ export default function AboutMe({visible, hidden}){
     }
     const handleSignIn = () => {
         resetCookieConsentValue('GA-COOKIES')
-        router.push('/signin')
+        router.push('/signup')
       }
 return (
   <Section>

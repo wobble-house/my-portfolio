@@ -148,7 +148,8 @@ export default function MyNavbar() {
                   Projects
                   </Link>
                 </li>
-                {auth.currentUser === null ? <></> : <p className="text-black dark:text-white">|</p>}
+                {auth.currentUser === null ? <></> : <>
+                <p className="text-black dark:text-white">|</p>
                 <li 
                 className="
                 py-2

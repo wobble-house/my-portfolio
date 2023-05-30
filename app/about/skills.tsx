@@ -60,35 +60,35 @@ export default function Skills(){
                 </div>
             </div>
         </div>
-        <motion.div                 
+        <motion.ul                 
             layout
             initial="hidden"
             whileInView="visible"
             variants={skillslist}
             viewport={{ once: false }}  className="flex flex-col md:content-evenly relative gap-12 justify-evenly mx-auto ">
             
-            <motion.div 
+            <motion.li
                 layout
                 variants={skills}
                 viewport={{ once: false }} >
                 <CodeSkills/>
-            </motion.div>
+            </motion.li>
 
-            <motion.div 
+            <motion.li
                 layout
                 variants={skills}
                 viewport={{ once: false }} >
                 <OtherSkills/>
-            </motion.div>
+            </motion.li>
 
-            <motion.div 
+            <motion.li 
                 layout
                 variants={skills}
                 viewport={{ once: false }} >
                 <MediaToolsSkills/>
-            </motion.div>
+            </motion.li>
 
-            </motion.div>
+            </motion.ul>
         </div>
         </AnimatePresence>
         </Section>
@@ -139,7 +139,7 @@ export function CodeSkills(){
             <div className="flex w-[120px] h-[120px]">
                 <div className="flex content-center justify-center bg-rosspurple dark:bg-rossdarkpurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2">
-                        <motion.div                 
+                        <motion.ul                 
                             layout
                             initial="hidden"
                             animate="visible"
@@ -147,15 +147,15 @@ export function CodeSkills(){
                             viewport={{ once: false }} 
                             className="grid grid-cols-2 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
                                 
-                                <motion.div 
+                                <motion.li
                                 layout
                                 variants={item}
                                 viewport={{ once: false }} 
                                 title="JavaScript" className="flex bg-rosspurple dark:bg-rossdarkpurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                                     <FontAwesomeIcon icon={faJs} size="2x"/>
-                                </motion.div >
+                                </motion.li >
 
-                                <motion.div 
+                                <motion.li 
                                     layout
                                     variants={item}
                                     viewport={{ once: false }} 
@@ -168,24 +168,24 @@ export function CodeSkills(){
                                                 (max-width: 1200px) 50vw,
                                                 33vw"
                                     />
-                                </motion.div>
+                                </motion.li>
 
-                                <motion.div 
+                                <motion.li 
                                 layout
                                 variants={item}
                                 viewport={{ once: false }} 
                                 title="Html5" className="flex bg-rosspurple  dark:bg-rossdarkpurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faHtml5} size="2x"/>
-                                </motion.div>
+                                </motion.li>
 
-                                <motion.div 
+                                <motion.li 
                                 layout
                                 variants={item}
                                 viewport={{ once: false }} 
                                 title="CSS3" className="flex bg-rosspurple dark:bg-rossdarkpurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faCss3} size="2x"/>
-                                </motion.div>
-                        </motion.div>
+                                </motion.li>
+                        </motion.ul>
                     </div>
                 </div>
             </div>
@@ -238,14 +238,14 @@ export function MediaToolsSkills(){
             <div className="flex w-[120px] h-[120px]">
                 <div className="flex content-center justify-center bg-rosspurple dark:bg-rossdarkpurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2">
-                    <motion.div                 
+                    <motion.ul                
                             layout
                             initial="hidden"
                             animate="visible"
                             variants={list}
                             viewport={{ once: false }} className="grid grid-cols-2 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
                             
-                            <motion.div 
+                            <motion.li
                                 layout
                                 variants={item} 
                                 viewport={{ once: false }} title="Adobe Photoshop" className="flex bg-rosspurple dark:bg-rossdarkpurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
@@ -256,35 +256,35 @@ export function MediaToolsSkills(){
                                 sizes="(max-width: 768px) 100vw,
                                             (max-width: 1200px) 50vw,
                                             33vw"/>
-                            </motion.div>
+                            </motion.li>
 
-                            <motion.div 
+                            <motion.li 
                                 layout
                                 variants={item} 
                                 viewport={{ once: false }} title="Adobe Illustrator" className="flex bg-rosspurple dark:bg-rossdarkpurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                                 <Image src={"/icons/illustrator.ico"} width={40} height={39} alt="Illustrator logo" sizes="(max-width: 768px) 100vw,
                                     (max-width: 1200px) 50vw,
                                     33vw" />
-                            </motion.div>
+                            </motion.li>
 
-                            <motion.div 
+                            <motion.li 
                                 layout
                                 variants={item} 
                                 viewport={{ once: false }} title="Adobe Premiere" className="flex bg-rosspurple dark:bg-rossdarkpurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                                 <Image src={"/icons/premiere.ico"} width={40} height={39} alt="premiere logo" sizes="(max-width: 768px) 100vw,
                                     (max-width: 1200px) 50vw,
                                     33vw" />
-                            </motion.div>
+                            </motion.li>
 
-                            <motion.div 
+                            <motion.li 
                                 layout
                                 variants={item} 
                                 viewport={{ once: false }} title="Adobe After Effects" className="flex bg-rosspurple dark:bg-rossdarkpurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                                 <Image src={"/icons/aftereffects.ico"} width={40} height={39} alt="after effects logo" sizes="(max-width: 768px) 100vw,
                                     (max-width: 1200px) 50vw,
                                     33vw" />
-                            </motion.div>
-                        </motion.div>
+                            </motion.li>
+                        </motion.ul>
                     </div>
                 </div>
             </div>
@@ -337,7 +337,7 @@ export function OtherSkills(){
             <div className="flex w-[120px] h-[120px]">
                 <div className="flex content-center justify-center bg-rosspurple dark:bg-rossdarkpurple w-full h-full relative shadow-3xl">
                     <div className="flex content-center justify-center bg-rossblue dark:bg-rossdarkblue w-full h-full relative -ml-4 -mt-2">
-                    <motion.div                 
+                    <motion.ul                
                             layout
                             initial="hidden"
                             animate="visible"
@@ -345,14 +345,14 @@ export function OtherSkills(){
                             viewport={{ once: false }} 
                              className="grid grid-cols-2 content-evenly relative gap-1 -ml-4 -mt-4 mr-2 mb-2">
                                 
-                        <motion.div 
+                        <motion.li
                                 layout
                                 variants={item} 
                                 viewport={{ once: false }} title="React" className="flex bg-rosspurple dark:bg-rossdarkpurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faReact} size="2x"/>
-                                </motion.div> 
+                                </motion.li> 
                                 
-                                <motion.div 
+                                <motion.li
                                 layout
                                 variants={item} 
                                 viewport={{ once: false }} title="Nextjs" className="flex bg-rosspurple dark:bg-rossdarkpurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center p-3">
@@ -363,22 +363,22 @@ export function OtherSkills(){
                                         sizes="(max-width: 768px) 100vw,
                                                     (max-width: 1200px) 50vw,
                                                     33vw"/>
-                                </motion.div>
+                                </motion.li>
 
-                                <motion.div 
+                                <motion.li 
                                 layout
                                 variants={item} 
                                 viewport={{ once: false }} title="Docker" className="flex bg-rosspurple dark:bg-rossdarkpurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faDocker} size="2x"/>
-                                </motion.div>
+                                </motion.li>
 
-                                <motion.div 
+                                <motion.li 
                                 layout
                                 variants={item} 
                                 viewport={{ once: false }} title="Python" className="flex bg-rosspurple dark:bg-rossdarkpurple h-[60px] w-[60px] justify-center content-center hover:scale-105 items-center">
                                 <FontAwesomeIcon icon={faPython} size="2x"/>
-                                </motion.div>
-                                </motion.div>
+                                </motion.li>
+                                </motion.ul>
                     </div>
                 </div>
             </div>

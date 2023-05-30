@@ -4,7 +4,6 @@ import Skills from "./skills"
 import AboutMe from "./about-me"
 import { Animation } from "../../utils/animation/animation"
 import { Header, Spacer } from "../../components/section"
-import { Me } from "../../lib/me"
 import MyNavbar from "../../components/navbar"
 import { Suspense } from 'react'
 import Loading from '../loading'

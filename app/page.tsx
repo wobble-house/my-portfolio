@@ -1,8 +1,8 @@
 import "server-only";
-import { NameLarge } from "../components/name"
 import MyNavbar from '../components/navbar'
 import { Suspense } from 'react'
 import Loading from './loading'
+import Welcome from "../components/welcome";
 
 export const metadata = {
   title: 'Home',
@@ -10,13 +10,15 @@ export const metadata = {
 }
 
 export default async function Home() {
+  var url = new URL("https://www.rossalanford.com/")
+  url.searchParams.append('redirect', "about");
 
   return (
     <>
 
     <MyNavbar/>    
       <div className="max-w-3xl py-20 mx-auto">
-        <NameLarge/>
+        <Welcome/>
         <Suspense fallback={<Loading/>}>
 
         </Suspense>
