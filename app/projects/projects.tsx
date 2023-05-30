@@ -207,7 +207,7 @@ else return (
                     </div>
                   </div>
                 <div className="flex bg-zinc-50 m-2 relative mt-3 w-48 h-32 mr-5">
-                  <ImageWithFallback src={img.src} alt={img.alt} fallbackSrc={'/images/oof.png'} />
+                  <ImageWithFallback src={img.src} alt={img.alt} fallbackSrc={'/images/oof.png'} height={768} width={1024} />
                 </div>
                 </div>
                 </div>

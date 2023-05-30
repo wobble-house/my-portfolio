@@ -38,14 +38,15 @@ export function AdminContent({data}) {
     
     return (
         <>
-        <div className="pt-10 pb-64">
+        <div className="pt-10 pb-64 z-30">
             
-        <h2 className="mx-auto text-center ">Hi, {data.firstName} {data.lastName}!</h2>
+        <h2 className="mx-auto text-center text-black dark:text-white">Hi, <span className="animate-pulse">{data.firstName} {data.lastName}</span>!</h2>
+        <p className="mx-auto text-center text-black dark:text-white">this is an admin page.</p>
         <div className="flex flex-col max-w-xl mx-auto">
             <div>
 
         </div>
-        <h2 className="mx-auto text-center py-10">Update Your Info Here</h2>
+        <h3 className="mx-auto text-center py-10 text-black dark:text-white">Update Your Info Here</h3>
     <form onSubmit={handleUpdateForm} className=" text-black dark:text-white max-w-[222px] mx-auto z-30 pb-32">
     
             <div className="flex flex-col bg-rosspurple dark:bg-rossdarkpurple pr-2 mb-12 shadow-2xl">

@@ -4,12 +4,26 @@ import React, { useId, useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion';
 import Section from './section';
+import { getAuth } from 'firebase/auth';
+import firebase_app from "../utils/firebase/config";
+import getDocument from "../utils/firebase/firestore/getData";
+import { use } from "react";
 
-export default function ContactForm(){
+const auth = getAuth(firebase_app);
+
+export default function ContactData(){
+  const user = use(getDocument("users", auth?.currentUser?.uid ))
+  const data = user.result.data();
+  return (
+<ContactForm data={data}/>
+)      
+}
+
+export function ContactForm({data}){
     const id = useId();
     // States for contact form fields
-    const [fullname, setFullname] = useState("");
-    const [email, setEmail] = useState("");
+    const [fullname, setFullname] = useState(data? () => JSON.stringify(data?.firstName + " " + data?.lastName) : "");
+    const [email, setEmail] = useState(data? () => data?.email : "");
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
   
@@ -162,9 +176,9 @@ export default function ContactForm(){
 
         <div className={`bg-rosspurple dark:bg-rossdarkpurple mx-auto pb-1 pr-1 mb-10 ${!(message || subject || email || fullname) ? "": "animate-pulse"}`}>
           <button 
-              className=" bg-rossblue dark:bg-rossdarkblue  drop-shadow-2xl hover:scale-105 justify-center leading-tight mx-auto pb-1 pr-1 -ml-1 -mt-1 "
+              className=" bg-rossblue dark:bg-rossdarkblue  drop-shadow-2xl hover:scale-105 justify-center leading-tight mx-auto pb-1 pr-1 -ml-1 pt-2 -mt-2"
               onClick={handleSubmit}>
-                <h3 className="bg-rosspurple dark:bg-rossdarkpurple  text-white truncate font-bold -ml-1 -mt-1 px-3">
+                <h3 className="bg-rosspurple dark:bg-rossdarkpurple  text-white truncate font-bold -ml-1 -mt-2 px-3 py-2">
               {buttonText}
               </h3>
           </button>

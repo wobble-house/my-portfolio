@@ -122,11 +122,11 @@ return (
         animate="visible"
         variants={detailslist}
         className=" bg-rosspurple dark:bg-rossdarkpurple md:pr-2 pb-2 md:mb-12 shadow-2xl block">
-      <div className="flex flex-col gap-10 bg-rossblue dark:bg-rossdarkblue  -ml-2 -mt-2 pt-6 px-5 pb-6"> 
-            <div className="flex shrink gap-8 pb-5 align-top">
+      <div className="flex flex-col gap-10 bg-rossblue dark:bg-rossdarkblue  -ml-2 -mt-2 p-10"> 
+            <div className="flex gap-8 align-top justify-between">
                 <div className="relative px-1 md:px-5 pt-4">
-                  <div className="flex w-32 h-48 md:w-64 md:h-72">
-                      <ImageWithFallback src={visibledata.img.src} alt={visibledata.img.alt} fallbackSrc={'/images/oof.png'}/>
+                  <div className="relative">
+                      <ImageWithFallback width={262} height={263} src={visibledata.img.src} alt={visibledata.img.alt} fallbackSrc={'/images/oof.png'}/>
                   </div>
                 </div>
                 <div className="flex flex-col justify-evenly">
@@ -159,7 +159,7 @@ return (
                 </div>
               </div>
       <div className="mx-auto ">
-
+<div className="bg-rosspurple dark:bg-rossdarkpurple h-1 w-full mb-5"></div>
       {auth.currentUser != null ? 
       (
         <div className="flex relative">
@@ -179,7 +179,7 @@ return (
                       ref={aboutref}
                       onClick={close}
                       onHoverEnd={close}
-                      className="flex w-[275px] md:w-[500px] h-[1000px]"
+                      className="flex h-[1000px]"
                       exit="exit"
                       >
                         <div className="flex mx-auto top-0 relative">

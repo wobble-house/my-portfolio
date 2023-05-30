@@ -1,5 +1,5 @@
 import 'server-only'
-import ContactForm from "../../components/contact-form"
+import ContactData from "../../components/contact-form"
 import Skills from "./skills"
 import AboutMe from "./about-me"
 import { Animation } from "../../utils/animation/animation"
@@ -44,7 +44,7 @@ export default async function About(){
               <Skills/>
               </div>
               <Spacer/>
-            <ContactForm/>
+            <ContactData/>
         </div>
       </div></Suspense>
 </Animation>
