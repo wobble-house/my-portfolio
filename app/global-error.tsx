@@ -1,22 +1,41 @@
-'use client';
+"use client";
 import Footer from './footer'
 import './globals.css'
 import MyNavbar from '../components/navbar'
-import ChatModal from '../components/modal'
+import MyModal from '../components/modal'
+import Chatbot from '../components/chatbot';
 import LoginButton from '../components/login'
+import { getFirestore } from 'firebase/firestore';
+import { collection, getDocs, query } from 'firebase/firestore';
+import firebase_app from '../utils/firebase/config';
 
 export const metadata = {
     title: 'Error',
     description: 'Oops! If you are seeing this, Something Went Wrong!',
   }
 
-export default function GlobalError({
+
+  async function getInterchanges(){
+    const interchanges = [];
+    const db = getFirestore(firebase_app)
+    const q = query(collection(db, "interchanges"));
+    const querySnapshot = await getDocs(q)
+    querySnapshot.forEach(doc => {
+      let myinterchanges = doc.data();
+      myinterchanges.id = doc.id;
+      interchanges.push(myinterchanges)
+    });
+    return interchanges
+  };
+  
+export default async function GlobalError({
   error,
   reset,
 }: {
   error: Error;
   reset: () => void;
 }) {
+  const interchanges = await getInterchanges()
   return (
 <html lang="en" style={{scrollBehavior:'smooth'}}>
       <link
@@ -50,7 +69,7 @@ export default function GlobalError({
 <div className="absolute top-1 left-8 md:invisible">
 
 </div>
-<ChatModal/>
+<MyModal><Chatbot interchanges={interchanges}></Chatbot></MyModal>
 <Footer color={'white'}/>
 </body>
 </html>

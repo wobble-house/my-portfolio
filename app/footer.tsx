@@ -16,7 +16,7 @@ export default function Footer({color}:{color: string}){
         </div>
         <div className="flex flex-row justify-center gap-4 text-zinc-50 mx-auto">
             <Link
-                href="https://www.instagram.com/rossalanford/"
+                href={'https://www.instagram.com/rossalanford/'}
                 className={`Instagram social ${textcolor}`}
                 passHref
                 target="_blank"
@@ -24,7 +24,7 @@ export default function Footer({color}:{color: string}){
                 <FontAwesomeIcon icon={faInstagram} size="2x" />
             </Link>
             <Link
-                href="https://www.linkedin.com/in/rossaford/"
+                href={'https://www.linkedin.com/in/rossaford/'}
                 className={`Linkedin social ${textcolor}`}
                 passHref
                 target="_blank"
@@ -32,7 +32,7 @@ export default function Footer({color}:{color: string}){
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
             </Link>
             <Link
-                href="https://github.com/wobble-house"
+                href={'https://github.com/wobble-house'}
                 className={`Github social ${textcolor}`}
                 passHref
                 target="_blank"
