@@ -67,6 +67,7 @@ module.exports = {
 },
   experimental: {
     appDir: true,
+    typedRoutes: true,
   },
   typescript: {
     // !! WARN !!

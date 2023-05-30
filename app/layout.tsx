@@ -74,7 +74,7 @@ export default async function RootLayout({
         sizes="16x16"
         href="/favicon/favicon-16x16.png"
       />
-      <link rel="icon" href="/favicon/rossalanford.ico" />
+      <link rel="icon" href="/favicon/favicon.ico" />
       <GAScript/>
 <body className="min-h-screen mx-auto">
       <GABody/>
