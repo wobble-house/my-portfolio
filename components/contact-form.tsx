@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion';
 import Section from './section';
 
-export async function ContactForm(){
+export function ContactForm(){
     const id = useId();
     // States for contact form fields
     const [fullname, setFullname] = useState("");

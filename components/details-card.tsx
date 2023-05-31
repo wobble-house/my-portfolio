@@ -5,7 +5,6 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
 import ImageWithFallback from "./image-handler";
-import { MutableRefObject } from "react";
 
 export default function Details({ 
   description,
@@ -93,7 +92,7 @@ export default function Details({
                 className=" bg-rosspurple dark:bg-rossdarkpurple md:pr-2 pb-2 md:mb-12 shadow-2xl block">
               <div className="flex flex-col gap-2 bg-rossblue dark:bg-rossdarkblue -ml-2 -mt-2 pt-6 px-5 pb-6"> 
                     <div className="flex flex-col md:flex-row grow shrink gap-8 pb-5 align-middle">
-                          <div className="m-3">
+                          <div className="m-3 max-w-sm">
                             <ImageWithFallback src={img.src} alt={img.alt} fallbackSrc={'/images/oof.png'} height={768} width={1024}/>
                           </div>
                         <div className="flex flex-col">
@@ -153,7 +152,7 @@ export default function Details({
           className=" bg-rosspurple dark:bg-rossdarkpurple md:pr-2 pb-2 md:mb-12 shadow-2xl block">
         <div className="flex flex-col gap-2 bg-rossblue dark:bg-rossdarkblue -ml-2 -mt-2 pt-6 px-5 pb-6"> 
               <div className="flex flex-col md:flex-row grow shrink gap-8 pb-5 align-middle">
-                    <div className="relative m-3">
+                    <div className="relative m-3 max-w-sm">
                       <ImageWithFallback src={img.src} alt={img.alt} fallbackSrc={'/images/oof.png'} height={768} width={1024}/>
                     </div>
                   <div className="flex flex-col">
