@@ -41,7 +41,7 @@ export default async function RootLayout({
         href="/favicon/favicon-16x16.png"
       />
       <link rel="icon" href="/favicon/favicon.ico" />
-<body className="min-h-screen mx-auto">
+<body className="min-h-screen mx-auto overflow-hidden">
         <Footer color={'white'}/>
             <main className="flex flex-col mx-auto gap-5 justify-evenly align-top">
                   {children}
