@@ -1,11 +1,11 @@
 import 'server-only'
-import Footer from './footer'
 import './globals.css'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import { GeistSans, GeistMono } from "geist/font";
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
 
@@ -22,7 +22,7 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   return (
-<html lang="en" style={{scrollBehavior:'smooth'}}>
+<html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} style={{scrollBehavior:'smooth'}}>
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -41,11 +41,8 @@ export default async function RootLayout({
         href="/favicon/favicon-16x16.png"
       />
       <link rel="icon" href="/favicon/favicon.ico" />
-<body className="min-h-screen mx-auto overflow-hidden">
-        <Footer color={'white'}/>
-            <main className="flex flex-col mx-auto gap-5 justify-evenly align-top">
+<body className="min-h-screen overflow-hidden">
                   {children}
-            </main>
         </body>
     </html>
   )

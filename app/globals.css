@@ -1,295 +1,76 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  background-color: #FFFDE7;
-  --color-background:#FFFDE7;
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-  --black: #171717;
-  --grey: #262626;
-  --white: #FFFDE7;
-  --red:#ff1827;
-  --rosspurple: #A297C9;
-  --rossdarkpurple: #6954b1;
-  --rossblue: #C4E7E4;
-  --rossdarkblue: #579691;
-  --articlebackground: var(--white);
-  --articleforeground: var(--black);
-  --background: var(--white);
-  --foreground: var(--black);
-    --transition: 0.5s ease;
-}
-@layer base {
-  html {
-      font-family: CascadiaCode, sans-serif, system-ui;
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;
-      background-color: var(--white);
-      transition: color var(--transition);
-    }
-  html::before {
-      content: "";
-      position: fixed;
-      height: 100%;
-      width: 100%;
-      background: var(--black);
-      transform: translateX(-100%);
-      transition: transform var(--transition);
-      z-index: 0;
-    }
-    html.dark section a {
-      color: #60a5fa
-    }
-    html.dark .navigation a {
-      color: #60a5fa
-    }
-    section a {
-      color: blue
-    }
-    h1 {
-      font-family: MPLUS1Code;
-      letter-spacing: 2px;
-      line-height: 1.2em;
-      font-size: 3vmax;
-      font-weight: 500;
-      text-transform: uppercase;
-      padding-top: 0.25em;
-      padding-bottom: 0.25em;
-  }
-  h2 {
-      font-family: MPLUS1Code;
-      letter-spacing: 2px;
-      line-height: 1.2em;
-      font-size: 2.2vmax;
-      font-weight: 500;
-      text-transform: uppercase;
-      padding-top: 0.25em;
-      padding-bottom: 0.25em;
-      width: 100%;
-      max-width: 672px;
-  }
-  h3 {
-    font-family: MPLUS1Code;
-    letter-spacing: 2px;
-    line-height: 1.2em;
-    font-size: 1.5vmax;
-    font-weight: 500;
-    text-transform: uppercase;
-    padding-top: 0.25em;
-    padding-bottom: 0.25em;
-  }
-  h4 {
-      font-family: MPLUS1Code;
-      font-size: 1.5rem;
-      padding-bottom: 0.25em;
-  }
-  p {
-      font-family: CascadiaCode;
-    }
-  nav.li > ul { display: none; }
-  nav.li:hover > ul { display: block; }
-  .lvl1 li { display: relative; position:relative; }
-  .lvl2 { position: absolute; }
-  .lvl2 li { 
-    position: relative;
-   }
-  html::-webkit-scrollbar {
-    display: none;
-  }
-
-  a:hover {
-    --tw-scale-x: 1.01;
-    --tw-scale-y: 1.01;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-  .font-outline-2 {
-    -webkit-text-stroke: 2px black;
-  }
-  .font-outline-4 {
-    -webkit-text-stroke: 4px black;
-  }
-  .paragraph p { margin-bottom: 20px; }
-
  
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-     }
-}
-}
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  color: black;
-}
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+ 
+    --primary: 220.9 39.3% 11%;
+    --primary-foreground: 210 20% 98%;
+ 
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+ 
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+ 
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@font-face {
-  font-family: 'CascadiaCode';
-  src: local('CascadiaCode'), url(/fonts/CascadiaCode/woff2/CascadiaCode.woff2) format('woff2');
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
-}
-
-@font-face {
-  font-family: 'MPLUS1Code';
-  src: local('MPLUS1Code'), url(/fonts/MPLUS1Code/MPLUS1Code-VariableFont_wght.ttf) format('truetype');
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
-}
-
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 71.4% 4.1%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+ 
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+ 
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+ 
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
+ 
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+ 
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+ 
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+ 
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
   }
 }
-
-.preload {
-  display: none;
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
-
-.video-responsive {
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  position: relative;
-  height: 0;
-}
-
-.video-responsive iframe {
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
-
-
-.toggle .hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-.toggle-wrapper {
-  width: 60px;
-  display: block;
-}
-
-.toggle {
-  height: 25px;
-  width: 60px;
-  background: var(--background);
-  transition: background var(--transition);
-  border-radius: 40px;
-  padding: 3px;
-  position: relative;
-  margin: auto; 
-  cursor: pointer;
-}
-
-.toggle::before {
-  content: "";
-  display: block;
-  height: 20px;
-  width: 20px;
-  border-radius: 30px;
-  background: var(--foreground);
-  transition: transform var(--transition), background var(--transition);
-  position: absolute;
-  z-index: 2;
-  transform: translate(0);
-  transition: transform var(--transition);
-}
-
-.toggle.enabled::before {
-  transform: translateX(32px);
-}
-
-.toggle input {
-    position: absolute;
-    top: 0;
-  opacity: 0;
-}
-
-.toggle .icons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  margin: 0 5px;
-}
-
-.toggle .icons svg {
-  fill: var(--background);
-  height: 15px;
-  width: 15px;
-  z-index: 0;
-}
-
-/* When the darkmode class is applied, set the pseudo element position to 0 */
-.dark::before {
-  transform: translateX(0);
-}
-
-.bottext pre { 
-  white-space: pre-wrap;
-  list-style: none;
-  padding-left: 0;
-  padding: 0;
-}
-
-.bottext code { 
-  white-space: pre-wrap;
-  list-style: none;
-  padding-left: 0;
-  padding: 0;
-}
-
-.bottext ol { 
-  list-style: none;
-  padding-left: 0;
-  padding: 0;
-}
-
-.bottext li { 
-  margin-top: 1em;
-  margin-bottom:1em;
-  font-weight: 100;
-  font-family: MPLUS1Code;
-}
-
-.bottext p { 
-line-height: normal
-}
-
-.modalinfobg {
-  position: absolute;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-}
-.modalinfo {
-  position: absolute;
-  margin: auto;
-  z-index: 99;
- }
