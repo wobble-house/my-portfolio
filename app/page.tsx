@@ -1,7 +1,7 @@
 import "server-only";
 import { Suspense } from 'react'
 import Loading from './loading'
-import Footer from "./footer";
+import Footer from "../components/footer";
 import Link from "next/link";
 
 export const metadata = {
@@ -16,13 +16,13 @@ export default async function Home() {
       <div className="py-20 px-10">
         <Suspense fallback={<Loading/>}>
           <div className="z-50">
-        <h1 className="text-black dark:text-white font-black text-[9vw] lg:text-[6rem] uppercase w-full">Ross Alan Ford </h1>
-        <h2 className="text-black dark:text-white font-semibold text-[4vw] lg:text-2xl">A Full-Stack Developer with a background in Operations Management</h2>
-        <span className="flex gap-2 text-black dark:text-white py-20 text-sm md:text-md lg:text-lg"><p>Contact Me:</p><Link href={`mailto:ross@rossalanford.com`}>ross@rossalanford.com</Link></span>
+        <h1 className="text-primary font-black text-[9vw] lg:text-[6rem] uppercase w-full">Ross Alan Ford </h1>
+        <h2 className="text-primary font-semibold text-[4vw] lg:text-2xl">A Full-Stack Developer with a background in Operations Management</h2>
+        <span className="text-primary flex gap-2 py-20 text-sm font-medium md:text-md lg:text-lg"><p>Contact Me:</p><Link href={`mailto:ross@rossalanford.com?subject=Hey Ross! I'd like to chat sometime!`} className="transition ease-in-out duration-300 delay-75 active:animate-ping hover:scale-[1.1] hover:pl-2 text-blue-700">ross@rossalanford.com</Link></span>
         </div>
         </Suspense>
       </div>
-      <Footer color={'white'}/> 
+      <Footer/> 
      </main>
   )
 }

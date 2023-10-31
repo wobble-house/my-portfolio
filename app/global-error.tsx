@@ -1,9 +1,6 @@
 "use client";
-import Footer from './footer'
+import Footer from '../components/footer'
 import './globals.css'
-import { getFirestore } from 'firebase/firestore';
-import { collection, getDocs, query } from 'firebase/firestore';
-import firebase_app from '../utils/firebase/config';
 
 export const metadata = {
     title: 'Error',
@@ -47,7 +44,7 @@ export default async function GlobalError({
 <div className="absolute top-1 left-8 md:invisible">
 
 </div>
-<Footer color={'white'}/>
+<Footer/>
 </body>
 </html>
 )
