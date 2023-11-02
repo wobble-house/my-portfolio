@@ -12,7 +12,7 @@ export default function Footer(){
         <div className="flex flex-row justify-center gap-4 mx-auto">
             <Link
                 href='https://github.com/wobble-house'
-                className={`Github social text-secondary dark:text-secondary-foreground`}
+                className={`Github social text-white dark:text-secondary-foreground hover:text-secondary active:text-destructive`}
                 passHref
                 target="_blank"
                 rel="noopener noreferrer">

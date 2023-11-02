@@ -73,6 +73,13 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      dropShadow: {
+        '3xl': '0 35px 35px rgba(0, 0, 0, 0.25)',
+        '4xl': [
+            '0 35px 35px rgba(0, 0, 0, 0.25)',
+            '0 45px 65px rgba(0, 0, 0, 0.15)'
+        ]
+      },
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
         mono: ['var(--font-geist-mono)'],
@@ -95,6 +102,9 @@ module.exports = {
             '85%': { transform: 'rotate(6deg) translateX(13%)' },
             '100%': { transform: 'translateY(-25%) rotate(-6deg)' },
           },
+          spin: {
+            
+          }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

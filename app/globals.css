@@ -74,9 +74,86 @@
   body {
     @apply bg-background text-foreground;
   }
+  h1 {
+    -webkit-text-stroke: 1px hsl(var(--popover));
+  }
 }
 
-.mainBox {
-  background-image: url("https://images.unsplash.com/photo-1525947088131-b701cd0f6dc3?auto=format&fit=crop&q=80&w=1470&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-  display: inline;
+
+
+.hexgrid {
+	height: 100vh;
+	--sz: 10px; /*** size ***/
+	--c0: #3a1b0f;
+	--c1: #ffc56f;
+  --c2: #d99838;
+  --c3: #9b5e05;
+  --ts: 50%/ calc(var(--sz) * 12.8) calc(var(--sz) * 22);
+  background:
+		/*bottom*/
+    conic-gradient(from 120deg at 50% 86.5%, var(--c1) 0 120deg, #fff0 0 360deg) var(--ts),
+    conic-gradient(from 120deg at 50% 86.5%, var(--c1) 0 120deg, #fff0 0 360deg) var(--ts),
+		/*bottom dark*/
+		conic-gradient(from 120deg at 50% 74%, var(--c0) 0 120deg, #fff0 0 360deg) var(--ts),
+		/*right*/
+		conic-gradient(from 60deg at 60% 50%, var(--c1) 0 60deg, var(--c2) 0 120deg, #fff0 0 360deg) var(--ts),
+		/*left*/
+		conic-gradient(from 180deg at 40% 50%, var(--c3) 0 60deg, var(--c1) 0 120deg, #fff0 0 360deg) var(--ts),
+		/*top dark*/
+    conic-gradient(from 0deg at 90% 35%, var(--c0) 0 90deg, #fff0 0 360deg) var(--ts),
+    conic-gradient(from -90deg at 10% 35%, var(--c0) 0 90deg, #fff0 0 360deg) var(--ts),
+    conic-gradient(from 0deg at 90% 35%, var(--c0) 0 90deg, #fff0 0 360deg) var(--ts),
+    conic-gradient(from -90deg at 10% 35%, var(--c0) 0 90deg, #fff0 0 360deg) var(--ts),
+		/*top*/
+    conic-gradient(from -60deg at 50% 13.5%, var(--c1) 0 120deg, #fff0 0 360deg) var(--ts),
+    conic-gradient(from -60deg at 50% 13.5%, var(--c1) 0 120deg, #fff0 0 360deg) var(--ts),
+		conic-gradient(from -60deg at 50% 41%, var(--c2) 0 60deg, var(--c3) 0 120deg, #fff0 0 360deg) var(--ts),
+		var(--c0) ;
+}
+
+@keyframes logospin {
+  to {
+      transform: rotate(360deg);
+  }
+}
+@keyframes logospin-reverse {
+  to {
+      transform: rotate(-360deg);
+  }
+}
+.animate-logo-spin .fastest {
+  animation: logospin 13s linear infinite;
+}
+.animate-logo-spin .fast {
+  animation: logospin 17s linear infinite;
+}
+.animate-logo-spin .medFast {
+  animation: logospin 25s linear infinite;
+}
+.animate-logo-spin .medSlow {
+  animation: logospin 30s linear infinite;
+}
+.animate-logo-spin .slower {
+  animation: logospin 35s linear infinite;
+}
+.animate-logo-spin .slowest {
+  animation: logospin 38s linear infinite;
+}
+.animate-logo-spin-reverse .fastest {
+  animation: logospin-reverse 13s linear infinite;
+}
+.animate-logo-spin-reverse .fast {
+  animation: logospin-reverse 17s linear infinite;
+}
+.animate-logo-spin-reverse .medFast {
+  animation: logospin-reverse 25s linear infinite;
+}
+.animate-logo-spin-reverse .medSlow {
+  animation: logospin-reverse 30s linear infinite;
+}
+.animate-logo-spin-reverse .slower {
+  animation: logospin-reverse 35s linear infinite;
+}
+.animate-logo-spin-reverse .slowest {
+  animation: logospin-reverse 38s linear infinite;
 }
