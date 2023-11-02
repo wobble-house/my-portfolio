@@ -18,11 +18,11 @@ export default async function Home() {
       <div className=" flex-col px-8 pt-20 md:pt-32 pb-8 justify-center mx-auto">
         
         <Suspense fallback={<Loading/>}>
-          <div className="relative flex flex-col bg-primary rounded-md p-1 justify-between z-50">
-            <div className="flex bg-secondary rounded-md px-4 pt-8 pb-4">
-              <div className=" flex flex-col shadow-xl rounded-b-lg gap-2 bg-gradient-to-t from-foreground bg-opacity-50 py-4 max-w-3xl">
+          <div className="relative flex flex-col bg-primary rounded-md p-1 justify-between z-50 hover:scale-105 group transition duration-300 delay-75 ease-in-out">
+            <div className="flex bg-secondary rounded-md px-4 py-4">
+              <div className=" flex flex-col shadow-2xl rounded-lg gap-2 bg-foreground pb-4 pt-12 md:pt-0 max-w-3xl">
                 <div className=" flex flex-col-reverse md:flex-row-reverse rounded-md px-10 py-2 justify-between">
-                <h1 className="font-black text-destructive text-[6.2vw] lg:text-[3.5rem] uppercase w-full drop-shadow-2xl">Ross Alan Ford </h1>
+                <h1 className="font-black text-destructive text-[6.2vw] lg:text-[3.5rem] uppercase w-full drop-shadow-2xl group-hover:animate-pulse">Ross Alan Ford </h1>
                 <Logo/>
                 </div>
                 <hr className="mx-6 border-accent  border-2 border-rounded-full"/>
