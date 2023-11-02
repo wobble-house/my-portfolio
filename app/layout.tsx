@@ -7,7 +7,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { GeistSans, GeistMono } from "geist/font";
 import Footer from '../components/footer'
-import Nav from '../components/nav'
+import Image from 'next/image'
+import Logo from '../components/logo'
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
 
@@ -44,6 +45,7 @@ export default async function RootLayout({
       />
       <link rel="icon" type="image/png" href="/logos/favicon.png"/>
 <body className="max-w-screen overflow-y-auto no-scrollbar">
+<Logo position="left-2 top-2" mobile={false}/>
                   {children}
 
                   <Footer/>
