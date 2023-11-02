@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Nav from "../components/nav";
 export default function Loading() {
     return (
-
+      <>
+      <Nav></Nav>
          <div className="flex flex-col justify-center items-center content-center mx-auto py-32">
   <Image src={`/logos/RAF-logo.svg`} alt="Ross Alan Ford logo" width={100} height={100} className="absolute z-30 drop-shadow-4xl animate-bounce pb-8"/>
   
@@ -13,5 +15,6 @@ export default function Loading() {
     <span className="sr-only mx-auto text-center">Loading...</span>
   </div>
             </div>
+            </>
     );
 }

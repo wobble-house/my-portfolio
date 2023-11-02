@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef } from "react";
-
+import Image from "next/image";
 export default function Nav(){
     const [navbar, setNavbar] = useState(false);
     const Navref = useRef();
@@ -27,8 +27,9 @@ export default function Nav(){
                     </svg>
                   )}
                 </button>
-                <div ref={Navref} className={`flex mx-auto md:mx-0 bg-foreground md:bg-transparent md:block  ${navbar ? 'fixed top-0 flex-col min-h-content items-center w-full justify-center py-32 transition-all ease-in-out' : 'hidden'}`}>
-                    <ul className="text-center flex flex-col md:flex-row text-accent">
+                <div ref={Navref} className={`flex mx-auto md:mx-0 bg-foreground md:bg-transparent md:block  ${navbar ? 'fixed top-0 flex-col min-h-content items-center w-full h-full transition-all ease-in-out pt-12' : 'hidden'}`}>
+                    <ul className="text-center flex flex-col md:flex-row text-accent md:border-b-4 md:border-x-4 border-primary md:rounded-b-md">
+                    <Image src={`/logos/RAF-logo.svg`} alt="Ross Alan Ford logo" width={100} height={100} className="md:hidden z-30 drop-shadow-4xl animate-bounce"/>
                         <Link href={'/'} className={`${pathname == '/' ? 'bg-primary animate-pulse ' : ''} rounded-md md:rounded-b-md bg-foreground hover:bg-primary hover:bg-opacity-25 hover:scale-105 py-2 px-4 hover:text-white transition-all ease-in-out`} onClick={handleClose}>Home</Link>
                         <Link href={'/about'} className={`${pathname == '/about' ? 'bg-primary animate-pulse ' : ''} rounded-md md:rounded-b-md bg-foreground  hover:bg-primary hover:bg-opacity-25 hover:scale-105 py-2 px-4 hover:text-white transition-all ease-in-out`} onClick={handleClose}>About</Link>
                         <Link href={'/portfolio'} className={`${pathname == '/portfolio' ? 'bg-primary animate-pulse ' : ''} rounded-md md:rounded-b-md bg-foreground  hover:bg-primary hover:bg-opacity-25 hover:scale-105 py-2 px-4 hover:text-white transition-all ease-in-out`} onClick={handleClose}>Portfolio</Link>
