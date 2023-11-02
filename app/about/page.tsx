@@ -1,18 +1,18 @@
 import "server-only";
 import { Suspense } from 'react'
-import Loading from './loading'
-import Footer from "../components/footer";
+import Loading from '../loading'
+import Footer from "../../components/footer";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "../components/logo";
-import Nav from "../components/nav";
+import Logo from "../../components/logo";
+import Nav from "../../components/nav";
 
 export const metadata = {
-  title: 'Home',
+  title: 'About',
   description: 'Ross Alan Ford is a Full-Stack Developer with a background in Operations Management',
 }
 
-export default async function Home() {
+export default async function About() {
 
   return (
     <main className="flex flex-col mx-auto min-h-screen">

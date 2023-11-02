@@ -1,25 +1,24 @@
 import "server-only";
 import { Suspense } from 'react'
-import Loading from './loading'
-import Footer from "../components/footer";
+import Loading from '../loading'
+import Footer from "../../components/footer";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "../components/logo";
-import Nav from "../components/nav";
+import Logo from "../../components/logo";
 
 export const metadata = {
-  title: 'Home',
+  title: 'Profile',
   description: 'Ross Alan Ford is a Full-Stack Developer with a background in Operations Management',
 }
 
-export default async function Home() {
+export default async function Profile() {
 
   return (
-    <main className="flex flex-col mx-auto min-h-screen">
-      <Nav/>
-      <div className=" flex-col px-8 pt-20 md:pt-32 pb-8 justify-center mx-auto ">
+    <main className="flex flex-col gap-5 justify-center mx-auto z-40">
+      <div className=" flex-col px-8 pt-20 md:pt-32 pb-8 justify-center mx-auto">
+        
         <Suspense fallback={<Loading/>}>
-        <div className="relative flex flex-col rounded-md p-1 justify-between z-40 hover:scale-[1.01] group transition duration-300 delay-75 ease-in-out">
+        <div className="relative flex flex-col rounded-md p-1 justify-between z-50 hover:scale-[1.01] group transition duration-300 delay-75 ease-in-out">
             <div className="flex border-primary border-[6px] border-solid rounded-md shadow-2xl">
               <div className=" flex flex-col rounded-lg bg-foreground bg-opacity-0 pt-12 md:pt-0 max-w-3xl px-10">
                 <Logo/>

@@ -4,8 +4,8 @@
  
 @layer base {
   :root {
-    --background: 224 71.4% 14.1%;
-    --foreground: 224 71.4% 4.1%;
+    --background: url('/images/greyTexture.png');
+    --foreground: 224 71.4% 18%;
 
     --card: 45 57% 84%;
     --card-foreground: 169 83% 16%;
@@ -14,7 +14,7 @@
     --popover-foreground: 169 83% 16%;
  
     --primary: 169 83% 16%;
-    --primary-foreground: 210 20% 98%;
+    --primary-foreground: 45 57% 84%;;
  
     --secondary: 150 50% 67%;
     --secondary-foreground: 220.9 39.3% 11%;
@@ -46,7 +46,7 @@
     --popover-foreground: 210 20% 98%;
  
     --primary: 210 20% 98%;
-    --primary-foreground: 220.9 39.3% 11%;
+    --primary-foreground: 45 57% 84%;
  
     --secondary: 215 27.9% 16.9%;
     --secondary-foreground: 210 20% 98%;
@@ -72,10 +72,13 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+      background: var(--background);
   }
-  h1 {
-    -webkit-text-stroke: 1px hsl(var(--popover));
+  h1 .outline {
+    -webkit-text-stroke: 0.5px hsl(var(--destructive));
+  }
+  h2 {
+    color: hsl(var(--primary-foreground));
   }
 }
 
@@ -111,49 +114,6 @@
 		var(--c0) ;
 }
 
-@keyframes logospin {
-  to {
-      transform: rotate(360deg);
-  }
-}
-@keyframes logospin-reverse {
-  to {
-      transform: rotate(-360deg);
-  }
-}
-.animate-logo-spin .fastest {
-  animation: logospin 13s linear infinite;
-}
-.animate-logo-spin .fast {
-  animation: logospin 17s linear infinite;
-}
-.animate-logo-spin .medFast {
-  animation: logospin 25s linear infinite;
-}
-.animate-logo-spin .medSlow {
-  animation: logospin 30s linear infinite;
-}
-.animate-logo-spin .slower {
-  animation: logospin 35s linear infinite;
-}
-.animate-logo-spin .slowest {
-  animation: logospin 38s linear infinite;
-}
-.animate-logo-spin-reverse .fastest {
-  animation: logospin-reverse 13s linear infinite;
-}
-.animate-logo-spin-reverse .fast {
-  animation: logospin-reverse 17s linear infinite;
-}
-.animate-logo-spin-reverse .medFast {
-  animation: logospin-reverse 25s linear infinite;
-}
-.animate-logo-spin-reverse .medSlow {
-  animation: logospin-reverse 30s linear infinite;
-}
-.animate-logo-spin-reverse .slower {
-  animation: logospin-reverse 35s linear infinite;
-}
-.animate-logo-spin-reverse .slowest {
-  animation: logospin-reverse 38s linear infinite;
+.mainBox {
+  background-image: url('/images/greyTexture.png');
 }

@@ -7,6 +7,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { GeistSans, GeistMono } from "geist/font";
 import Footer from '../components/footer'
+import Nav from '../components/nav'
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
 
@@ -42,12 +43,9 @@ export default async function RootLayout({
         href="/logos/favicon-16x16.png"
       />
       <link rel="icon" type="image/png" href="/logos/favicon.png"/>
-<body className="min-h-content mx-auto">
-  <div className='flex mx-auto max-w-5xl'>
-
-        
+<body className="max-w-screen overflow-y-auto no-scrollbar">
                   {children}
-                  </div>
+
                   <Footer/>
         </body>
     </html>
