@@ -6,9 +6,7 @@ import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { GeistSans, GeistMono } from "geist/font";
-import Background from '../components/background'
 import Footer from '../components/footer'
-import Logo from '../components/logo'
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
 
@@ -49,7 +47,6 @@ export default async function RootLayout({
 
         
                   {children}
-<Background/>
                   </div>
                   <Footer/>
         </body>

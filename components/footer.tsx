@@ -6,7 +6,7 @@ import {
 
 export default function Footer(){
     return (
-        <div className="w-full flex bg-foreground dark:bg-secondary bottom-0 mx-auto justify-center fixed py-2 z-50">
+        <div className="w-full flex bg-primary dark:bg-secondary bottom-0 mx-auto justify-center fixed py-2 z-50">
             <div className="ml-2 my-auto">
         </div>
         <div className="flex flex-row justify-center gap-4 mx-auto">
