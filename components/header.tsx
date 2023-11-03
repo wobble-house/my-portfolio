@@ -14,8 +14,7 @@ export default function Header({metadata}){
         <div className=" flex flex-col rounded-lg bg-foreground bg-opacity-0 pt-6 md:pt-0 max-w-3xl px-10">
         <div className="flex flex-col-reverse rounded-md pt-2 justify-center">
         <div className="flex drop-shadow-xl text-center mx-auto hover:scale-105 transition duration-300 delay-75 ease-in-out">
-            <h1 className="absolute font-black text-secondary ml-1 mt-1 text-[6.2vw] lg:text-[3.5rem] uppercase w-full ">Ross Alan Ford </h1>
-            <h1 className="flex font-black text-primary text-[6.2vw] lg:text-[3.5rem] uppercase w-full ">Ross Alan Ford </h1>
+            <Image src={'/images/SVG/ROSSALANFORD.svg'} height={100} width={2000} alt={`image of the name ROSS ALAN FORD`} className='pb-2'/>
         </div>
         
         <div className="flex justify-center items-center z-50 pb-6 md:pb-0 hover:scale-110 transition duration-300 delay-75 ease-in-out">
