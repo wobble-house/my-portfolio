@@ -28,7 +28,7 @@ export default function Nav(){
                     </svg>
                   )}
                 </button>
-                <div ref={Navref} className={`flex transition mx-auto md:mx-0 bg-foreground md:block  ${navbar ? 'fixed top-0 flex-col min-h-content items-center w-full h-full scale-100 ease-in-out' : 'scale-0 md:scale-100 ease-out'}`}>
+                <div ref={Navref} className={`flex transition mx-auto md:mx-0 bg-foreground md:block  ${navbar ? 'fixed top-0 flex-col min-h-content items-center w-full h-full scale-100 ease-in-out' : 'hidden scale-0 md:scale-100 ease-out'}`}>
                     <ul className="text-center flex flex-col md:flex-row text-accent md:border-b-4 md:border-x-4 border-primary md:rounded-b-md">
                         <Logo mobileOnly={true} additionalClassName="pb-6 pt-20 md:pt-0 justify-center" scaleMultiplier={1} containerClassName=""/>
                         <Link href={'/'} className={`${pathname == '/' ? 'bg-primary animate-pulse rounded-md md:rounded-b-md' : ''}  md:bg-foreground hover:bg-primary hover:bg-opacity-25 hover:scale-110 py-2 px-4 hover:text-white transition-all ease-in-out drop-shadow-xl`} onClick={handleClose}>Home</Link>
