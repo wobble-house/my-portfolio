@@ -15,7 +15,7 @@ export default function Header({metadata}){
         <div className="flex flex-col-reverse rounded-md pt-2 justify-center">
         <div className="flex drop-shadow-xl text-center mx-auto hover:scale-105 transition duration-300 delay-75 ease-in-out">
             <h1 className="absolute font-black text-secondary mt-1 text-[6.2vw] lg:text-[3.5rem] uppercase w-full ">Ross Alan Ford </h1>
-            <h1 className="flex font-black text-primary text-[6.2vw] lg:text-[3.5rem] uppercase w-full ">Ross Alan Ford </h1>
+            <h1 className="absolute flex font-black text-primary text-[6.2vw] lg:text-[3.5rem] uppercase w-full ">Ross Alan Ford </h1>
         </div>
         
         <div className="flex justify-center items-center z-50 pb-6 md:pb-0 hover:scale-110 transition duration-300 delay-75 ease-in-out">
