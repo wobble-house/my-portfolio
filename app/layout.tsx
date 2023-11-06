@@ -25,26 +25,11 @@ export default function RootLayout({
 }) {
   return (
 <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} style={{scrollBehavior:'smooth'}}>
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/logos/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/logos/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/logos/favicon-16x16.png"
-      />
-      <link rel="icon" type="image/png" href="/logos/favicon.png"/>
-<body className="max-w-screen overflow-y-auto no-scrollbar">
-  <Image src={'/images/background.png'} alt='main background image' fill className={`fixed z-0`}/>
+<body className="relative max-w-screen overflow-y-auto no-scrollbar">
+  <Image src={'/images/background.png'} alt='main background image' fill sizes="100vw"
+      style={{
+        objectFit: 'cover',
+      }} className={`z-0`}/>
                   {children}
                   <Footer/>
         </body>
