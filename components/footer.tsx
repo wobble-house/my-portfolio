@@ -1,8 +1,4 @@
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faGithub
-  } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer(){
     return (
@@ -16,7 +12,7 @@ export default function Footer(){
                 passHref
                 target="_blank"
                 rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faGithub} size="2x" className={`transition ease-in-out duration-300 delay-75 hover:scale-[1.1] active:animate-ping`}/>
+Github
             </Link>
         </div>
     </div>
