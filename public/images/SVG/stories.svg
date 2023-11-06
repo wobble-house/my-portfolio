@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 327.85 84.9">
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 328.37 81.39">
   <defs>
     <style>
       .cls-1 {
@@ -7,27 +7,36 @@
       }
 
       .cls-2 {
-        fill: #094c48;
+        letter-spacing: -.02em;
       }
 
-      .cls-2, .cls-3 {
-        font-family: Geist-UltraBlack, Geist;
+      .cls-3 {
+        fill: #094c48;
         font-size: 72px;
+      }
+
+      .cls-3, .cls-4 {
+        font-family: Geist-UltraBlack, Geist;
         font-variation-settings: 'wght' 208;
         font-weight: 800;
       }
 
-      .cls-3 {
-        fill: #77d5a7;
+      .cls-5 {
+        letter-spacing: -.02em;
       }
 
       .cls-4 {
+        fill: #77d5a7;
+        font-size: 73px;
+      }
+
+      .cls-6 {
         letter-spacing: -.02em;
       }
     </style>
   </defs>
-  <g id="Layer_4" data-name="Layer 4">
-    <text class="cls-2" transform="translate(4 70)"><tspan class="cls-4" x="0" y="0">ST</tspan><tspan class="cls-1" x="96.62" y="0">O</tspan><tspan x="151.99" y="0">RIES</tspan></text>
-    <text class="cls-3" transform="translate(0 61.56)"><tspan class="cls-4" x="0" y="0">ST</tspan><tspan class="cls-1" x="96.62" y="0">O</tspan><tspan x="151.99" y="0">RIES</tspan></text>
+  <g id="Layer_2-2" data-name="Layer 2">
+    <text class="cls-3" transform="translate(4.52 66.49)"><tspan class="cls-6" x="0" y="0">ST</tspan><tspan class="cls-1" x="96.62" y="0">O</tspan><tspan x="151.99" y="0">RIES</tspan></text>
+    <text id="CONTACT" class="cls-4" transform="translate(0 62.41)"><tspan class="cls-5" x="0" y="0">ST</tspan><tspan class="cls-2" x="97.97" y="0">O</tspan><tspan x="154.1" y="0">RIES</tspan></text>
   </g>
 </svg>

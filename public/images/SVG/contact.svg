@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 366.61 82.54">
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 363.9 81.39">
   <defs>
     <style>
       .cls-1 {
-        letter-spacing: -.11em;
+        letter-spacing: -.02em;
       }
 
       .cls-2 {
-        fill: #094c48;
+        letter-spacing: -.11em;
       }
 
-      .cls-2, .cls-3 {
-        font-family: Geist-UltraBlack, Geist;
+      .cls-3 {
+        fill: #094c48;
         font-size: 72px;
+      }
+
+      .cls-3, .cls-4 {
+        font-family: Geist-UltraBlack, Geist;
         font-variation-settings: 'wght' 208;
         font-weight: 800;
       }
 
-      .cls-4 {
-        letter-spacing: -.05em;
-      }
-
       .cls-5 {
-        letter-spacing: -.02em;
+        letter-spacing: -.05em;
       }
 
       .cls-6 {
@@ -30,16 +30,37 @@
       }
 
       .cls-7 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-8 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-9 {
         letter-spacing: 0em;
       }
 
-      .cls-3 {
+      .cls-10 {
+        letter-spacing: 0em;
+      }
+
+      .cls-11 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-4 {
         fill: #77d5a7;
+        font-size: 73px;
+      }
+
+      .cls-12 {
+        letter-spacing: -.11em;
       }
     </style>
   </defs>
-  <g id="Layer_5" data-name="Layer 5">
-    <text class="cls-2" transform="translate(7.69 67.64)"><tspan x="0" y="0">C</tspan><tspan class="cls-5" x="54.07" y="0">O</tspan><tspan class="cls-7" x="109.44" y="0">N</tspan><tspan class="cls-1" x="163.22" y="0">T</tspan><tspan class="cls-4" x="204.34" y="0">A</tspan><tspan class="cls-6" x="257.18" y="0">C</tspan><tspan x="310.18" y="0">T</tspan></text>
-    <text class="cls-3" transform="translate(0 61.56)"><tspan x="0" y="0">C</tspan><tspan class="cls-5" x="54.07" y="0">O</tspan><tspan class="cls-7" x="109.44" y="0">N</tspan><tspan class="cls-1" x="163.22" y="0">T</tspan><tspan class="cls-4" x="204.34" y="0">A</tspan><tspan class="cls-6" x="257.18" y="0">C</tspan><tspan x="310.18" y="0">T</tspan></text>
+  <g id="Layer_2-2" data-name="Layer 2">
+    <text class="cls-3" transform="translate(4.52 66.49)"><tspan x="0" y="0">C</tspan><tspan class="cls-6" x="54.07" y="0">O</tspan><tspan class="cls-10" x="109.44" y="0">N</tspan><tspan class="cls-2" x="163.22" y="0">T</tspan><tspan class="cls-5" x="204.34" y="0">A</tspan><tspan class="cls-7" x="257.18" y="0">C</tspan><tspan x="310.18" y="0">T</tspan></text>
+    <text id="CONTACT" class="cls-4" transform="translate(0 62.41)"><tspan x="0" y="0">C</tspan><tspan class="cls-1" x="54.82" y="0">O</tspan><tspan class="cls-9" x="110.96" y="0">N</tspan><tspan class="cls-12" x="165.49" y="0">T</tspan><tspan class="cls-8" x="207.17" y="0">A</tspan><tspan class="cls-11" x="260.76" y="0">C</tspan><tspan x="314.48" y="0">T</tspan></text>
   </g>
 </svg>

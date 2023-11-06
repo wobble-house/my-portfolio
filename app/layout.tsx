@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
 <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} style={{scrollBehavior:'smooth'}}>
-<body className="relative max-w-screen overflow-y-auto no-scrollbar overscroll-auto">
+<body className="relative max-w-screen overflow-y-auto no-scrollbar overscroll-auto pb-20">
   <Image src={'/images/background.png'} alt='main background image' fill sizes="100vw" style={{objectFit: 'cover'}} className={`z-0`}/>
           {children}
           <Footer/>
