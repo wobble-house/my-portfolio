@@ -1,5 +1,4 @@
 'use client';
-import Image from "next/image"
 import MainLogo from "../public/logos/RAF-logo.svg"
 import LeafRing from "../public/images/SVG/leafring.svg"
 

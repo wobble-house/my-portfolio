@@ -3,10 +3,10 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import Link from "next/link";
 import Logo from "./logo";
-import AboutIcon from "../public/icons/About.svg";
-import PortfolioIcon from "../public/icons/Portfolio.svg";
-import StoriesIcon from "../public/icons/Stories.svg";
-import ContactIcon from "../public/icons/Contact.svg";
+import AboutIcon from "../public/icons/about.svg";
+import PortfolioIcon from "../public/icons/portfolio.svg";
+import StoriesIcon from "../public/icons/stories.svg";
+import ContactIcon from "../public/icons/contact.svg";
 import AboutTitle from "../public/images/SVG/about.svg"
 import PortfolioTitle from "../public/images/SVG/portfolio.svg"
 import StoriesTitle from "../public/images/SVG/stories.svg"
