@@ -2,10 +2,12 @@ import Image from "next/image"
 export default function DetailsCard(){
     return(
     <div className={`relative flex flex-col border-[6px] border-solid border-primary bg-foreground rounded-lg max-w-lg mx-auto `}>
-        <div className={`flex flex-row rounded-lg overflow-none p-4 gap-4 items-start`}>
-            <Image src={'/images/Ross.png'} height={262} width={263} alt={'image'} style={{objectFit: 'contain'}}></Image>
-            <div className={`flex flex-col`}>
-                <h2 className={`text-3xl font-extrabold whitespace-nowrap`}>Ross Alan Ford</h2>
+        <div className={`flex flex-col md:flex-row rounded-lg overflow-none md:px-4 py-4 gap-8 md:gap-4 items-center md:items-start justify-center mt-4 md:mt-0 mb-8`}>
+            <div className={`flex justify-center w-full md:w-1/2`}>
+            <Image src={'/images/Ross.png'} height={262} width={263} alt={'image'} style={{objectFit: 'contain'}}/>
+            </div>
+            <div className={`flex flex-col bg-primary md:bg-transparent px-4 pt-2 pb-4 rounded-xl`}>
+                <h2 className={`text-[1.5rem] font-extrabold uppercase`}>Ross Alan Ford</h2>
                 <hr></hr>
                 <ul className="list-inside list-disc">
                     <h3 className={`text-2xl font-mono text-accent`}>Skills</h3>
@@ -28,10 +30,10 @@ export default function DetailsCard(){
                 </ul>
             </div>
         </div>
-        <div className={`flex flex-col p-4 gap-1`}>
-            <h2 className={`text-2xl font-extrabold`}>BIO</h2>
-            <hr></hr>
-            <p className={`text-accent font-mono`}>
+        <div className={`flex flex-col p-4 gap-1 bg-accent pt-8 rounded-b-lg`}>
+            <h2 className={`text-2xl font-extrabold text-primary`}>BIO</h2>
+            <hr className="text-foreground"></hr>
+            <p className={`font-mono`}>
             What is Lorem Ipsum?
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
