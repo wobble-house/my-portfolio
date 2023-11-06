@@ -19,7 +19,7 @@
  
 @layer base {
   :root {
-    --background: url('/images/greyTexture.png');
+    --background: 149 0% 16%;
     --foreground: 224 71.4% 18%;
 
     --card: 45 57% 84%;

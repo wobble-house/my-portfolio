@@ -45,6 +45,7 @@ export default async function RootLayout({
       />
       <link rel="icon" type="image/png" href="/logos/favicon.png"/>
 <body className="max-w-screen overflow-y-auto no-scrollbar">
+  <Image src={'/images/background.png'} alt='main background image' fill className={`fixed z-0`}/>
                   {children}
                   <Footer/>
         </body>
