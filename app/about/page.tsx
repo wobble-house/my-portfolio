@@ -8,7 +8,7 @@ import Header from "../../components/header";
 import Nav from "../../components/nav";
 
 export const metadata = {
-  title: 'About Me',
+  title: 'About',
   description: 'Learn some more about lil ol me',
 }
 

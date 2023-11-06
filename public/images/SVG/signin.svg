@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 282.03 82.18">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #094c48;
+      }
+
+      .cls-1, .cls-2 {
+        font-family: Geist-UltraBlack, Geist;
+        font-size: 72px;
+        font-variation-settings: 'wght' 208;
+        font-weight: 800;
+      }
+
+      .cls-3 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        fill: #77d5a7;
+      }
+    </style>
+  </defs>
+  <g id="Layer_8" data-name="Layer 8">
+    <text class="cls-1" transform="translate(7.13 67.28)"><tspan class="cls-3" x="0" y="0">S</tspan><tspan class="cls-4" x="49.54" y="0">I</tspan><tspan x="72.79" y="0">GN IN</tspan></text>
+    <text class="cls-2" transform="translate(0 61.56)"><tspan class="cls-3" x="0" y="0">S</tspan><tspan class="cls-4" x="49.54" y="0">I</tspan><tspan x="72.79" y="0">GN IN</tspan></text>
+  </g>
+</svg>

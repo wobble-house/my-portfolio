@@ -1,11 +1,15 @@
 import Image from "next/image";
+import Logo from "../components/logo";
 import Nav from "../components/nav";
 export default function Loading() {
     return (
       <>
       <Nav></Nav>
          <div className="flex flex-col justify-center items-center content-center mx-auto py-32">
-  <Image src={`/logos/RAF-logo.svg`} alt="Ross Alan Ford logo" width={100} height={100} className="absolute z-30 drop-shadow-4xl animate-bounce pb-8"/>
+         <div className="flex justify-center items-center z-50 pb-6 md:pb-0 hover:scale-110 transition duration-300 delay-75 ease-in-out">
+            <Logo mobileOnly={true} additionalClassName="top-0" scaleMultiplier={1} containerClassName="" isStatic={false}/>
+            <Logo mobileOnly={false} additionalClassName="top-0 md:my-4" scaleMultiplier={2} containerClassName="" isStatic={false}/>
+        </div>
   
   <div role="status" className="mx-auto justify-center items-center content-center mt-14">
     <svg aria-hidden="true" className="w-8 h-8 mr-2 animate-spin text-primary fill-secondary" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 366.61 82.54">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.11em;
+      }
+
+      .cls-2 {
+        fill: #094c48;
+      }
+
+      .cls-2, .cls-3 {
+        font-family: Geist-UltraBlack, Geist;
+        font-size: 72px;
+        font-variation-settings: 'wght' 208;
+        font-weight: 800;
+      }
+
+      .cls-4 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-5 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-6 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        fill: #77d5a7;
+      }
+    </style>
+  </defs>
+  <g id="Layer_5" data-name="Layer 5">
+    <text class="cls-2" transform="translate(7.69 67.64)"><tspan x="0" y="0">C</tspan><tspan class="cls-5" x="54.07" y="0">O</tspan><tspan class="cls-7" x="109.44" y="0">N</tspan><tspan class="cls-1" x="163.22" y="0">T</tspan><tspan class="cls-4" x="204.34" y="0">A</tspan><tspan class="cls-6" x="257.18" y="0">C</tspan><tspan x="310.18" y="0">T</tspan></text>
+    <text class="cls-3" transform="translate(0 61.56)"><tspan x="0" y="0">C</tspan><tspan class="cls-5" x="54.07" y="0">O</tspan><tspan class="cls-7" x="109.44" y="0">N</tspan><tspan class="cls-1" x="163.22" y="0">T</tspan><tspan class="cls-4" x="204.34" y="0">A</tspan><tspan class="cls-6" x="257.18" y="0">C</tspan><tspan x="310.18" y="0">T</tspan></text>
+  </g>
+</svg>
