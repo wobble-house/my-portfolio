@@ -8,7 +8,6 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import { GeistSans, GeistMono } from "geist/font";
 import Footer from '../components/footer'
 import Image from 'next/image'
-import Logo from '../components/logo'
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
 
@@ -19,7 +18,7 @@ export const metadata = {
   },
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode

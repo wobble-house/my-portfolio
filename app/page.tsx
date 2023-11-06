@@ -12,7 +12,7 @@ export const metadata = {
   description: 'Ross Alan Ford is a Full-Stack Developer with a background in Operations Management',
 }
 
-export default async function Home() {
+export default function Home() {
 
   return (
     <main className="flex flex-col mx-auto min-h-screen">

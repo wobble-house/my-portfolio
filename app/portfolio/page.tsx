@@ -12,7 +12,7 @@ export const metadata = {
   description: 'Here are some of the Projects I have worked on',
 }
 
-export default async function Portfolio() {
+export default function Portfolio() {
 
   return (
     <main className="flex flex-col mx-auto min-h-screen">

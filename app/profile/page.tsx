@@ -12,7 +12,7 @@ export const metadata = {
   description: 'Update your profile info here',
 }
 
-export default async function Profile() {
+export default function Profile() {
 
   return (
     <main className="flex flex-col mx-auto min-h-screen">

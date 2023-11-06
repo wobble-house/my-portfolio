@@ -12,7 +12,7 @@ export const metadata = {
   description: 'Sign up',
 }
 
-export default async function Signup() {
+export default function Signup() {
 
   return (
     <main className="flex flex-col mx-auto min-h-screen">

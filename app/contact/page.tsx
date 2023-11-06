@@ -12,7 +12,7 @@ export const metadata = {
   description: 'Contact me below',
 }
 
-export default async function Contact() {
+export default function Contact() {
 
   return (
     <main className="flex flex-col mx-auto min-h-screen">

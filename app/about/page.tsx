@@ -12,7 +12,7 @@ export const metadata = {
   description: 'Learn some more about lil ol me',
 }
 
-export default async function About() {
+export default function About() {
 
   return (
     <main className="flex flex-col mx-auto min-h-screen">

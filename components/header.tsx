@@ -5,10 +5,9 @@ import Link from "next/link";
 import Logo from "./logo";
 export default function Header({metadata}){
     const pathname = usePathname();
+    const imgname = metadata.title
     return(
         <div className="relative flex flex-col rounded-md md:pt-14 px-1 justify-between z-40 hover:scale-[1.01] group transition duration-300 delay-75 ease-in-out">
-        
-        
         <div className="flex border-primary border-[6px] border-solid rounded-md shadow-2xl">
         {pathname == '/' ? 
         <div className=" flex flex-col rounded-lg bg-foreground bg-opacity-0 pt-6 md:pt-0 max-w-3xl px-10">
@@ -28,8 +27,8 @@ export default function Header({metadata}){
               <div className=" flex flex-col rounded-lg bg-foreground bg-opacity-0  max-w-3xl px-10">
                 <div className="flex rounded-md pt-2 justify-center">
                 <div className="flex-col justify-center gap-5 drop-shadow-xl text-center hover:scale-105 transition duration-300 delay-75 ease-in-out">
-                <Image src={`/icons/${metadata.title}.svg`} height={100} width={100} alt={`icon of the page title`} className='mx-auto py-2'/>
-            <Image src={`/images/SVG/${metadata.title}.svg`} height={50} width={300} alt={`image of the page title`} className='pb-2'/>
+                <Image src={`/icons/${imgname}.svg`} height={100} width={100} alt={`icon of the page title`} className='mx-auto py-2'/>
+            <Image src={`/images/SVG/${imgname}.svg`} height={50} width={300} alt={`image of the page title`} className='pb-2'/>
         </div>
             </div><hr className="border-[1px] md:border-2 border-solid border-accent rounded-full md:w-4/5 mx-auto w-full group-hover:scale-90 transition-all duration-200 ease-in-out"></hr>
                     <h2 className="text-accent hover:text-white text-md font-medium text-center md:mx-24 mb-4 md:px-10 py-3 hover:bg-primary rounded-xl scale-105 transition-all ease-in-out duration-300">{metadata.description}</h2>
