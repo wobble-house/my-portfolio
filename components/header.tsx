@@ -14,7 +14,7 @@ import ContactTitle from "../public/images/SVG/contact.svg"
 export default function Header({metadata}){
     const pathname = usePathname();
     return(
-        <div className="relative flex flex-col rounded-md md:pt-14 px-1 justify-between z-40 hover:scale-[1.01] group transition duration-300 delay-75 ease-in-out">
+        <div className="relative flex flex-col rounded-md px-1 justify-between z-40 hover:scale-[1.01] group transition duration-300 delay-75 ease-in-out">
         <div className="flex border-primary border-[6px] border-solid rounded-md shadow-2xl">
         {pathname == '/' ? 
         <div className=" flex flex-col rounded-lg bg-foreground bg-opacity-0 pt-6 md:pt-0 max-w-3xl px-10">

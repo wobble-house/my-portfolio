@@ -1,11 +1,13 @@
+'use client'
 import Image from "next/image"
+import ROSSALANFORD from '../public/images/SVG/ROSSALANFORD.svg'
 export default function DetailsCard(){
     return(
     <div className={`relative flex flex-col border-[6px] border-solid border-primary bg-foreground rounded-lg max-w-lg mx-auto `}>
-        <div className={`relative flex flex-col md:flex-row  rounded-lg overflow-none px-4 py-4 gap-8 md:gap-4 items-start justify-start z-30`}>
-            <Image src={'/images/Ross.png'} alt={'image'} fill sizes={'100vw'} style={{objectFit: 'cover'}} className='flex'/>
-            <div className={`relative flex flex-col bg-gradient-to-r drop-shadow-4xl from-foreground to-transparent px-4 pt-2 pb-4 rounded-xl group`}>
-                <h2 className={`text-[1.5rem] font-extrabold uppercase drop-shadow-2xl group-hover:text-[1.6rem] transition-all ease-in-out`}>Ross Alan Ford</h2>
+        <div className={`relative flex flex-col md:flex-row  rounded-lg overflow-none gap-8 md:gap-4 items-start justify-start z-30`}>
+            <Image src={'/images/rossalanford.jpg'} alt={'image'} fill style={{objectFit: 'cover', objectPosition: '50% 10%'}} className='flex md:px-20'/>
+            <div className={`relative flex flex-col bg-gradient-to-r from-foreground from-25% via-transparent via-55% to-foreground to-75% px-4 pt-2 pb-4 w-full group`}>
+            <ROSSALANFORD className='py-2 w-full'/>
                 <hr></hr>
                 <ul className="list-inside list-disc">
                     <h3 className={`text-2xl font-mono text-accent`}>Skills:</h3>
