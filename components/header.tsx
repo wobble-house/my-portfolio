@@ -31,7 +31,7 @@ export default function Header({metadata}){
         <hr className="border-[1px] md:border-2 border-solid border-accent rounded-full md:w-4/5 mx-auto w-full group-hover:scale-90 transition-all duration-200 ease-in-out"></hr>
         <h2 className="text-accent hover:text-white text-md font-medium text-center md:mx-24 mb-4 md:px-10 py-3 hover:bg-primary hover:scale-105 rounded-xl transition-all ease-in-out duration-300">A Full-Stack Developer with a background in Operations Management</h2>
               </div> : 
-              <div className=" flex flex-col rounded-lg bg-foreground bg-opacity-0 max-w-3xl px-10">
+              <div className=" flex flex-col rounded-lg bg-foreground bg-opacity-0 w-full px-10">
                 <div className="flex rounded-md pt-2 justify-center">
                 
                 {(pathname == "/about") ? <div className="flex-col justify-center gap-5 drop-shadow-xl text-center transition duration-300 delay-75 ease-in-out"><AboutIcon height={100} width={100} className='mx-auto py-2'/><AboutTitle className='pb-2 w-full'/> </div> : <></>}
